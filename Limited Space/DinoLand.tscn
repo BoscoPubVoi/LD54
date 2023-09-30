@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=18 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
-[ext_resource type="PackedScene" path="res://Nature/golftree.tscn" id="5_bpe82"]
+[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="5_bpe82"]
+[ext_resource type="PackedScene" uid="uid://c4tpklaj4lxdw" path="res://Nature/sand_trap.tscn" id="7_6gtns"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="7_rckfh"]
-[ext_resource type="PackedScene" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
+[ext_resource type="PackedScene" uid="uid://cv4gaqnb6wtki" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,8 +24,8 @@ tonemap_exposure = 0.7
 glow_enabled = true
 adjustment_enabled = true
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cfwu0"]
-data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yk8d3"]
+radius = 30.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4w8m"]
 albedo_color = Color(0, 0.592157, 0.890196, 1)
@@ -53,9 +54,8 @@ top_radius = 10.0
 height = 0.001
 cap_bottom = false
 
-[node name="World" type="Node3D" groups=["LevelRoot"]]
+[node name="World" type="Node3D"]
 script = ExtResource("1_gncxt")
-NextLevel = "res://DinoLand.tscn"
 MainMenu = "res://ui/main_menu.tscn"
 ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
 
@@ -67,8 +67,8 @@ collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("ConcavePolygonShape3D_cfwu0")
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("CylinderShape3D_yk8d3")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.05, 0)
@@ -148,5 +148,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7978, -1.90735e-06, -3.307
 
 [node name="Environment_Slow_Trap7" parent="." instance=ExtResource("8_a3e8r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0515, -4.76837e-07, -6.17481)
+
+[node name="Sand_Trap" parent="." instance=ExtResource("7_6gtns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3947, 0, 17.8105)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

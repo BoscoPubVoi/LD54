@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsnj4rmacodpy"]
+
+[ext_resource type="Script" path="res://Balls/scatter_ball_tiny.gd" id="1_iyyw0"]
+[ext_resource type="Script" path="res://Balls/trail.gd" id="2_ya7u4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg75e"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xq873"]
+material = SubResource("StandardMaterial3D_xg75e")
+radius = 0.2
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mjsub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mew8a"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wuvgu"]
+material = SubResource("StandardMaterial3D_mew8a")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3epgj"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.443137)
+
+[node name="Scatter Ball Tiny" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 3
+mass = 0.01
+lock_rotation = true
+script = ExtResource("1_iyyw0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_xq873")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_mjsub")
+
+[node name="ShadowCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573092, 0)
+target_position = Vector3(0, -20, 0)
+
+[node name="ShadowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_wuvgu")
+skeleton = NodePath("../ShadowCast")
+
+[node name="Trail3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_3epgj")
+cast_shadow = 0
+script = ExtResource("2_ya7u4")
+scaleAcceleration = 0.667
+lifespan = 0.4
+scaleTexture = false
+startColor = Color(1, 1, 1, 0.396078)

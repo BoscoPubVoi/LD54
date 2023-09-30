@@ -5,6 +5,7 @@ extends Node3D
 @onready var timer : Timer = $Shot_Timer
 
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
+#var ballGeneric = preload("res://Balls/scatter_ball.tscn")
 
 func _ready():
 	var root = get_tree().get_first_node_in_group("LevelRoot")
@@ -25,7 +26,6 @@ func emit():
 	Global.IncrementScore()
 
 func _on_shot_timer_timeout():
-
 	look_at(get_tree().get_first_node_in_group("player").position)
 	rotate_y(3.1415)
 	golfer.play("default")

@@ -64,6 +64,7 @@ down={
 3d_physics/layer_2="player"
 3d_physics/layer_3="balls"
 3d_physics/layer_4="traps"
+3d_physics/layer_5="littleballs"
 
 [rendering]
 
