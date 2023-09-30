@@ -1,14 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4tpklaj4lxdw"]
+[gd_scene load_steps=4 format=3 uid="uid://c4tpklaj4lxdw"]
 
 [ext_resource type="Script" path="res://Nature/environment_slow_trap.gd" id="1_xmjco"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fejdk"]
-albedo_color = Color(1, 0.729412, 0.521569, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_0xsns"]
-material = SubResource("StandardMaterial3D_fejdk")
-size = Vector2(5, 3)
-orientation = 1
+[ext_resource type="PackedScene" uid="uid://djayy0giymo8g" path="res://sandmound.tscn" id="2_1528c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpl11"]
 size = Vector3(4.98914, 1, 3.00068)
@@ -18,10 +11,10 @@ collision_layer = 8
 collision_mask = 6
 script = ExtResource("1_xmjco")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("QuadMesh_0xsns")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fpl11")
+
+[node name="sandmound2" parent="." instance=ExtResource("2_1528c")]
+transform = Transform3D(3.16171, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.182927, 0)
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited" flags=18]

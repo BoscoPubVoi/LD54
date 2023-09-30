@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://djayy0giymo8g"]
+
+[ext_resource type="PackedScene" uid="uid://2xhvjj5x3ij" path="res://assets/models/sandmound.glb" id="1_vm3s4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0afud"]
+albedo_color = Color(1, 0.854902, 0.32549, 1)
+
+[node name="sandmound" instance=ExtResource("1_vm3s4")]
+
+[node name="mound" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0afud")
