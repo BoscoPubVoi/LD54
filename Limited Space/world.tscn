@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_2ej0l"]
 [ext_resource type="Script" path="res://Level.gd" id="1_6qppj"]
-[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="2_1wxqo"]
+[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="2_1wxqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
