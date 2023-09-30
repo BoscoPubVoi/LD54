@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=17 format=3 uid="uid://br0debc663st4"]
 
+[ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
 [ext_resource type="PackedScene" path="res://Nature/golftree.tscn" id="5_bpe82"]
@@ -53,6 +54,9 @@ height = 0.001
 cap_bottom = false
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_gncxt")
+MainMenu = "res://ui/main_menu.tscn"
+ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pmrkg")
@@ -143,3 +147,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7978, -1.90735e-06, -3.307
 
 [node name="Environment_Slow_Trap7" parent="." instance=ExtResource("8_a3e8r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0515, -4.76837e-07, -6.17481)
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
