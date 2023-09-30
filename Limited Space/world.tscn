@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxwu7vuenibrk"]
+[gd_scene load_steps=11 format=3 uid="uid://cxwu7vuenibrk"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_2ej0l"]
-[ext_resource type="PackedScene" uid="uid://dut3rbonuq221" path="res://player.tscn" id="2_1wxqo"]
+[ext_resource type="PackedScene" uid="uid://bbpvje8xcdhsu" path="res://hole.tscn" id="2_uyp7b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,8 +17,20 @@ sky = SubResource("Sky_honci")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l5l8o"]
+noise_type = 3
+seed = 6
+frequency = 0.5225
+offset = Vector3(16.1, 0, 0)
+fractal_gain = 1.0
+fractal_weighted_strength = 0.71
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k08xo"]
+noise = SubResource("FastNoiseLite_l5l8o")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgi82"]
 albedo_color = Color(0, 0.964706, 0, 1)
+albedo_texture = SubResource("NoiseTexture2D_k08xo")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jx1k7"]
 material = SubResource("StandardMaterial3D_tgi82")
@@ -50,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8416, 4.50414, -54.251)
 transform = Transform3D(-0.989037, 0, -0.147671, 0, 1, 0, 0.147671, 0, -0.989037, -18.4342, 2.40116, -81.1919)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.987963, 0.154693, 0, -0.154693, 0.987963, 0.340557, 16.2455, 26.0264)
+transform = Transform3D(1, 0, 0, 0, 0.831896, 0.554932, 0, -0.554932, 0.831896, 0.340557, 23.575, 26.0264)
 
 [node name="Ball Spitter3" parent="." instance=ExtResource("1_2ej0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
@@ -58,7 +70,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
 [node name="Ball Spitter4" parent="." instance=ExtResource("1_2ej0l")]
 transform = Transform3D(-0.998659, 0, -0.0517783, 0, 1, 0, 0.0517783, 0, -0.998659, 33.7453, 3.10413, -65.8004)
 
+[node name="Hole" parent="." instance=ExtResource("2_uyp7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
 [node name="Ball Spitter5" parent="." instance=ExtResource("1_2ej0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3691, 0, -48.8143)
-
-[node name="Player" parent="." instance=ExtResource("2_1wxqo")]

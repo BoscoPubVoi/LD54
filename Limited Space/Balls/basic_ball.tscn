@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c58l0ckg4on82"]
+[gd_scene load_steps=9 format=3 uid="uid://c58l0ckg4on82"]
 
 [ext_resource type="Script" path="res://Balls/basic_ball.gd" id="1_c28n2"]
+[ext_resource type="Script" path="res://Balls/trail.gd" id="2_x7x47"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pwfjr"]
-friction = 0.37
-rough = true
+friction = 0.26
 bounce = 0.8
 
 [sub_resource type="SphereMesh" id="SphereMesh_80ju2"]
@@ -17,6 +17,13 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_i8r3s"]
 material = SubResource("StandardMaterial3D_yf6m0")
 height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0d7w"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.443137)
 
 [node name="Basic Ball" type="RigidBody3D"]
 collision_layer = 2
@@ -39,3 +46,12 @@ target_position = Vector3(0, -20, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("CylinderMesh_i8r3s")
 skeleton = NodePath("../ShadowCast")
+
+[node name="Trail3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_m0d7w")
+cast_shadow = 0
+script = ExtResource("2_x7x47")
+scaleAcceleration = 0.667
+lifespan = 0.4
+scaleTexture = false
+startColor = Color(1, 1, 1, 0.396078)
