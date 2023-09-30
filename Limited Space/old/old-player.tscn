@@ -1,7 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://0e13tex7hvxm"]
+[gd_scene load_steps=11 format=3 uid="uid://prjjcokxhp2n"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_w460h"]
-[ext_resource type="Script" path="res://UI.gd" id="2_ksh0t"]
+[ext_resource type="Script" path="res://old/OldPlayer.gd" id="1_q2n7q"]
+[ext_resource type="Script" path="res://UI.gd" id="2_whidt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_de6tt"]
+friction = 2.0
+rough = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xtykm"]
+height = 0.511428
+radius = 1.49218
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
 albedo_color = Color(0, 0, 0, 1)
@@ -28,35 +36,41 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_do7fc")
 size = Vector3(0.125, 1, 0.5)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xtykm"]
-height = 0.511428
-radius = 1.49218
+[node name="Player" type="RigidBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309745, 0)
+collision_layer = 2
+collision_mask = 29
+physics_material_override = SubResource("PhysicsMaterial_de6tt")
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_q2n7q")
 
-[node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_w460h")
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_xtykm")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="Collider" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("CylinderShape3D_xtykm")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_hoej1")
-skeleton = NodePath("../..")
 
 [node name="FlagPole" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.70231, 0)
 mesh = SubResource("CylinderMesh_uqw8s")
-skeleton = NodePath("../..")
 
 [node name="Flag" type="MeshInstance3D" parent="FlagPole"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.436962, 2.35763, 0)
 mesh = SubResource("PrismMesh_l8vcc")
-
-[node name="Collider" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_xtykm")
 
 [node name="UI" type="Control" parent="." groups=["UI"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 76.0
-script = ExtResource("2_ksh0t")
+script = ExtResource("2_whidt")
 
 [node name="Label" type="Label" parent="UI"]
 layout_mode = 0
@@ -65,3 +79,5 @@ offset_top = 10.0
 offset_right = 331.0
 offset_bottom = 102.0
 text = "Score: 0"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

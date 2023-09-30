@@ -12,7 +12,8 @@ bounce = 0.8
 [sub_resource type="SphereShape3D" id="SphereShape3D_mnsas"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqy2y"]
-albedo_color = Color(0, 0, 0, 1)
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.505882)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_i8r3s"]
 material = SubResource("StandardMaterial3D_bqy2y")
@@ -36,6 +37,7 @@ lock_rotation = true
 script = ExtResource("1_c28n2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("SphereMesh_80ju2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

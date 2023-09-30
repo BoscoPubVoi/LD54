@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbpvje8xcdhsu"]
 
-[ext_resource type="Script" path="res://hole.gd" id="1_6r0ar"]
+[ext_resource type="Script" path="res://old/hole.gd" id="1_6r0ar"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_uoebi"]
 albedo_color = Color(0, 0, 0, 1)

@@ -36,7 +36,7 @@ func _physics_process(_delta):
 
 
 func _on_body_entered(body:Node):
-	print("uh oh")
+#	print("uh oh")
 	if body.has_method("BallInHole"):
 		body.BallInHole()
 	explode()
