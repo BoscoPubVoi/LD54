@@ -14,6 +14,7 @@ func emit():
 	newBall.apply_new_force(get_global_transform().basis.z, new_speed/2)
 	newBall.position = position
 	
+	Global.IncrementScore()
 
 func _on_shot_timer_timeout():
 	look_at(get_tree().get_first_node_in_group("player").position)
@@ -24,3 +25,4 @@ func _on_shot_timer_timeout():
 func _on_golfer_sprite_frame_changed():
 	if golfer.frame == 1:
 		emit()
+	

@@ -7,6 +7,7 @@ extends Control
 
 
 func _on_start_pressed():
+	Global.PrepScore()
 	get_tree().change_scene_to_file(GameScene.resource_path)
 
 func _on_exit_pressed():
@@ -15,7 +16,7 @@ func _on_exit_pressed():
 func _on_options_pressed():
 	Toggle(false)
 
-func Toggle(on):
+func Toggle(on : bool):
 	Title.visible = on
 	ButtonContainer.visible = on
 

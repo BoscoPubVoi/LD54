@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 var speed = .2
 
@@ -17,3 +17,7 @@ func _physics_process(delta):
 		position.z -= speed
 	if Input.is_action_pressed("down"):
 		position.z += speed
+
+
+func BallInHole():
+	print("RIP")
