@@ -47,7 +47,7 @@ func speedup():
 	speed = 14
 
 func _on_level_ended():
-	self.contact_monitor = false;
+	self.call_deferred("set_contact_monitor", false);
 	self.continuous_cd = false;
 
 func explode():
