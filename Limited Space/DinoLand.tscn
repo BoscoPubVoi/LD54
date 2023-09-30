@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8yi0cw8uey2k"]
+[gd_scene load_steps=16 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
-[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="5_bpe82"]
-[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="7_rckfh"]
-[ext_resource type="PackedScene" uid="uid://cv4gaqnb6wtki" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
+[ext_resource type="PackedScene" path="res://Nature/golftree.tscn" id="5_bpe82"]
+[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="7_rckfh"]
+[ext_resource type="PackedScene" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
