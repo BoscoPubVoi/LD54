@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
-[ext_resource type="PackedScene" uid="uid://bbpvje8xcdhsu" path="res://hole.tscn" id="2_33aj4"]
 [ext_resource type="ArrayMesh" uid="uid://d0wuodox1hprr" path="res://Nature/Low_Poly_Forest_tree01.obj" id="3_fev4u"]
 [ext_resource type="Texture2D" uid="uid://bt6p2xhs3pp2r" path="res://Nature/Textures/treeRound.png" id="4_2i75m"]
 [ext_resource type="ArrayMesh" uid="uid://ddjf47evk1le3" path="res://Nature/Low_Poly_Forest_tree02.obj" id="5_kk0py"]
 [ext_resource type="ArrayMesh" uid="uid://5e7yxuflni11" path="res://Nature/Low_Poly_Forest_tree03.obj" id="6_wccci"]
+[ext_resource type="PackedScene" uid="uid://dut3rbonuq221" path="res://player.tscn" id="7_rckfh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,16 +28,16 @@ adjustment_enabled = true
 data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4w8m"]
-albedo_color = Color(0, 0.886275, 0.309804, 1)
+albedo_color = Color(0, 0.592157, 0.890196, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_msqat"]
 material = SubResource("StandardMaterial3D_v4w8m")
-top_radius = 100.0
+top_radius = 1000.0
 bottom_radius = 100.0
 height = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oy38"]
-albedo_color = Color(0, 0.666667, 0.223529, 1)
+albedo_color = Color(0, 0.886275, 0.309804, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5bouf"]
 material = SubResource("StandardMaterial3D_3oy38")
@@ -46,7 +46,7 @@ height = 0.001
 cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tltpt"]
-albedo_color = Color(0.509804, 0.878431, 1, 1)
+albedo_color = Color(0.125, 0.710938, 0.960938, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oepgq"]
 material = SubResource("StandardMaterial3D_tltpt")
@@ -100,12 +100,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
 [node name="Ball Spitter4" parent="." instance=ExtResource("1_u2qr8")]
 transform = Transform3D(-0.841426, 0, -0.540373, 0, 1, 0, 0.540373, 0, -0.841426, 26.8874, 3.10413, -17.0502)
 
-[node name="Hole" parent="." instance=ExtResource("2_33aj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 18.7545)
-
-[node name="Camera3D" type="Camera3D" parent="Hole"]
-transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0.340557, 21.9278, 19.1185)
-
 [node name="Ball Spitter5" parent="." instance=ExtResource("1_u2qr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01656, 0, -0.191565)
 
@@ -137,3 +131,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
 transform = Transform3D(0.00377437, 0, -0.00926035, 0, 0.01, 0, 0.00926035, 0, 0.00377437, 20.9742, 0, -7.12729)
 mesh = ExtResource("3_fev4u")
 surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
+
+[node name="Player" parent="." instance=ExtResource("7_rckfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0.0340538, 30, 24.9172)
