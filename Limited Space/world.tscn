@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://duid4fk2td1fl"]
+[gd_scene load_steps=10 format=3 uid="uid://xtkowdwhykiw"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_2ej0l"]
 [ext_resource type="Script" path="res://Level.gd" id="1_6qppj"]
@@ -28,7 +28,7 @@ size = Vector2(200, 200)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cfwu0"]
 data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
 
-[node name="World" type="Node3D"]
+[node name="World2" type="Node3D"]
 script = ExtResource("1_6qppj")
 MainMenu = "res://ui/main_menu.tscn"
 ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
@@ -55,6 +55,7 @@ transform = Transform3D(-0.989037, 0, -0.147671, 0, 1, 0, 0.147671, 0, -0.989037
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.987963, 0.154693, 0, -0.154693, 0.987963, 0.340557, 16.2455, 26.0264)
+current = true
 
 [node name="Ball Spitter3" parent="." instance=ExtResource("1_2ej0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)

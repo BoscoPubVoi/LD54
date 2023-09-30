@@ -2,11 +2,19 @@ extends Node3D
 
 
 @onready var golfer = $Golfer_Sprite
+@onready var timer : Timer = $Shot_Timer
+
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
 var ballScatter = preload("res://Balls/scatter_ball.tscn")
 var ballTomato = preload("res://Balls/tomato.tscn")
 
 var ballarray = [ballGeneric, ballScatter, ballTomato]
+
+func _ready():
+	var root = get_tree().get_first_node_in_group("LevelRoot")
+	
+	if root != null && root.has_signal("LevelEnded") : 
+		root.LevelEnded.connect(_on_level_ended)
 
 func emit():
 	#try and work out a rough speed to shoot towards the player
@@ -29,4 +37,6 @@ func _on_shot_timer_timeout():
 func _on_golfer_sprite_frame_changed():
 	if golfer.frame == 1:
 		emit()
-	
+
+func _on_level_ended():
+	timer.stop()
