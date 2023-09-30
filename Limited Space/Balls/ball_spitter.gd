@@ -8,9 +8,13 @@ func _ready():
 
 
 func emit():
+	#try and work out a rough speed to shoot towards the player
+	var new_speed = position.distance_to(get_tree().get_first_node_in_group("hole").position)
+	
+	#create new ball
 	var newBall = ballGeneric.instantiate()
 	add_sibling(newBall)
-	newBall.apply_new_force(get_global_transform().basis.z)
+	newBall.apply_new_force(get_global_transform().basis.z, new_speed/2)
 	newBall.position = position
 	
 
