@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Limited Space"
-run/main_scene="res://world.tscn"
+run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://global.gd"
+
+[dotnet]
+
+project/assembly_name="Limited Space"
 
 [input]
 
