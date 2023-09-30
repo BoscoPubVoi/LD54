@@ -53,3 +53,8 @@ down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0.886275, 0.309804, 1)
+anti_aliasing/quality/msaa_3d=3
