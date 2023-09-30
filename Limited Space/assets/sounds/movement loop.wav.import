@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d1smrlnhjimrh"
-path="res://.godot/imported/ball movement loop.wav-b059e6bb33341a388dbaf29d9ffe8224.sample"
+path="res://.godot/imported/movement loop.wav-504fd820a15bb8d378bffac7d9b4fa4c.sample"
 
 [deps]
 
-source_file="res://assets/sounds/ball movement loop.wav"
-dest_files=["res://.godot/imported/ball movement loop.wav-b059e6bb33341a388dbaf29d9ffe8224.sample"]
+source_file="res://assets/sounds/movement loop.wav"
+dest_files=["res://.godot/imported/movement loop.wav-504fd820a15bb8d378bffac7d9b4fa4c.sample"]
 
 [params]
 
