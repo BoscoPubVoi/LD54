@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dm2t2q4s11ca7"
-path="res://.godot/imported/tree.glb-d29a3d5b2d34de8f26474065b5543a28.scn"
+uid="uid://bsmn3yq253x5c"
+path="res://.godot/imported/sandmound.glb-fed28fe22be5f4cb70580a9185dd7a24.scn"
 
 [deps]
 
-source_file="res://assets/tree.glb"
-dest_files=["res://.godot/imported/tree.glb-d29a3d5b2d34de8f26474065b5543a28.scn"]
+source_file="res://assets/models/sandmound.glb"
+dest_files=["res://.godot/imported/sandmound.glb-fed28fe22be5f4cb70580a9185dd7a24.scn"]
 
 [params]
 
