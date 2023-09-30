@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
 [ext_resource type="PackedScene" path="res://Nature/golftree.tscn" id="5_bpe82"]
-[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="7_rckfh"]
+[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="7_rckfh"]
 [ext_resource type="PackedScene" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
@@ -53,8 +53,9 @@ top_radius = 10.0
 height = 0.001
 cap_bottom = false
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" groups=["LevelRoot"]]
 script = ExtResource("1_gncxt")
+NextLevel = "res://DinoLand.tscn"
 MainMenu = "res://ui/main_menu.tscn"
 ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
 

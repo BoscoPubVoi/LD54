@@ -7,6 +7,13 @@ var speed = 20
 @onready var shadowcaster = $ShadowCast
 @onready var shadow = $ShadowMesh
 
+func _ready():
+	var root = get_tree().get_first_node_in_group("LevelRoot")
+	
+	if root != null && root.has_signal("LevelEnded") : 
+		root.LevelEnded.connect(_on_level_ended)
+
+
 func apply_new_force(direction, new_speed):
 	
 	direction = Vector3(direction.x, 1, direction.z)
@@ -34,3 +41,7 @@ func slow():
 	
 func speedup():
 	speed = 14
+
+func _on_level_ended():
+	self.contact_monitor = false;
+	self.continuous_cd = false;

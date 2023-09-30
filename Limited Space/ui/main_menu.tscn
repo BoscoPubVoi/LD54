@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://br0debc663st4" path="res://DinoLand.tscn" id="2_u5y6d"]
 [ext_resource type="Script" path="res://ui/Credits.gd" id="3_415tf"]
 
-[node name="Main Menu" type="Control" node_paths=PackedStringArray("Title")]
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("Title", "ButtonContainer", "Credits")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uwqp2")
 Title = NodePath("Title")
+ButtonContainer = NodePath("VBoxContainer")
+Credits = NodePath("Credits")
 GameScene = ExtResource("2_u5y6d")
 
 [node name="Fancy Background" type="TextureRect" parent="."]

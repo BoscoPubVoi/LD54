@@ -5,18 +5,19 @@ signal hit
 @export var move_speed = 14
 
 var target_velocity = Vector3.ZERO
+var IsAlive : bool = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var direction = Vector3.ZERO
 
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") && IsAlive:
 		direction.x += 1
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") && IsAlive:
 		direction.x -= 1
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("down") && IsAlive:
 		direction.z += 1
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("up") && IsAlive:
 		direction.z -= 1
 
 	if direction != Vector3.ZERO:
@@ -33,7 +34,7 @@ func _integrate_forces(state):
 	apply_central_force(target_velocity)
 
 func BallInHole():
-	print("RIP")
+	IsAlive = false
 	die()
 
 func slow():
@@ -41,9 +42,6 @@ func slow():
 
 func speedup():
 	move_speed = 50
-
-# func _on_body_entered(body):
-# 	die()
 	
 func die():
 	hit.emit()
