@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://dr8amsr78ipsc"]
+
+[ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
+[ext_resource type="PackedScene" uid="uid://bbpvje8xcdhsu" path="res://hole.tscn" id="2_33aj4"]
+[ext_resource type="ArrayMesh" uid="uid://d0wuodox1hprr" path="res://Nature/Low_Poly_Forest_tree01.obj" id="3_fev4u"]
+[ext_resource type="Texture2D" uid="uid://bt6p2xhs3pp2r" path="res://Nature/Textures/treeRound.png" id="4_2i75m"]
+[ext_resource type="ArrayMesh" uid="uid://ddjf47evk1le3" path="res://Nature/Low_Poly_Forest_tree02.obj" id="5_kk0py"]
+[ext_resource type="ArrayMesh" uid="uid://5e7yxuflni11" path="res://Nature/Low_Poly_Forest_tree03.obj" id="6_wccci"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 4.3
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_honci"]
+sky_material = SubResource("ProceduralSkyMaterial_76u55")
+
+[sub_resource type="Environment" id="Environment_pmrkg"]
+background_mode = 2
+sky = SubResource("Sky_honci")
+tonemap_mode = 2
+tonemap_exposure = 0.7
+glow_enabled = true
+adjustment_enabled = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cfwu0"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4w8m"]
+albedo_color = Color(0, 0.886275, 0.309804, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_msqat"]
+material = SubResource("StandardMaterial3D_v4w8m")
+top_radius = 100.0
+bottom_radius = 100.0
+height = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tltpt"]
+albedo_color = Color(0.509804, 0.878431, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oepgq"]
+material = SubResource("StandardMaterial3D_tltpt")
+top_radius = 20.0
+height = 0.001
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrcu8"]
+albedo_texture = ExtResource("4_2i75m")
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pmrkg")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConcavePolygonShape3D_cfwu0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02, 0)
+mesh = SubResource("CylinderMesh_msqat")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("CylinderMesh_oepgq")
+
+[node name="Ball Spitter" parent="." instance=ExtResource("1_u2qr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3982, 4.50414, -29.2335)
+
+[node name="Ball Spitter2" parent="." instance=ExtResource("1_u2qr8")]
+transform = Transform3D(-0.989037, 0, -0.147671, 0, 1, 0, 0.147671, 0, -0.989037, -32.2064, 2.40116, -11.5608)
+
+[node name="Ball Spitter3" parent="." instance=ExtResource("1_u2qr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
+
+[node name="Ball Spitter4" parent="." instance=ExtResource("1_u2qr8")]
+transform = Transform3D(-0.841426, 0, -0.540373, 0, 1, 0, 0.540373, 0, -0.841426, 26.8874, 3.10413, -17.0502)
+
+[node name="Hole" parent="." instance=ExtResource("2_33aj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 25.073)
+
+[node name="Camera3D" type="Camera3D" parent="Hole"]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0.340557, 20.7054, 16.8147)
+
+[node name="Ball Spitter5" parent="." instance=ExtResource("1_u2qr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01656, 0, -0.191565)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.323395, -0.381334, 0, -0.762668, 0.64679, -0.5, 0.560136, 0.66049, 0, 0, 0)
+shadow_enabled = true
+
+[node name="LowPolyForestTree01" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00844524, 0, 0.00535517, 0, 0.01, 0, -0.00535517, 0, 0.00844524, -18.1567, 0, -12.7888)
+mesh = ExtResource("3_fev4u")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
+
+[node name="LowPolyForestTree02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00945626, 0, 0.00325255, 0, 0.01, 0, -0.00325255, 0, 0.00945626, -11.879, 0, -19.1869)
+mesh = ExtResource("5_kk0py")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
+
+[node name="LowPolyForestTree03" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00844524, 0, 0.00535517, 0, 0.01, 0, -0.00535517, 0, 0.00844524, -4.8453, 0, -24.6462)
+mesh = ExtResource("6_wccci")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
+
+[node name="LowPolyForestTree04" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00844524, 0, 0.00535517, 0, 0.01, 0, -0.00535517, 0, 0.00844524, 10.3187, 0, -22.2408)
+mesh = ExtResource("3_fev4u")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
+
+[node name="LowPolyForestTree05" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00844524, 0, 0.00535517, 0, 0.01, 0, -0.00535517, 0, 0.00844524, 2.42774, 0, -25.5366)
+mesh = ExtResource("3_fev4u")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")
+
+[node name="LowPolyForestTree07" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00844524, 0, 0.00535517, 0, 0.01, 0, -0.00535517, 0, 0.00844524, 20.9742, 0, -14.2183)
+mesh = ExtResource("3_fev4u")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrcu8")

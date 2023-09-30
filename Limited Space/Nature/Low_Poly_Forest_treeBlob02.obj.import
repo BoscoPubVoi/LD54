@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dek0118v1e47e"
+path="res://.godot/imported/Low_Poly_Forest_treeBlob02.obj-939b32c6f162d4e9723c5edeb0ed6526.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Low_Poly_Forest_treeBlob02.obj-939b32c6f162d4e9723c5edeb0ed6526.mesh"]
+
+source_file="res://Nature/Low_Poly_Forest_treeBlob02.obj"
+dest_files=["res://.godot/imported/Low_Poly_Forest_treeBlob02.obj-939b32c6f162d4e9723c5edeb0ed6526.mesh", "res://.godot/imported/Low_Poly_Forest_treeBlob02.obj-939b32c6f162d4e9723c5edeb0ed6526.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
