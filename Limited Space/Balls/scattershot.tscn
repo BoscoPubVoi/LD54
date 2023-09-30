@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2g71el2rogxm"]
+
+[ext_resource type="PackedScene" uid="uid://fn1fggu2f0kb" path="res://assets/models/scattershot.glb" id="1_x6th5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wk41t"]
+albedo_color = Color(0.6, 0, 0.952941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ioii"]
+albedo_color = Color(0.6, 0, 0.952941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8d60n"]
+albedo_color = Color(0.6, 0, 0.952941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq5ra"]
+albedo_color = Color(0.6, 0, 0.952941, 1)
+
+[node name="scattershot" instance=ExtResource("1_x6th5")]
+
+[node name="Sphere" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wk41t")
+
+[node name="Sphere_001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8ioii")
+
+[node name="Sphere_002" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8d60n")
+
+[node name="Sphere_003" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kq5ra")

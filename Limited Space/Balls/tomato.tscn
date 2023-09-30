@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://book61cnkpv8j"]
+
+[ext_resource type="Script" path="res://Balls/tomato.gd" id="1_vrik0"]
+[ext_resource type="PackedScene" uid="uid://ct200lnos1ljn" path="res://Balls/tomato_model.tscn" id="2_puaai"]
+[ext_resource type="Script" path="res://Balls/trail.gd" id="3_p5s4j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kjosj"]
+radius = 1.04808
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq4k8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4teu8"]
+material = SubResource("StandardMaterial3D_sq4k8")
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igdns"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.443137)
+
+[node name="Tomato" type="RigidBody3D"]
+collision_layer = 20
+collision_mask = 3
+mass = 0.1
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_vrik0")
+
+[node name="tomato" parent="." instance=ExtResource("2_puaai")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.642119, 0)
+shape = SubResource("SphereShape3D_kjosj")
+
+[node name="ShadowCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573092, 0)
+target_position = Vector3(0, -20, 0)
+
+[node name="ShadowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_4teu8")
+skeleton = NodePath("../ShadowCast")
+
+[node name="Trail3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_igdns")
+cast_shadow = 0
+script = ExtResource("3_p5s4j")
+scaleAcceleration = 0.667
+lifespan = 0.4
+scaleTexture = false
+startColor = Color(1, 1, 1, 0.396078)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

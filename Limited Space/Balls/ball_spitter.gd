@@ -4,8 +4,9 @@ extends Node3D
 @onready var golfer = $Golfer_Sprite
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
 var ballScatter = preload("res://Balls/scatter_ball.tscn")
+var ballTomato = preload("res://Balls/tomato.tscn")
 
-var ballarray = [ballGeneric, ballScatter]
+var ballarray = [ballGeneric, ballScatter, ballTomato]
 
 func emit():
 	#try and work out a rough speed to shoot towards the player

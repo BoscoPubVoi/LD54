@@ -1,17 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://swjlgixmxitm"]
+[gd_scene load_steps=10 format=3 uid="uid://swjlgixmxitm"]
 
 [ext_resource type="Script" path="res://Balls/scatter_ball.gd" id="1_f5i35"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_0l88n"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg75e"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_xq873"]
-material = SubResource("StandardMaterial3D_xg75e")
-radius = 0.2
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://c2g71el2rogxm" path="res://Balls/scattershot.tscn" id="2_rhbfl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mjsub"]
+radius = 0.379963
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf6m0"]
 albedo_color = Color(0, 0, 0, 1)
@@ -43,8 +37,8 @@ contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_f5i35")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_xq873")
+[node name="scattershot" parent="." instance=ExtResource("2_rhbfl")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_mjsub")

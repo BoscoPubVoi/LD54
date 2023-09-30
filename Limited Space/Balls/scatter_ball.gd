@@ -15,7 +15,7 @@ func explode():
 	$CPUParticles3D.emitting = true
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
-	$MeshInstance3D.hide()
+	$scattershot.hide()
 	shadow.hide()
 
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c062yqfprre53"]
+
+[ext_resource type="Script" path="res://Nature/environment_slow_trap.gd" id="1_qek17"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8lsf0"]
+height = 1.0
+radius = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkgkx"]
+albedo_color = Color(1, 0.0980392, 0.27451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mc2k6"]
+material = SubResource("StandardMaterial3D_xkgkx")
+radius = 1.5
+height = 0.1
+
+[node name="Tomato Splatter" type="Area3D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_qek17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210049, 0)
+shape = SubResource("CylinderShape3D_8lsf0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_mc2k6")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited" flags=18]
