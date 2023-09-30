@@ -25,7 +25,7 @@ project/assembly_name="Limited Space"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dreadpon.spatial_gardener/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
