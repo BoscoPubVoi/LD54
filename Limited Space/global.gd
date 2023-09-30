@@ -5,13 +5,14 @@ var PLAYER_SCORE : Array[int]
 var CURRENT_LEVEL : int = 0
 
 #level count should probably be handled differently but maybe it's fine for gamejam 
-var LEVEL_COUNT : int = 1
+var LEVEL_COUNT : int = 2
 
 func _ready():
 	PrepScore()
-	
+
 func PrepScore():
-	PLAYER_SCORE = [LEVEL_COUNT]
+	PLAYER_SCORE = []
+	PLAYER_SCORE.resize(LEVEL_COUNT)
 
 func IncrementScore():
 	PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
