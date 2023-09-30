@@ -31,9 +31,12 @@ func _integrate_forces(state):
 	# Move
 	apply_central_force(target_velocity)
 
-
-func _on_body_entered(body):
+func BallInHole():
+	print("RIP")
 	die()
+
+# func _on_body_entered(body):
+# 	die()
 	
 func die():
 	hit.emit()

@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_x7x47"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pwfjr"]
-friction = 0.26
-bounce = 0.8
+friction = 0.37
+rough = true
+bounce = 0.75
 
 [sub_resource type="SphereMesh" id="SphereMesh_80ju2"]
 
@@ -26,9 +27,12 @@ shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.443137)
 
 [node name="Basic Ball" type="RigidBody3D"]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_pwfjr")
+continuous_cd = true
+max_contacts_reported = 1
+contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_c28n2")
 
@@ -40,7 +44,7 @@ shape = SubResource("SphereShape3D_mnsas")
 
 [node name="ShadowCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573092, 0)
-target_position = Vector3(0, -20, 0)
+target_position = Vector3(0, -10, 0)
 
 [node name="ShadowMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
