@@ -11,14 +11,15 @@ func emit():
 	#create new ball
 	var newBall = ballGeneric.instantiate()
 	add_sibling(newBall)
-	newBall.apply_new_force(get_global_transform().basis.z, new_speed/2)
+	newBall.apply_new_force(get_global_transform().basis.z, new_speed)
 	newBall.position = position
 	
 	Global.IncrementScore()
 
 func _on_shot_timer_timeout():
+
 	look_at(get_tree().get_first_node_in_group("player").position)
-	rotate_y(135)
+	rotate_y(3.1415)
 	golfer.play("default")
 	$Shot_Timer.start(randi()%5)
 

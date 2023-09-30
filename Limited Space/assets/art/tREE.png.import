@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://06mgarag2ioi"
-path.s3tc="res://.godot/imported/tREE.png-4440381c6e84b45f22d71014a51aca02.s3tc.ctex"
+path.s3tc="res://.godot/imported/tREE.png-d60336f9a3e56f872e162696c97d7629.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://tREE.png"
-dest_files=["res://.godot/imported/tREE.png-4440381c6e84b45f22d71014a51aca02.s3tc.ctex"]
+source_file="res://assets/art/tREE.png"
+dest_files=["res://.godot/imported/tREE.png-d60336f9a3e56f872e162696c97d7629.s3tc.ctex"]
 
 [params]
 

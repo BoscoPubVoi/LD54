@@ -11,7 +11,7 @@ top_radius = 2.0
 height = 0.002
 cap_bottom = false
 
-[node name="Hole" type="Node3D" groups=["hole"]]
+[node name="Hole" type="Node3D" groups=["hole", "player"]]
 script = ExtResource("1_6r0ar")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]

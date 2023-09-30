@@ -54,6 +54,13 @@ down={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="balls"
+3d_physics/layer_4="traps"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0.886275, 0.309804, 1)

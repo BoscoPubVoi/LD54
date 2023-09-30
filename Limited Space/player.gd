@@ -7,7 +7,7 @@ signal hit
 var target_velocity = Vector3.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var direction = Vector3.ZERO
 
 	if Input.is_action_pressed("right"):
@@ -25,6 +25,7 @@ func _process(delta):
 	# Ground Velocity
 	target_velocity.x = direction.x * move_speed
 	target_velocity.z = direction.z * move_speed
+	
 
 # Called every frame. Used to control the rigidbody through physics
 func _integrate_forces(state):
@@ -34,6 +35,12 @@ func _integrate_forces(state):
 func BallInHole():
 	print("RIP")
 	die()
+
+func slow():
+	move_speed = 25
+
+func speedup():
+	move_speed = 50
 
 # func _on_body_entered(body):
 # 	die()
