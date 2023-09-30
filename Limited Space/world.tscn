@@ -37,15 +37,17 @@ collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_jx1k7")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("ConcavePolygonShape3D_cfwu0")
+metadata/_edit_lock_ = true
 
 [node name="Ball Spitter" parent="." instance=ExtResource("1_2ej0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3982, 4.50414, -29.2335)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8416, 4.50414, -54.251)
 
 [node name="Ball Spitter2" parent="." instance=ExtResource("1_2ej0l")]
-transform = Transform3D(-0.989037, 0, -0.147671, 0, 1, 0, 0.147671, 0, -0.989037, -32.2064, 2.40116, -11.5608)
+transform = Transform3D(-0.989037, 0, -0.147671, 0, 1, 0, 0.147671, 0, -0.989037, -18.4342, 2.40116, -81.1919)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.987963, 0.154693, 0, -0.154693, 0.987963, 0.340557, 16.2455, 26.0264)
@@ -54,10 +56,10 @@ transform = Transform3D(1, 0, 0, 0, 0.987963, 0.154693, 0, -0.154693, 0.987963, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
 
 [node name="Ball Spitter4" parent="." instance=ExtResource("1_2ej0l")]
-transform = Transform3D(-0.841426, 0, -0.540373, 0, 1, 0, 0.540373, 0, -0.841426, 26.8874, 3.10413, -17.0502)
+transform = Transform3D(-0.998659, 0, -0.0517783, 0, 1, 0, 0.0517783, 0, -0.998659, 33.7453, 3.10413, -65.8004)
 
 [node name="Hole" parent="." instance=ExtResource("2_uyp7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Ball Spitter5" parent="." instance=ExtResource("1_2ej0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01656, 0, -0.191565)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3691, 0, -48.8143)

@@ -5,7 +5,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pwfjr"]
 friction = 0.37
 rough = true
-bounce = 0.75
+bounce = 0.8
 
 [sub_resource type="SphereMesh" id="SphereMesh_80ju2"]
 
@@ -33,7 +33,7 @@ shape = SubResource("SphereShape3D_mnsas")
 
 [node name="ShadowCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573092, 0)
-target_position = Vector3(0, -10, 0)
+target_position = Vector3(0, -20, 0)
 
 [node name="ShadowMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

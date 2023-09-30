@@ -16,6 +16,6 @@ func apply_new_force(direction, new_speed):
 	global_position = Vector3.ZERO
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#makes a drop shadow underneath (better than a normal shadow for perspective)
 	shadow.global_position = shadowcaster.get_collision_point()

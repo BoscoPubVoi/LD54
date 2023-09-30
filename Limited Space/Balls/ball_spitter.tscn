@@ -1,27 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=7 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
+[ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_grk06"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oivri"]
+atlas = ExtResource("2_e5nxh")
+region = Rect2(0, 0, 144, 256)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_nuewe"]
-top_radius = 0.4
-bottom_radius = 0.4
-height = 1.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4hty"]
+atlas = ExtResource("2_e5nxh")
+region = Rect2(144, 0, 144, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy3ym"]
+atlas = ExtResource("2_e5nxh")
+region = Rect2(288, 0, 144, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4tlh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oivri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4hty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy3ym")
+}],
+"loop": false,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Ball Spitter" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14347, 0)
 script = ExtResource("1_5hgg1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_grk06")
-
 [node name="Shot_Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.09086e-08, -3.09086e-08, -1, -0.707107, 0.707107, 0, 0.707107, 0.707107, -4.37114e-08, -0.00521785, 0.759789, 0.487399)
-mesh = SubResource("CylinderMesh_nuewe")
+[node name="Golfer_Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.182, 3.2551, 0)
+pixel_size = 0.03
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_j4tlh")
+frame = 1
 
 [connection signal="timeout" from="Shot_Timer" to="." method="_on_shot_timer_timeout"]
+[connection signal="frame_changed" from="Golfer_Sprite" to="." method="_on_golfer_sprite_frame_changed"]

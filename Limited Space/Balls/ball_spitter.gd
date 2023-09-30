@@ -1,11 +1,8 @@
 extends Node3D
 
+
+@onready var golfer = $Golfer_Sprite
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func emit():
 	#try and work out a rough speed to shoot towards the player
@@ -21,5 +18,9 @@ func emit():
 func _on_shot_timer_timeout():
 	look_at(get_tree().get_first_node_in_group("hole").position)
 	rotate_y(135)
-	emit()
+	golfer.play("default")
 	$Shot_Timer.start(randi()%5)
+
+func _on_golfer_sprite_frame_changed():
+	if golfer.frame == 1:
+		emit()
