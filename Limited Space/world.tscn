@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://xtkowdwhykiw"]
+[gd_scene load_steps=10 format=3 uid="uid://duid4fk2td1fl"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_2ej0l"]
 [ext_resource type="Script" path="res://Level.gd" id="1_6qppj"]
-[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="2_1wxqo"]
-[ext_resource type="PackedScene" uid="uid://dex1snqt3bb3e" path="res://ui/player_score.tscn" id="4_abo5l"]
-[ext_resource type="Script" path="res://ui/player_score.gd" id="5_os53c"]
+[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="2_1wxqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -68,8 +66,3 @@ transform = Transform3D(-0.998659, 0, -0.0517783, 0, 1, 0, 0.0517783, 0, -0.9986
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3691, 0, -48.8143)
 
 [node name="Player" parent="." instance=ExtResource("2_1wxqo")]
-
-[node name="Player Score" parent="." instance=ExtResource("4_abo5l")]
-script = ExtResource("5_os53c")
-
-[connection signal="hit" from="Player" to="." method="_on_player_hit"]

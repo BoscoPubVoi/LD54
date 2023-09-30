@@ -12,8 +12,8 @@ func PrepScore():
 	PLAYER_SCORE = [LEVEL_COUNT]
 
 func IncrementScore():
+	PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
 	get_tree().get_first_node_in_group("UI").updateScore(PLAYER_SCORE[CURRENT_LEVEL - 1])
-	# PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
 
 func GetTotalScore():
 	var score = 0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_uwqp2"]
 [ext_resource type="Texture2D" uid="uid://0cs6v4b1272c" path="res://ui/golfmockup.png" id="2_gt81a"]
-[ext_resource type="PackedScene" uid="uid://br0debc663st4" path="res://DinoLand.tscn" id="2_u5y6d"]
+[ext_resource type="PackedScene" uid="uid://c8yi0cw8uey2k" path="res://DinoLand.tscn" id="2_u5y6d"]
 [ext_resource type="Script" path="res://ui/Credits.gd" id="3_415tf"]
 
 [node name="Main Menu" type="Control" node_paths=PackedStringArray("Title")]
