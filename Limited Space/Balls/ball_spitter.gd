@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var golfer = $Golfer_Sprite
+@onready var golfer : AnimatedSprite3D = $Golfer_Sprite
 @onready var timer : Timer = $Shot_Timer
 
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
@@ -26,8 +26,6 @@ func emit():
 	newBall.apply_new_force(get_global_transform().basis.z, new_speed)
 	newBall.position = position
 	
-	Global.IncrementScore()
-
 func _on_shot_timer_timeout():
 	look_at(get_tree().get_first_node_in_group("player").position)
 	rotate_y(3.1415)
@@ -40,3 +38,4 @@ func _on_golfer_sprite_frame_changed():
 
 func _on_level_ended():
 	timer.stop()
+	golfer.stop()

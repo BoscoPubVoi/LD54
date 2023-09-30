@@ -34,6 +34,9 @@ func _integrate_forces(state):
 	apply_central_force(target_velocity)
 
 func BallInHole():
+	if !IsAlive:
+		return
+		
 	IsAlive = false
 	die()
 

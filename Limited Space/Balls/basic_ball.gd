@@ -3,6 +3,7 @@ extends RigidBody3D
 
 
 var speed = 20
+var TouchedGround : bool = false;
 
 @onready var shadowcaster = $ShadowCast
 @onready var shadow = $ShadowMesh
@@ -39,6 +40,10 @@ func _on_body_entered(body:Node):
 	print("uh oh")
 	if body.has_method("BallInHole"):
 		body.BallInHole()
+	elif !TouchedGround:
+		TouchedGround = true
+		Global.IncrementScore()
+
 	explode()
 
 func slow():
