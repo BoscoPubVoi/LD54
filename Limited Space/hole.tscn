@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbpvje8xcdhsu"]
+
+[ext_resource type="Script" path="res://hole.gd" id="1_6r0ar"]
+[ext_resource type="Texture2D" uid="uid://blhubawv8v84b" path="res://icon.svg" id="1_g2pyc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thwrm"]
+albedo_texture = ExtResource("1_g2pyc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jnc5s"]
+material = SubResource("StandardMaterial3D_thwrm")
+size = Vector2(5, 5)
+orientation = 1
+
+[node name="Hole" type="Node3D" groups=["hole"]]
+script = ExtResource("1_6r0ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_jnc5s")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyngbwnxwg8rd"]
+
+[ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_grk06"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nuewe"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 1.0
+
+[node name="Ball Spitter" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14347, 0)
+script = ExtResource("1_5hgg1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_grk06")
+
+[node name="Shot_Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, -1, -0.707107, 0.707107, 0, 0.707107, 0.707107, -4.37114e-08, -0.00521785, 0.759789, 0.487399)
+mesh = SubResource("CylinderMesh_nuewe")
+
+[connection signal="timeout" from="Shot_Timer" to="." method="_on_shot_timer_timeout"]
