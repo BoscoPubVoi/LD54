@@ -6,7 +6,7 @@ var ballGeneric = preload("res://Balls/basic_ball.tscn")
 
 func emit():
 	#try and work out a rough speed to shoot towards the player
-	var new_speed = position.distance_to(get_tree().get_first_node_in_group("hole").position)
+	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)
 	
 	#create new ball
 	var newBall = ballGeneric.instantiate()
@@ -16,7 +16,7 @@ func emit():
 	
 
 func _on_shot_timer_timeout():
-	look_at(get_tree().get_first_node_in_group("hole").position)
+	look_at(get_tree().get_first_node_in_group("player").position)
 	rotate_y(135)
 	golfer.play("default")
 	$Shot_Timer.start(randi()%5)
