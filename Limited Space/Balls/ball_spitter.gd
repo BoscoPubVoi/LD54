@@ -5,7 +5,9 @@ extends Node3D
 @onready var timer : Timer = $Shot_Timer
 
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
-#var ballGeneric = preload("res://Balls/scatter_ball.tscn")
+var ballScatter = preload("res://Balls/scatter_ball.tscn")
+
+var ballarray = [ballGeneric, ballScatter]
 
 func _ready():
 	var root = get_tree().get_first_node_in_group("LevelRoot")
@@ -18,7 +20,7 @@ func emit():
 	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)
 	
 	#create new ball
-	var newBall = ballGeneric.instantiate()
+	var newBall = ballarray.pick_random().instantiate()
 	add_sibling(newBall)
 	newBall.apply_new_force(get_global_transform().basis.z, new_speed)
 	newBall.position = position
