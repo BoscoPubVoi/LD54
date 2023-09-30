@@ -1,0 +1,118 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4b6motarcrgh"]
+
+[ext_resource type="Script" path="res://ui/Scoreboard/Scoreboard.gd" id="1_6osyn"]
+
+[node name="Scoreboard" type="Control" node_paths=PackedStringArray("ScoreLabel", "TotalScoreLabel", "NextBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6osyn")
+ScoreLabel = NodePath("Level Score")
+TotalScoreLabel = NodePath("Total score/Value")
+NextBtn = NodePath("buttons/Next Level")
+
+[node name="Maybe fullscreen blur in future" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27451, 0.27451, 0.27451, 0.619608)
+
+[node name="Level Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -271.5
+offset_top = 65.0
+offset_right = 271.5
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.345098, 0.27451, 1, 1)
+theme_override_colors/font_outline_color = Color(0.913725, 0, 0.858824, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 100
+text = "100x BOGEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -66.0
+offset_right = 64.5
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 39
+text = "Total Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Total score"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "80"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="buttons" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(128, 48)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -112.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 128
+alignment = 1
+
+[node name="Main Menu" type="Button" parent="buttons"]
+custom_minimum_size = Vector2(258, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+
+[node name="Next Level" type="Button" parent="buttons"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[connection signal="pressed" from="buttons/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="buttons/Next Level" to="." method="_on_next_level_pressed"]

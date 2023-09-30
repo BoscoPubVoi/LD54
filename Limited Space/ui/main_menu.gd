@@ -5,6 +5,8 @@ extends Control
 @export var Credits : Control
 @export var GameScene : PackedScene
 
+func _ready():
+	Global.CURRENT_LEVEL = 0
 
 func _on_start_pressed():
 	Global.PrepScore()

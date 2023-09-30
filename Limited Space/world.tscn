@@ -32,7 +32,8 @@ data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100,
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_6qppj")
-NextLevel = "res://ui/main_menu.tscn"
+MainMenu = "res://ui/main_menu.tscn"
+ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pmrkg")

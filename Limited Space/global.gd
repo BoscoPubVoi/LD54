@@ -8,8 +8,15 @@ var CURRENT_LEVEL : int
 var LEVEL_COUNT : int = 1
 
 func PrepScore():
-    PLAYER_SCORE = [LEVEL_COUNT]
+	PLAYER_SCORE = [LEVEL_COUNT]
 
 func IncrementScore():
-    PLAYER_SCORE[CURRENT_LEVEL] += 1
-    
+	PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
+
+func GetTotalScore():
+	var score = 0
+	for i in CURRENT_LEVEL:
+		score += PLAYER_SCORE[i]
+	
+	return score
+	
