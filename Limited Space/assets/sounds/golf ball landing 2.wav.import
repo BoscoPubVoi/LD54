@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blpqhpvbb3cpu"
+path="res://.godot/imported/golf ball landing 2.wav-5a70f245b9848395903693d33b26428a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/golf ball landing 2.wav"
+dest_files=["res://.godot/imported/golf ball landing 2.wav-5a70f245b9848395903693d33b26428a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
