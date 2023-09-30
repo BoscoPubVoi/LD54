@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d1smrlnhjimrh"
+path="res://.godot/imported/ball movement loop.wav-b059e6bb33341a388dbaf29d9ffe8224.sample"
+
+[deps]
+
+source_file="res://assets/sounds/ball movement loop.wav"
+dest_files=["res://.godot/imported/ball movement loop.wav-b059e6bb33341a388dbaf29d9ffe8224.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
