@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxwu7vuenibrk"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_2ej0l"]
-[ext_resource type="PackedScene" uid="uid://bbpvje8xcdhsu" path="res://hole.tscn" id="2_uyp7b"]
+[ext_resource type="PackedScene" uid="uid://dut3rbonuq221" path="res://player.tscn" id="2_1wxqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -58,8 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
 [node name="Ball Spitter4" parent="." instance=ExtResource("1_2ej0l")]
 transform = Transform3D(-0.998659, 0, -0.0517783, 0, 1, 0, 0.0517783, 0, -0.998659, 33.7453, 3.10413, -65.8004)
 
-[node name="Hole" parent="." instance=ExtResource("2_uyp7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-
 [node name="Ball Spitter5" parent="." instance=ExtResource("1_2ej0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3691, 0, -48.8143)
+
+[node name="Player" parent="." instance=ExtResource("2_1wxqo")]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://dut3rbonuq221"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_06rac"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_de6tt"]
+friction = 2.0
+rough = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hoej1"]
+material = SubResource("StandardMaterial3D_7rhvt")
+top_radius = 1.5
+bottom_radius = 1.5
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wst5l"]
+albedo_color = Color(0.729412, 0.729412, 0.729412, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uqw8s"]
+material = SubResource("StandardMaterial3D_wst5l")
+top_radius = 0.05
+bottom_radius = 0.1
+height = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_do7fc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_l8vcc"]
+material = SubResource("StandardMaterial3D_do7fc")
+size = Vector3(0.125, 1, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xtykm"]
+height = 0.511428
+radius = 1.49218
+
+[node name="Player" type="RigidBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309745, 0)
+physics_material_override = SubResource("PhysicsMaterial_de6tt")
+script = ExtResource("1_06rac")
+move_speed = 50
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_hoej1")
+
+[node name="FlagPole" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.70231, 0)
+mesh = SubResource("CylinderMesh_uqw8s")
+
+[node name="Flag" type="MeshInstance3D" parent="FlagPole"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.436962, 2.35763, 0)
+mesh = SubResource("PrismMesh_l8vcc")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_xtykm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
