@@ -11,3 +11,7 @@ func apply_new_force(direction, new_speed):
 	
 	apply_impulse(direction)
 	global_position = Vector3.ZERO
+
+func _on_body_entered(body:Node):
+	if body.has_method("BallInHole"):
+		body.BallInHole()
