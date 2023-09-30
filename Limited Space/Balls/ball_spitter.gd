@@ -3,6 +3,7 @@ extends Node3D
 
 @onready var golfer = $Golfer_Sprite
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
+#var ballGeneric = preload("res://Balls/scatter_ball.tscn")
 
 func emit():
 	#try and work out a rough speed to shoot towards the player
@@ -17,7 +18,6 @@ func emit():
 	Global.IncrementScore()
 
 func _on_shot_timer_timeout():
-
 	look_at(get_tree().get_first_node_in_group("player").position)
 	rotate_y(3.1415)
 	golfer.play("default")

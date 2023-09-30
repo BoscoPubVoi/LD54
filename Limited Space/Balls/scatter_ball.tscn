@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://swjlgixmxitm"]
+
+[ext_resource type="Script" path="res://Balls/scatter_ball.gd" id="1_f5i35"]
+[ext_resource type="Script" path="res://Balls/trail.gd" id="2_0l88n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg75e"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xq873"]
+material = SubResource("StandardMaterial3D_xg75e")
+radius = 0.2
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mjsub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf6m0"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qfmcx"]
+material = SubResource("StandardMaterial3D_yf6m0")
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlxm5"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.443137)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fp6wi"]
+albedo_color = Color(0.823529, 0.568627, 0.419608, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_apswy"]
+material = SubResource("StandardMaterial3D_fp6wi")
+radius = 0.1
+height = 0.2
+
+[node name="Scatter Ball" type="RigidBody3D"]
+collision_layer = 16
+mass = 0.1
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_f5i35")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_xq873")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_mjsub")
+
+[node name="ShadowCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573092, 0)
+target_position = Vector3(0, -20, 0)
+
+[node name="ShadowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_qfmcx")
+skeleton = NodePath("../ShadowCast")
+
+[node name="Trail3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wlxm5")
+cast_shadow = 0
+script = ExtResource("2_0l88n")
+scaleAcceleration = 0.667
+lifespan = 0.4
+scaleTexture = false
+startColor = Color(1, 1, 1, 0.396078)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 0.97
+mesh = SubResource("SphereMesh_apswy")
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

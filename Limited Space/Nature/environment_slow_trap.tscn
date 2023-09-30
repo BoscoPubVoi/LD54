@@ -1,34 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv4gaqnb6wtki"]
+[gd_scene load_steps=2 format=3 uid="uid://cv4gaqnb6wtki"]
 
 [ext_resource type="Script" path="res://Nature/environment_slow_trap.gd" id="1_8rtu3"]
-[ext_resource type="QuadMesh" uid="uid://7d2mccc7dee2" path="res://Nature/thick_grass_blade.tres" id="2_8q4u5"]
-[ext_resource type="MultiMesh" uid="uid://bkpssjkig3itw" path="res://Nature/thick_grass.tres" id="2_jf487"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_ieptp"]
-radius = 1.0
-height = 0.001
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f6u8q"]
-size = Vector3(2, 0.314687, 2)
 
 [node name="Environment_Slow_Trap" type="Area3D"]
 collision_layer = 8
 collision_mask = 6
 script = ExtResource("1_8rtu3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("SphereMesh_ieptp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_f6u8q")
-
-[node name="Grass" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0128731, 0)
-visible = false
-mesh = ExtResource("2_8q4u5")
-
-[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
-multimesh = ExtResource("2_jf487")
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
