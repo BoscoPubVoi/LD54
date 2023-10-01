@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
 [ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
+[ext_resource type="PackedScene" uid="uid://djayy0giymo8g" path="res://Nature/sandmound.tscn" id="4_x0kgl"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
 [ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
@@ -48,7 +49,7 @@ height = 0.001
 cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tltpt"]
-albedo_color = Color(0.12549, 0.709804, 0.960784, 1)
+albedo_color = Color(0.0470588, 0.592157, 0.807843, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oepgq"]
 material = SubResource("StandardMaterial3D_tltpt")
@@ -125,23 +126,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 shape = SubResource("CylinderShape3D_x2hxb")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
+[node name="background" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.05, 0)
 mesh = SubResource("CylinderMesh_msqat")
 skeleton = NodePath("")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
+[node name="fairway" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("CylinderMesh_5bouf")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_lkics")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="water" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(0.882811, 0, 0.346189, 0, 1, 0, -0.384389, 0, 0.795079, -10.4424, -0.01, -10.3119)
 mesh = SubResource("CylinderMesh_oepgq")
 metadata/_edit_lock_ = true
+
+[node name="sandmound" parent="Floor" instance=ExtResource("4_x0kgl")]
+transform = Transform3D(10.4293, 0, 0, 0, 1, 0, 0, 0, 8.58552, 11.6441, 0, 6.35468)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.323395, -0.381334, 0, -0.762668, 0.64679, -0.5, 0.560136, 0.66049, 0, 0, 0)
