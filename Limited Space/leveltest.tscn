@@ -474,7 +474,7 @@ current = true
 fov = 50.0
 script = ExtResource("4_y3dv8")
 offset = Vector3(0, 10, 20)
-speed = 0.3
+speed = 2.0
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("5_wkqrl")]
