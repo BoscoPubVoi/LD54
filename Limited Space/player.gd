@@ -59,3 +59,6 @@ func BallInHole():
 func die():
 	print("dead")
 	hit.emit()
+
+func slow():
+	print("Needs Implementation - player.gd::slow()::63")
