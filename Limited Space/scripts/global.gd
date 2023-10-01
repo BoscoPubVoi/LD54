@@ -91,3 +91,21 @@ func bogey_calculator(number):
 			bogeystring += "Novuple  "
 	bogeystring += "Bogey!"
 	return bogeystring
+
+
+func SpringStep(currentValue : float, velocity : float, targetValue : float, time_step : float, damping : float = 0.2, oscillation : float = 30):
+	var squareOsci : float = oscillation * oscillation
+	var squareTime : float = time_step * time_step
+	var newPos : float = 1.0 + (2.0 * time_step * damping * oscillation) ##FirstPart of equation
+	var deltaInverse : float = 1.0 / (newPos + (squareOsci * squareTime))
+	var deltaPos : float = (newPos * currentValue) + (time_step * velocity) + (squareOsci * squareTime * targetValue)
+	var deltaVelocity : float = velocity + (time_step * squareOsci * (targetValue - currentValue))
+
+	# Normally we would pass velocity as ref and update it here and return new value between current one and target
+	# but this is not possible in script so we return array, new position/value and new velocity
+	var newValues = []
+	newValues.resize(2)
+	newValues[0] = deltaPos * deltaInverse #new value
+	newValues[1] = deltaVelocity * deltaInverse #new velocity
+
+	return newValues;
