@@ -68,7 +68,6 @@ down={
 3d_physics/layer_5="little"
 3d_physics/layer_6="water"
 3d_physics/layer_7="trees/obstacles"
-3d_physics/layer_8="golfers"
 
 [rendering]
 

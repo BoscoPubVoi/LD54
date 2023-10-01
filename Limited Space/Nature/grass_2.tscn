@@ -1,7 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://2k0upaes1sfl"]
+[gd_scene load_steps=9 format=3 uid="uid://c5vagevlhu250"]
 
+[ext_resource type="Shader" path="res://scripts/shaders/grass_1.gdshader" id="1_h0ray"]
 [ext_resource type="Texture2D" uid="uid://cehid8teuk1ke" path="res://Nature/grass/Grass_2.png" id="1_micif"]
+[ext_resource type="Script" path="res://Nature/grass.gd" id="3_j7pjl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djeav"]
+render_priority = 0
+shader = ExtResource("1_h0ray")
+shader_parameter/grass_texture = ExtResource("1_micif")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l74c3"]
+radius = 0.997154
+height = 7.34814
+
+[sub_resource type="Animation" id="Animation_n0oue"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_1a7j6"]
+resource_name = "rustle"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4v5j8"]
+_data = {
+"RESET": SubResource("Animation_n0oue"),
+"rustle": SubResource("Animation_1a7j6")
+}
 
 [node name="grass2" type="Sprite3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.8564, 0, 17.9348)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0845692, 0.893174, -0.112747)
+material_override = SubResource("ShaderMaterial_djeav")
 texture = ExtResource("1_micif")
+script = ExtResource("3_j7pjl")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-0.0188485, 0.999822, -7.04084e-16, -0.999822, -0.0188485, 6.636e-18, -6.636e-18, 7.04084e-16, 1, -0.196698, -0.866094, 0.231551)
+shape = SubResource("CapsuleShape3D_l74c3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4v5j8")
+}
