@@ -30,7 +30,7 @@ func GetTotalScore():
 
 
 
-func bogey_calculator(number):
+func fun_bogey_calculator(number):
 	var bogeystring = ""
 	print("div 100: " + str(number / 100))
 	match number / 100:
@@ -93,8 +93,42 @@ func bogey_calculator(number):
 		9:
 			bogeystring += "Novuple "
 	bogeystring += "Bogey!"
+	if number == 1:
+		bogeystring = "Hole in One!"
 	return bogeystring
 
+func boring_bogey_calculator(number):
+	var bogeystring = ""
+	match number:
+		1:
+			bogeystring = "Condor!"
+		2:
+			bogeystring = "Albatross!"
+		3:
+			bogeystring = "Eagle!"
+		4:
+			bogeystring = "Birdey!"
+		5:
+			bogeystring = "Par!"
+		6:
+			bogeystring = "Bogey!"
+		7:
+			bogeystring = "Double Bogey!"
+		8:
+			bogeystring = "Triple Bogey!"
+		9:
+			bogeystring = "Quadruple Bogey!"
+		10:
+			bogeystring = "Pentuple Bogey!"
+		11:
+			bogeystring = "Sextuple Bogey!"
+		12:
+			bogeystring = "Septuple Bogey!"
+		13:
+			bogeystring = "Octuple Bogey!"
+	if number >= 14:
+		bogeystring = str(number-5) + "x Bogey!"
+	return bogeystring
 
 func SpringStep(currentValue : float, velocity : float, targetValue : float, time_step : float, damping : float = 0.2, oscillation : float = 30):
 	var squareOsci : float = oscillation * oscillation
