@@ -15,7 +15,7 @@ func _ready():
 	particlearray.append($Node2D/Label/CPUParticles2D7)
 
 func updateScore(newscore):
-	label.text = Global.bogey_calculator(newscore)
+	label.text = Global.boring_bogey_calculator(newscore)
 	scale *= 1.1
 	labelparent.rotate(randf_range(-.1, .1))
 	var num_sparks = randi_range(1,particlearray.size())
