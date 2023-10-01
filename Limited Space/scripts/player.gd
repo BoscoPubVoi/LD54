@@ -31,8 +31,8 @@ func move(delta):
 	if !IsAlive:
 		return
 	
-#	if not is_on_floor():
-#		velocity.y -= gravity * delta
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 
 	var input_dir = -Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * -Vector3(input_dir.x, 0, input_dir.y)).normalized()
