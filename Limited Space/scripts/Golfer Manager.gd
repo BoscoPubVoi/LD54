@@ -36,7 +36,7 @@ func get_golfer():
 	var code = randi() % (currentscore + 1)
 	
 	if code < 10:
-		return golfer_seeker
+		return golfer_generic
 	if code < 40:
 		return golfer_scatter
 	if code < 60:
