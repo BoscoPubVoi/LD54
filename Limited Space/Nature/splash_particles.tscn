@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://coayhwibmhm7c"]
+
+[ext_resource type="Script" path="res://Nature/splash_particles.gd" id="1_74m6g"]
+
+[sub_resource type="Curve" id="Curve_cyyoj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.974026, 0.0105263), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_73mk7"]
+curve = SubResource("Curve_cyyoj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jy2v"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+scale_curve = SubResource("CurveTexture_73mk7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcf5r"]
+albedo_color = Color(0.12549, 0.709804, 0.960784, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h3je0"]
+material = SubResource("StandardMaterial3D_fcf5r")
+radius = 0.3
+height = 0.6
+
+[node name="Splash Particles" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.386198, 0)
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5jy2v")
+draw_pass_1 = SubResource("SphereMesh_h3je0")
+script = ExtResource("1_74m6g")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

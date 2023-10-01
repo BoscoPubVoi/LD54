@@ -8,7 +8,7 @@ friction = 0.09
 bounce = 0.62
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg75e"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0.839216, 0, 0.968627, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_xq873"]
 material = SubResource("StandardMaterial3D_xg75e")
@@ -36,7 +36,7 @@ albedo_color = Color(1, 1, 1, 0.443137)
 
 [node name="Scatter Ball Tiny" type="RigidBody3D"]
 collision_layer = 16
-collision_mask = 35
+collision_mask = 99
 mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_wpfnw")
 max_contacts_reported = 1

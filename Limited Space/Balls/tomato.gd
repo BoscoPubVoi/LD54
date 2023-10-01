@@ -8,3 +8,4 @@ func explode():
 	add_sibling(newsplat)
 	newsplat.position = position
 	queue_free()
+

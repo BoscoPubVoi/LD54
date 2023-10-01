@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dex1snqt3bb3e"]
+[gd_scene format=3 uid="uid://clmyxh3m300mn"]
 
 [node name="Player Score" type="Label"]
 offset_right = 184.0

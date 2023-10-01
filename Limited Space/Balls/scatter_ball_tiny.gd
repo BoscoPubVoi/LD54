@@ -17,7 +17,11 @@ func _on_body_entered(body:Node):
 		body.BallInHole()
 	elif !TouchedGround:
 		TouchedGround = true
+		Global.IncrementScore()
 	
 	if body.is_in_group("water"):
+		var newsplash = load("res://Nature/splash_particles.tscn").instantiate()
+		add_sibling(newsplash)
+		newsplash.position = position
+		AudioManager.play("splash")
 		self.queue_free()
-		return
