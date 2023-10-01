@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyttdvi22ldke"]
+
+[ext_resource type="Texture2D" uid="uid://c2yo2nyqfg3nb" path="res://Nature/grass/Grass_1.png" id="1_dpep0"]
+
+[node name="grass1" type="Sprite3D"]
+transform = Transform3D(0.5, -1.74393e-16, 1.74393e-16, 1.74393e-16, 0.5, -1.74393e-16, -1.74393e-16, 1.74393e-16, 0.5, -17.6519, 0.991115, -13.1365)
+texture = ExtResource("1_dpep0")
