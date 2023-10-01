@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c58l0ckg4on82"]
+[gd_scene load_steps=11 format=3 uid="uid://c58l0ckg4on82"]
 
 [ext_resource type="Script" path="res://Balls/basic_ball.gd" id="1_c28n2"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_x7x47"]
@@ -9,6 +9,8 @@ friction = 0.32
 bounce = 0.35
 
 [sub_resource type="SphereMesh" id="SphereMesh_80ju2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef4md"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mnsas"]
 
@@ -37,7 +39,9 @@ lock_rotation = true
 script = ExtResource("1_c28n2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("SphereMesh_80ju2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ef4md")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_mnsas")
