@@ -9,7 +9,8 @@ var deadzone : Vector2 = Vector2(0.1, 0.0001)
 func _ready():
 	set_physics_process(true)
 	look_at_from_position(global_position, target.global_position, Vector3.UP)
-	get_tree().get_root().get_node("World2").LevelEnded.connect(end)
+	var root = get_tree().get_first_node_in_group("LevelRoot")
+	root.LevelEnded.connect(end)
 
 func _physics_process(delta):
 	var w = ProjectSettings.get_setting("display/window/size/viewport_width")
