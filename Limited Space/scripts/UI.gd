@@ -6,13 +6,13 @@ extends Control
 var particlearray = []
 
 func _ready():
-	particlearray.append($Node2D/Label/CPUParticles2D)
-	particlearray.append($Node2D/Label/CPUParticles2D2)
-	particlearray.append($Node2D/Label/CPUParticles2D3)
-	particlearray.append($Node2D/Label/CPUParticles2D4)
-	particlearray.append($Node2D/Label/CPUParticles2D5)
-	particlearray.append($Node2D/Label/CPUParticles2D6)
-	particlearray.append($Node2D/Label/CPUParticles2D7)
+	particlearray.append($Node2D/CPUParticles2D)
+	particlearray.append($Node2D/CPUParticles2D2)
+	particlearray.append($Node2D/CPUParticles2D3)
+	particlearray.append($Node2D/CPUParticles2D4)
+	particlearray.append($Node2D/CPUParticles2D5)
+	particlearray.append($Node2D/CPUParticles2D6)
+	particlearray.append($Node2D/CPUParticles2D7)
 
 func updateScore(newscore):
 	label.text = Global.boring_bogey_calculator(newscore)

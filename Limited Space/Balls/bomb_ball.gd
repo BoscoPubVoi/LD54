@@ -3,7 +3,13 @@ extends basic_ball
 var explosion_size = 5
 var ball_array = []
 
+
+
 func explode():
+	var newsplash = load("res://Nature/explosion_particle.tscn").instantiate()
+	add_sibling(newsplash)
+	newsplash.position = position
+	self.queue_free()
 	for i in ball_array.size():
 		var direction = ball_array[i].global_position - global_position
 		direction.normalized()
@@ -11,6 +17,7 @@ func explode():
 		direction.z = direction.z * 0.2
 		direction.y = 1
 		ball_array[i].apply_impulse(direction)
+	
 	queue_free()
 
 func _process(delta):

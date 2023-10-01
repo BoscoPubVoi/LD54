@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dnsxx58dsnroo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q5yvf"]
-[ext_resource type="PackedScene" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
+[ext_resource type="PackedScene" uid="uid://c6hx3owgggi8u" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
 albedo_color = Color(0, 0, 0, 1)
@@ -38,7 +38,7 @@ radius = 1.18516
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-collision_mask = 97
+collision_mask = 353
 floor_stop_on_slope = false
 script = ExtResource("1_q5yvf")
 
