@@ -68,3 +68,6 @@ offset_top = 10.0
 offset_right = 331.0
 offset_bottom = 102.0
 text = "Score: 0"
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true

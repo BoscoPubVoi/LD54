@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://swjlgixmxitm"]
+[gd_scene load_steps=11 format=3 uid="uid://swjlgixmxitm"]
 
 [ext_resource type="Script" path="res://Balls/scatter_ball.gd" id="1_f5i35"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_0l88n"]
 [ext_resource type="PackedScene" uid="uid://c2g71el2rogxm" path="res://Balls/scattershot.tscn" id="2_rhbfl"]
+[ext_resource type="AudioStream" uid="uid://blpqhpvbb3cpu" path="res://assets/sounds/golf ball landing 2.wav" id="4_t2jh7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mjsub"]
 radius = 0.379963
@@ -70,5 +71,8 @@ mesh = SubResource("SphereMesh_apswy")
 direction = Vector3(0, 1, 0)
 initial_velocity_min = 3.0
 initial_velocity_max = 3.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_t2jh7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

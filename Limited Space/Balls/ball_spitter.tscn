@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=8 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
 [ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
+[ext_resource type="AudioStream" uid="uid://cewfygsmqonrf" path="res://assets/sounds/golfballhit1.wav" id="3_bukh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oivri"]
 atlas = ExtResource("2_e5nxh")
@@ -46,6 +47,9 @@ pixel_size = 0.03
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_j4tlh")
 frame = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_bukh6")
 
 [connection signal="timeout" from="Shot_Timer" to="." method="_on_shot_timer_timeout"]
 [connection signal="frame_changed" from="Golfer_Sprite" to="." method="_on_golfer_sprite_frame_changed"]

@@ -4,6 +4,8 @@ extends Node3D
 @onready var golfer : AnimatedSprite3D = $Golfer_Sprite
 @onready var timer : Timer = $Shot_Timer
 
+@onready var audioplayer = $AudioStreamPlayer3D
+
 var ballGeneric = preload("res://Balls/basic_ball.tscn")
 var ballScatter = preload("res://Balls/scatter_ball.tscn")
 var ballTomato = preload("res://Balls/tomato.tscn")
@@ -22,7 +24,7 @@ func emit():
 	
 	#create new ball
 	var newBall = ballarray.pick_random().instantiate()
-	add_sibling(newBall)
+	get_tree().root.add_child(newBall)
 	newBall.apply_new_force(get_global_transform().basis.z, new_speed)
 	newBall.position = position
 	
@@ -34,7 +36,7 @@ func _on_shot_timer_timeout():
 
 func _on_golfer_sprite_frame_changed():
 	if golfer.frame == 1:
-		AudioManager.ball_hit()
+		audioplayer.play()
 		emit()
 
 func _on_level_ended():

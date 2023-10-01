@@ -25,3 +25,67 @@ func GetTotalScore():
 	
 	return score
 	
+
+
+
+func bogey_calculator(number):
+	var bogeystring = ""
+	match number / 100:
+		1:
+			bogeystring += "Centuple "
+		2:
+			bogeystring += "Double Centuple "
+		3:
+			bogeystring += "Triple Centuple "
+		4:
+			bogeystring += "Quadruple Centuple "
+		5:
+			bogeystring += "Pentuple Centuple "
+		6:
+			bogeystring += "Sextuple Centuple "
+		7:
+			bogeystring += "Septuple Centuple "
+		8:
+			bogeystring += "Octuple Centuple "
+		9:
+			bogeystring += "Novuple Centuple "
+	match number / 10:
+		1:
+			bogeystring += "Decuple "
+		2:
+			bogeystring += "Double Decuple "
+		3:
+			bogeystring += "Triple Decuple "
+		4:
+			bogeystring += "Quadruple Decuple "
+		5:
+			bogeystring += "Pentuple Decuple "
+		6:
+			bogeystring += "Sextuple Decuple "
+		7:
+			bogeystring += "Septuple Decuple "
+		8:
+			bogeystring += "Octuple Decuple "
+		9:
+			bogeystring += "Novuple Decuple "
+	match number % 10:
+		1:
+			bogeystring = "Single "
+		2:
+			bogeystring += "Double  "
+		3:
+			bogeystring += "Triple "
+		4:
+			bogeystring += "Quadruple  "
+		5:
+			bogeystring += "Pentuple  "
+		6:
+			bogeystring += "Sextuple  "
+		7:
+			bogeystring += "Septuple  "
+		8:
+			bogeystring += "Octuple  "
+		9:
+			bogeystring += "Novuple  "
+	bogeystring += "Bogey!"
+	return bogeystring

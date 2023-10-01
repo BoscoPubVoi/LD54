@@ -8,6 +8,8 @@ var TouchedGround : bool = false;
 @onready var shadowcaster = $ShadowCast
 @onready var shadow = $ShadowMesh
 
+@onready var audioplayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 func _ready():
 	var root = get_tree().get_first_node_in_group("LevelRoot")
 	
@@ -42,14 +44,14 @@ func _on_body_entered(body:Node):
 		body.BallInHole()
 	elif !TouchedGround:
 		TouchedGround = true
-		AudioManager.ball_bounce()
+		audioplayer.play()
 		Global.IncrementScore()
 	
 	if body.is_in_group("water"):
 		var newsplash = load("res://Nature/splash_particles.tscn").instantiate()
 		add_sibling(newsplash)
 		newsplash.position = position
-		AudioManager.play("splash")
+		audioplayer.play()
 		self.queue_free()
 		return
 		
