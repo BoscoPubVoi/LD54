@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
-[ext_resource type="Material" uid="uid://bniujwrqt6w8d" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
+[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
 [ext_resource type="PackedScene" uid="uid://bgvsbaoxxyk0b" path="res://Nature/sandmound.tscn" id="4_x0kgl"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
@@ -20,7 +20,7 @@ sky_material = SubResource("ProceduralSkyMaterial_76u55")
 [sub_resource type="Environment" id="Environment_pmrkg"]
 background_mode = 2
 sky = SubResource("Sky_honci")
-ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(1, 1, 0.862745, 1)
 ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
 tonemap_exposure = 0.7
