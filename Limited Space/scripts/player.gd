@@ -80,11 +80,11 @@ func move(delta):
 	
 
 func stretch_mesh(x_scale, z_scale, delta):
-	var new_scale = Global.SpringStep(mesh.scale.z, spring_velocity_scale_z, z_scale, delta, 0.4, 5)
+	var new_scale = Global.SpringStep(mesh.scale.z, spring_velocity_scale_z, z_scale, delta, 0.3, 5)
 	mesh.scale.z = new_scale[0]
 	spring_velocity_scale_z = new_scale[1]
 
-	new_scale = Global.SpringStep(mesh.scale.x, spring_velocity_scale_x, x_scale, delta, 0.4, 5)
+	new_scale = Global.SpringStep(mesh.scale.x, spring_velocity_scale_x, x_scale, delta, 0.3, 5)
 	mesh.scale.x = new_scale[0]
 	spring_velocity_scale_x = new_scale[1]
 
