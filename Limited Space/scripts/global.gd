@@ -5,7 +5,7 @@ var PLAYER_SCORE : Array[int]
 var CURRENT_LEVEL : int = 0
 
 #level count should probably be handled differently but maybe it's fine for gamejam 
-var LEVEL_COUNT : int = 2
+var LEVEL_COUNT : int = 1
 
 var MAX_GOLFERS : int = 50
 
