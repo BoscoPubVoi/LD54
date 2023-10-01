@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvlpp7o5iayhg"]
+
+[ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_rvrd5"]
+[ext_resource type="PackedScene" uid="uid://sxo74yxrvmjg" path="res://Balls/bomb_ball.tscn" id="2_7y46m"]
+
+[node name="Bomb Golfer" instance=ExtResource("1_rvrd5")]
+rate_of_fire = 3
+balltype = ExtResource("2_7y46m")
+
+[node name="Golfer_Sprite" parent="." index="1"]
+modulate = Color(0.0784314, 0, 1, 1)

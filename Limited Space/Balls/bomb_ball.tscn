@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=3 uid="uid://sxo74yxrvmjg"]
+
+[ext_resource type="Script" path="res://Balls/bomb_ball.gd" id="1_4yrrk"]
+[ext_resource type="Script" path="res://Balls/trail.gd" id="2_arf51"]
+[ext_resource type="AudioStream" uid="uid://o3sqsdl0u8v0" path="res://assets/sounds/splat 1.wav" id="3_b165k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqful"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xp5o8"]
+material = SubResource("StandardMaterial3D_mqful")
+radius = 1.0
+height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdm7j"]
+albedo_color = Color(0.960784, 0.686275, 0.372549, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4pexv"]
+material = SubResource("StandardMaterial3D_pdm7j")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jime"]
+albedo_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4uena"]
+material = SubResource("StandardMaterial3D_4jime")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kjosj"]
+radius = 1.04808
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq4k8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4teu8"]
+material = SubResource("StandardMaterial3D_sq4k8")
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igdns"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.443137)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ewc0t"]
+radius = 10.0
+
+[node name="Bomb" type="RigidBody3D"]
+collision_layer = 20
+collision_mask = 99
+mass = 0.1
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_4yrrk")
+
+[node name="bomb" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669849, 0)
+mesh = SubResource("SphereMesh_xp5o8")
+
+[node name="fuse" type="MeshInstance3D" parent="bomb"]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 1.0175, -0.623307)
+mesh = SubResource("CylinderMesh_4pexv")
+
+[node name="fuse_base" type="MeshInstance3D" parent="bomb"]
+transform = Transform3D(1, 0, 0, 0, 0.83829, 0.545224, 0, -0.545224, 0.83829, 0, 0.803356, -0.488591)
+mesh = SubResource("CylinderMesh_4uena")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.665901, 0)
+shape = SubResource("SphereShape3D_kjosj")
+
+[node name="ShadowCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573092, 0)
+target_position = Vector3(0, -20, 0)
+
+[node name="ShadowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_4teu8")
+skeleton = NodePath("../ShadowCast")
+
+[node name="Trail3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_igdns")
+cast_shadow = 0
+script = ExtResource("2_arf51")
+scaleAcceleration = 0.667
+lifespan = 0.4
+scaleTexture = false
+startColor = Color(1, 1, 1, 0.396078)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_b165k")
+max_db = 0.0
+panning_strength = 2.0
+emission_angle_filter_attenuation_db = -6.0
+attenuation_filter_db = -12.0
+
+[node name="ExplosionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.650943, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="ExplosionSphere" type="CollisionShape3D" parent="ExplosionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0150045, 0)
+shape = SubResource("SphereShape3D_ewc0t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="ExplosionArea" to="." method="_on_explosion_area_body_entered"]
+[connection signal="body_exited" from="ExplosionArea" to="." method="_on_explosion_area_body_exited"]

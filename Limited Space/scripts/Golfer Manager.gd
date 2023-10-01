@@ -9,6 +9,7 @@ var golfer_generic = preload("res://Balls/Golfers/generic_golfer.tscn")
 var golfer_scatter = preload("res://Balls/Golfers/scatter_golfer.tscn")
 var golfer_tomato = preload("res://Balls/Golfers/tomato_golfer.tscn")
 var golfer_seeker = preload("res://Balls/Golfers/seeker_golfer.tscn")
+var golfer_bomb = preload("res://Balls/Golfers/bomb_golfer.tscn")
 
 var distance_from_player = 25
 
@@ -40,6 +41,8 @@ func get_golfer():
 	if code < 40:
 		return golfer_scatter
 	if code < 50:
+		return golfer_bomb
+	if code < 60:
 		return golfer_tomato
 	else:
 		return golfer_seeker
