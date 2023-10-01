@@ -42,6 +42,7 @@ func _on_body_entered(body:Node):
 		body.BallInHole()
 	elif !TouchedGround:
 		TouchedGround = true
+		AudioManager.ball_bounce()
 		Global.IncrementScore()
 	
 	if body.is_in_group("water"):

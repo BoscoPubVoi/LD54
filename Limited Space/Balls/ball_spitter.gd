@@ -34,6 +34,7 @@ func _on_shot_timer_timeout():
 
 func _on_golfer_sprite_frame_changed():
 	if golfer.frame == 1:
+		AudioManager.ball_hit()
 		emit()
 
 func _on_level_ended():

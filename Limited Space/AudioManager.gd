@@ -6,7 +6,13 @@ var audio_files = \
 	
 	#PLAYER SFX
 	"applause" : ["res://assets/sounds/applause.wav", "SFX", 0],
-	"splash" : ["res://assets/sounds/splash.wav", "SFX", 0]
+	"splash" : ["res://assets/sounds/splash.wav", "SFX", 0],
+	"bounce1" : ["res://assets/sounds/golf ball landing 1.wav", "SFX", 0],
+	"bounce2" : ["res://assets/sounds/golf ball landing 2.wav", "SFX", 0],
+	"bounce3" : ["res://assets/sounds/golf ball landing 3.wav", "SFX", 0],
+	"bounce4" : ["res://assets/sounds/golf ball landing 4.wav", "SFX", 0],
+	"hit1" : ["res://assets/sounds/golfballhit1.wav", "SFX", 0],
+	"hit2" : ["res://assets/sounds/golfballhit2.wav", "SFX", 0]
 	
 
 }
@@ -23,6 +29,10 @@ var music_streams = []
 
 var current_music = null
 var current_music_name = ""
+
+
+var ballbouncesounds = ["bounce1", "bounce2", "bounce3", "bounce4"]
+var ballhitsounds = ["hit1", "hit2"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -130,3 +140,10 @@ func _on_fade_finished(_object, _path, fade):
 func _on_music_fade_finished():
 	print("MUSIC FADE FINISHED")
 	current_music = null
+
+
+func ball_bounce():
+	play(ballbouncesounds.pick_random(), -3, randf_range(.8, 1.2))
+
+func ball_hit():
+	play(ballhitsounds.pick_random(), -3, randf_range(.8, 1.2))
