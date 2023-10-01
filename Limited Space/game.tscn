@@ -1,10 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=22 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
 [ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
+[ext_resource type="Texture2D" uid="uid://c2yo2nyqfg3nb" path="res://Nature/grass/Grass_1.png" id="3_tuitc"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
 [ext_resource type="PackedScene" uid="uid://djayy0giymo8g" path="res://Nature/sandmound.tscn" id="4_x0kgl"]
+[ext_resource type="Texture2D" uid="uid://cehid8teuk1ke" path="res://Nature/grass/Grass_2.png" id="4_xl1oq"]
+[ext_resource type="Texture2D" uid="uid://1vax5dyq0egx" path="res://Nature/grass/Grass_3.png" id="5_2cle0"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
 [ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
@@ -49,7 +52,7 @@ height = 0.001
 cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tltpt"]
-albedo_color = Color(0.0470588, 0.592157, 0.807843, 1)
+albedo_color = Color(0.0196078, 0.462745, 0.639216, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oepgq"]
 material = SubResource("StandardMaterial3D_tltpt")
@@ -74,6 +77,30 @@ visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
+
+[node name="grass" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 4.95224, 0.830812, -55.507)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("3_tuitc")
+
+[node name="grass2" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 26.1638, 0.830815, 3.54092)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("4_xl1oq")
+
+[node name="grass3" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -9.70793, 0.830813, -23.5902)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("5_2cle0")
+
+[node name="grass4" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 31.9907, 0.830813, -24.4557)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("5_2cle0")
 
 [node name="Tree3" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9496, 4.24201, -21.9737)
