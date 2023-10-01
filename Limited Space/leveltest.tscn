@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_tgabm"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_koamh"]
-[ext_resource type="Material" path="res://Nature/fairwaymaterial.tres" id="3_issut"]
+[ext_resource type="Material" uid="uid://bniujwrqt6w8d" path="res://Nature/fairwaymaterial.tres" id="3_issut"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_y3dv8"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_wkqrl"]
 [ext_resource type="PackedScene" uid="uid://c4tpklaj4lxdw" path="res://Nature/sand_trap.tscn" id="8_1hk4o"]
