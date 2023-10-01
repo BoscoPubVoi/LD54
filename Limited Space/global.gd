@@ -7,6 +7,8 @@ var CURRENT_LEVEL : int = 0
 #level count should probably be handled differently but maybe it's fine for gamejam 
 var LEVEL_COUNT : int = 2
 
+var MAX_GOLFERS : int = 50
+
 func _ready():
 	PrepScore()
 

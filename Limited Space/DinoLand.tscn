@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
-[ext_resource type="Material" path="res://fairwaymaterial.tres" id="3_2saks"]
+[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://fairwaymaterial.tres" id="3_2saks"]
 [ext_resource type="Script" path="res://CameraFollow.gd" id="4_d2r8t"]
 [ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="5_bpe82"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="7_rckfh"]
@@ -90,7 +90,7 @@ metadata/_edit_lock_ = true
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("CylinderMesh_5bouf")
-skeleton = NodePath("../MeshInstance3D")
+skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_2saks")
 metadata/_edit_lock_ = true
 

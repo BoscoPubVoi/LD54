@@ -1,9 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1wyl6psthrj4"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c5pv64p0w87cc"]
 
 [ext_resource type="Texture2D" uid="uid://djp3ggk3sow6j" path="res://assets/art/fairwaytextur2e.png" id="1_iflur"]
 
 [resource]
-transparency = 1
 albedo_color = Color(0.0901961, 0.760784, 0.156863, 1)
 albedo_texture = ExtResource("1_iflur")
 heightmap_scale = 16.0
