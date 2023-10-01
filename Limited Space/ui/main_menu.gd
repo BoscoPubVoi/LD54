@@ -10,7 +10,7 @@ func _ready():
 
 func _on_start_pressed():
 	Global.PrepScore()
-	#get_tree().change_scene_to_file(GameScene.resource_path)
+	get_tree().change_scene_to_file(GameScene.resource_path)
 
 func _on_exit_pressed():
 	get_tree().quit();

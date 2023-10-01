@@ -4,8 +4,9 @@ signal hit
 
 var IsAlive : bool = true
 
+@onready var mesh = $Mesh
 @export var speed : float = 10
-@export var acceleration : float = 4
+@export var acceleration : float = 10
 
 const JUMP_VELOCITY = 4.5
 const ANGULAR_ACCELERATION = 10
@@ -45,11 +46,31 @@ func move(delta):
 	if direction:
 		target_speed_x = direction.x * speed
 		target_speed_z = direction.z * speed
+		acceleration = 10
+	else:
+		acceleration = 2
+	
+	if velocity.x > 0 && target_speed_x < 0:
+		mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		acceleration = 3
+	elif velocity.x < 0 && target_speed_x > 0:
+		mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		acceleration = 3
+	elif velocity.z > 0 && target_speed_z < 0:
+		mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		acceleration = 3
+	elif velocity.z < 0 && target_speed_z > 0:
+		mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		acceleration = 3
+	else:
+		mesh.scale.x = lerp(mesh.scale.x, 1.0, .02)
+		mesh.scale.z = lerp(mesh.scale.z, 1.0, .02)
 
 	velocity.x = lerp(velocity.x, target_speed_x, delta * acceleration); 
 	velocity.z = lerp(velocity.z, target_speed_z, delta * acceleration); 
 	velocity.y -= gravity * delta * 1.5
 	move_and_slide()
+	
 
 
 func align_to_ground(delta):

@@ -10,6 +10,8 @@ var TouchedGround : bool = false;
 
 @onready var audioplayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
 
+var down_grav = 2
+
 func _ready():
 
 	var root = get_tree().get_first_node_in_group("LevelRoot")
@@ -45,7 +47,7 @@ func _physics_process(_delta):
 	else:
 		shadow.hide()
 	if linear_velocity.y < 0:
-		gravity_scale = 2
+		gravity_scale = down_grav
 	else:
 		gravity_scale = 1
 
@@ -80,6 +82,7 @@ func _on_level_ended():
 	self.continuous_cd = false;
 
 func explode():
+	down_grav += .3
 	pass
 
 
