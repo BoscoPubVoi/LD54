@@ -18,8 +18,8 @@ func _ready():
 
 
 func apply_new_force(direction, new_speed):
-	
-	direction = Vector3(direction.x, 1, direction.z)
+	new_speed = new_speed * randf_range(.9, 1.1)
+	direction = Vector3(direction.x * randf_range(.9, 1.1), 1, direction.z * randf_range(.9, 1.1))
 	direction = direction.normalized()
 	direction = direction * new_speed /17
 #	direction.x = direction.x * new_speed / 2
