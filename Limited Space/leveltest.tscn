@@ -1,0 +1,317 @@
+[gd_scene load_steps=21 format=3 uid="uid://c6wibr36fk20i"]
+
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_tgabm"]
+[ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_koamh"]
+[ext_resource type="Material" uid="uid://b37abi0ae4fcj" path="res://Nature/fairwaymaterial.tres" id="3_issut"]
+[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_y3dv8"]
+[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_wkqrl"]
+[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="6_57ils"]
+[ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_t78oa"]
+[ext_resource type="PackedScene" uid="uid://c4tpklaj4lxdw" path="res://Nature/sand_trap.tscn" id="8_1hk4o"]
+[ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_3xbif"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 4.3
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_honci"]
+sky_material = SubResource("ProceduralSkyMaterial_76u55")
+
+[sub_resource type="Environment" id="Environment_pmrkg"]
+background_mode = 2
+sky = SubResource("Sky_honci")
+tonemap_mode = 2
+tonemap_exposure = 0.7
+glow_enabled = true
+adjustment_enabled = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x2hxb"]
+height = 0.5
+radius = 100.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4w8m"]
+albedo_color = Color(0, 0.592157, 0.890196, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_msqat"]
+material = SubResource("StandardMaterial3D_v4w8m")
+top_radius = 1000.0
+bottom_radius = 100.0
+height = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oy38"]
+albedo_color = Color(0, 0.886275, 0.309804, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5bouf"]
+material = SubResource("StandardMaterial3D_3oy38")
+top_radius = 30.0
+height = 0.001
+cap_bottom = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_kb7hg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tltpt"]
+albedo_color = Color(0.12549, 0.709804, 0.960784, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oepgq"]
+material = SubResource("StandardMaterial3D_tltpt")
+top_radius = 10.0
+height = 0.001
+cap_bottom = false
+
+[node name="World" type="Node3D" groups=["LevelRoot"]]
+script = ExtResource("1_tgabm")
+NextLevel = "res://game.tscn"
+MainMenu = "res://ui/main_menu.tscn"
+ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pmrkg")
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45592, 4.24201, -31.1827)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Tree3" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9496, 4.24201, -21.9737)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Tree4" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05038, 4.24201, -36.9737)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Tree5" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6646, 4.24201, -32.8633)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Tree6" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3354, 4.24201, -23.8633)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Tree7" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8262, 4.24201, -30.862)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Tree2" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5962, 4.242, -28.9947)
+pixel_size = 0.1
+billboard = 2
+texture = ExtResource("2_koamh")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+visible = false
+shape = SubResource("CylinderShape3D_x2hxb")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.05, 0)
+visible = false
+mesh = SubResource("CylinderMesh_msqat")
+skeleton = NodePath("")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(0.41, 0, 0, 0, 0.5, 0, 0, 0, 0.41, -73, -0.02, 2.2)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, -0.02, 2.08165e-12)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1.5, 0, 0, 0, 1.4, 0, 0, 0, 1.5, 130, -0.02, 30)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1.5, 0, 0, 0, 1.4, 0, 0, 0, 1.5, -123.7, -25, 116.23)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(2, 0, 0, 0, 1.4, 0, 0, 0, 1.5, -74.56, -25, 97.96)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(0.9, 0, 0, 0, 1.4, 0, 0, 0, 1.2, 58.68, -25, 182.69)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 131.02, -25, 194.75)
+mesh = SubResource("CylinderMesh_5bouf")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 30, 50, -0.02, 2.08165e-12)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 20, -50, -0.02, 2.08165e-12)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(74.6739, -4.85765e-17, -20.0752, 3.17954e-14, 0.1, -1.22075e-14, 52.2872, 8.56536e-18, 28.6703, 10.94, -25, 137.27)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(20, 0, 0, 0, 0.1, 0, 0, 0, 12, -75.2, -0.02, 9.5)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(20, -1.74393e-17, 1.51029e-14, 6.04117e-15, 0.0866025, -25, -3.48787e-15, 0.05, 43.3013, -75.1, -12.6, 37)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(30, 0, 0, 0, 0.1, 0, 0, 0, 40, 125, -0.02, 90.37)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(30, 0, 0, 0, 0.1, 0, 0, 0, 40, 125, -25, 173.9)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 30, 105.53, -25, 188.66)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(30, -1.74393e-17, 1.51029e-14, 9.06175e-15, 0.0866025, -25, -5.2318e-15, 0.05, 43.3013, 125, -12.6, 132.18)
+mesh = SubResource("BoxMesh_kb7hg")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_issut")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(0.882811, 0, 0.346189, 0, 1, 0, -0.384389, 0, 0.795079, -10.4424, -0.01, -10.3119)
+mesh = SubResource("CylinderMesh_oepgq")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1.55429, -5.15596e-17, 0.62932, 6.97574e-16, 1, -3.48787e-16, -1.25864, 4.90557e-16, 0.777146, 141.94, -0.01, 50)
+mesh = SubResource("CylinderMesh_oepgq")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4.27975, -2.23935e-16, 0.797264, 1.56954e-15, 1, -8.9987e-16, -1.39058, 4.39497e-16, 2.45373, -78.35, -24.9, 104.03)
+mesh = SubResource("CylinderMesh_oepgq")
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.323395, -0.381334, 0, -0.762668, 0.64679, -0.5, 0.560136, 0.66049, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 6.69697e-08, -5.61943e-08, 0, 0.642788, 0.766044, 8.74228e-08, 0.766044, -0.642788, 0.0340538, 30.31, 24.9172)
+fov = 50.0
+script = ExtResource("4_y3dv8")
+offset = Vector3(0, 19.83, 24.12)
+speed = 0.3
+target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("5_wkqrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297199, -1.90735e-06, 2.75464)
+
+[node name="golftree" parent="." instance=ExtResource("6_57ils")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7825, 4.76837e-07, -20.9093)
+visible = false
+
+[node name="golftree2" parent="." instance=ExtResource("6_57ils")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.434, 0, -20.8102)
+visible = false
+
+[node name="golftree3" parent="." instance=ExtResource("6_57ils")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8711, 4.76837e-07, -3.54049)
+visible = false
+
+[node name="WaterCollision" parent="." instance=ExtResource("7_t78oa")]
+
+[node name="WaterCollision2" parent="." instance=ExtResource("7_t78oa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.414, 0, 50.7391)
+
+[node name="Sand_Trap" parent="." instance=ExtResource("8_1hk4o")]
+transform = Transform3D(5.99963, 0, -0.11135, 0, 6, 0, 0.06681, 0, 9.99938, 98, 2.08165e-12, -3.683)
+
+[node name="Sand_Trap2" parent="." instance=ExtResource("8_1hk4o")]
+transform = Transform3D(3.6713, 0, 2.77891, 0, 4, 0, -1.58795, 0, 6.42477, 59.7953, -25.062, 170.904)
+
+[node name="Sand_Trap3" parent="." instance=ExtResource("8_1hk4o")]
+transform = Transform3D(3.6713, 0, 2.77891, 0, 4, 0, -1.58795, 0, 6.42477, -131.396, -25.062, 142.193)
+
+[node name="Sand_Trap4" parent="." instance=ExtResource("8_1hk4o")]
+transform = Transform3D(6.42477, 0, 2.77891, 0, 7, 0, -2.77891, 0, 6.42477, -143.586, -25.062, 106.054)
+
+[node name="Golfer Manager" type="Node" parent="."]
+script = ExtResource("8_3xbif")
+
+[node name="NewGolfer" type="Timer" parent="Golfer Manager"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Golfer Manager/NewGolfer" to="Golfer Manager" method="_on_new_golfer_timeout"]
