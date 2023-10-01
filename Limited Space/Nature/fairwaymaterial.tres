@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dnx01t41gnnl" path="res://assets/art/fairway.png" id="1_gejxy"]
 
 [resource]
-albedo_color = Color(0, 0.439216, 0.45098, 1)
+albedo_color = Color(0.25098, 0.74902, 0.639216, 1)
 albedo_texture = ExtResource("1_gejxy")
 heightmap_scale = 16.0
 uv1_scale = Vector3(0.01, 0.01, 0.01)

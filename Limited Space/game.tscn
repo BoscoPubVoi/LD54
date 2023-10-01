@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
 [ext_resource type="PackedScene" uid="uid://c4tpklaj4lxdw" path="res://Nature/sand_trap.tscn" id="8_2b8lq"]
 [ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
-[ext_resource type="PackedScene" uid="uid://d3roe7vvj0wvl" path="res://Nature/grass_1.tscn" id="9_huojr"]
-[ext_resource type="PackedScene" uid="uid://c5vagevlhu250" path="res://Nature/grass_2.tscn" id="10_62njo"]
-[ext_resource type="PackedScene" uid="uid://c1bfpouwvcilb" path="res://Nature/grass_3.tscn" id="11_s4tt8"]
+[ext_resource type="PackedScene" path="res://Nature/grass_1.tscn" id="9_huojr"]
+[ext_resource type="PackedScene" path="res://Nature/grass_2.tscn" id="10_62njo"]
+[ext_resource type="PackedScene" path="res://Nature/grass_3.tscn" id="11_s4tt8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
