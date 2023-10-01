@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=12 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
 [ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
@@ -36,6 +36,17 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1tawm"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ydbk"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.47451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1nr8n"]
+material = SubResource("StandardMaterial3D_6ydbk")
+top_radius = 1.7
+bottom_radius = 1.7
+height = 0.01
+cap_bottom = false
+
 [node name="Ball Spitter" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14347, 0)
 script = ExtResource("1_5hgg1")
@@ -46,7 +57,7 @@ one_shot = true
 autostart = true
 
 [node name="Golfer_Sprite" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10647, 3.2551, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10647, 3.18333, 0)
 pixel_size = 0.03
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_j4tlh")
@@ -62,6 +73,10 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0686874, 0.559813, 0)
 shape = SubResource("CapsuleShape3D_1tawm")
+
+[node name="Shadow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.385237, -0.5, -0.382888)
+mesh = SubResource("CylinderMesh_1nr8n")
 
 [connection signal="timeout" from="Shot_Timer" to="." method="_on_shot_timer_timeout"]
 [connection signal="frame_changed" from="Golfer_Sprite" to="." method="_on_golfer_sprite_frame_changed"]

@@ -26,13 +26,14 @@ func emit():
 	#create new ball
 	var newBall = balltype.instantiate()
 	scene_root.add_child(newBall)
-	newBall.apply_new_force(get_global_transform().basis.z, new_speed)
+	var facing = transform.basis.z
+	var enemy_to_player = get_tree().get_first_node_in_group("player").position - global_transform.origin 
+	var newDir = Vector3(enemy_to_player.x, 0, enemy_to_player.z)
+	newBall.apply_new_force(newDir, new_speed)
 	newBall.position = position
 	newBall.position.x -= 1.4
 	
 func _on_shot_timer_timeout():
-	look_at(get_tree().get_first_node_in_group("player").position)
-	rotate_y(3.1415)
 	golfer.play("default")
 	$Shot_Timer.start(rate_of_fire * randf_range(0.8, 1.2))
 
