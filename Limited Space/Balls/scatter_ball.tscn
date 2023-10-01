@@ -30,7 +30,7 @@ material = SubResource("StandardMaterial3D_fp6wi")
 radius = 0.1
 height = 0.2
 
-[node name="Scatter Ball" type="RigidBody3D"]
+[node name="Scatter Ball" type="RigidBody3D" groups=["ball"]]
 collision_layer = 4
 collision_mask = 97
 mass = 0.1

@@ -42,3 +42,4 @@ func _on_golfer_sprite_frame_changed():
 func _on_level_ended():
 	timer.stop()
 	golfer.stop()
+

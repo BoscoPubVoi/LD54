@@ -69,3 +69,8 @@ func _on_level_ended():
 
 func explode():
 	pass
+
+
+
+func disable_collisions():
+	$CollisionShape3D.queue_free()
