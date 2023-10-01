@@ -105,7 +105,7 @@ func align_to_ground(delta):
 func BallInHole():
 	if !IsAlive:
 		return
-
+	Global.isDead = true
 	IsAlive = false
 	die()
 

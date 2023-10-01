@@ -9,12 +9,15 @@ var LEVEL_COUNT : int = 1
 
 var MAX_GOLFERS : int = 50
 
+var isDead = false
+
 func _ready():
 	PrepScore()
 
 func PrepScore():
 	PLAYER_SCORE = []
 	PLAYER_SCORE.resize(LEVEL_COUNT)
+	isDead = false
 
 func IncrementScore():
 	PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
