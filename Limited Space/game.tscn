@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=22 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
 [ext_resource type="PackedScene" uid="uid://c4tpklaj4lxdw" path="res://Nature/sand_trap.tscn" id="8_2b8lq"]
 [ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
+[ext_resource type="PackedScene" uid="uid://d3roe7vvj0wvl" path="res://Nature/grass_1.tscn" id="9_huojr"]
+[ext_resource type="PackedScene" uid="uid://c5vagevlhu250" path="res://Nature/grass_2.tscn" id="10_62njo"]
+[ext_resource type="PackedScene" uid="uid://c1bfpouwvcilb" path="res://Nature/grass_3.tscn" id="11_s4tt8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -172,5 +175,14 @@ autostart = true
 
 [node name="Sand_Trap" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.51313, 0.308358, 4.65216)
+
+[node name="grass1" parent="." instance=ExtResource("9_huojr")]
+transform = Transform3D(0.5, -1.74393e-16, 1.74393e-16, 1.74393e-16, 0.5, -1.74393e-16, -1.74393e-16, 1.74393e-16, 0.5, -27.6527, 0.735419, 12.7627)
+
+[node name="grass2" parent="." instance=ExtResource("10_62njo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.7807, 0.735419, 20.6263)
+
+[node name="grass3" parent="." instance=ExtResource("11_s4tt8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.691787, 0.735419, 19.0582)
 
 [connection signal="timeout" from="Golfer Manager/NewGolfer" to="Golfer Manager" method="_on_new_golfer_timeout"]
