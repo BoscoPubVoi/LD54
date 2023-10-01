@@ -15,3 +15,9 @@ func apply_new_force(direction, new_speed):
 func _on_body_entered(body:Node):
 	if body.has_method("BallInHole"):
 		body.BallInHole()
+	elif !TouchedGround:
+		TouchedGround = true
+	
+	if body.is_in_group("water"):
+		self.queue_free()
+		return

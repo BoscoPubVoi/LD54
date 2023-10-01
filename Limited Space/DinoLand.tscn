@@ -1,12 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
 [ext_resource type="Script" path="res://CameraFollow.gd" id="4_d2r8t"]
-[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="5_bpe82"]
-[ext_resource type="PackedScene" uid="uid://0e13tex7hvxm" path="res://player.tscn" id="7_rckfh"]
-[ext_resource type="PackedScene" uid="uid://cv4gaqnb6wtki" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
+[ext_resource type="PackedScene" path="res://Nature/golftree.tscn" id="5_bpe82"]
+[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="7_rckfh"]
+[ext_resource type="PackedScene" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
+[ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="8_j0xy2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,8 +25,8 @@ tonemap_exposure = 0.7
 glow_enabled = true
 adjustment_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2fyh4"]
-size = Vector3(500, 1, 500)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cfwu0"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4w8m"]
 albedo_color = Color(0, 0.592157, 0.890196, 1)
@@ -68,8 +69,7 @@ collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_2fyh4")
+shape = SubResource("ConcavePolygonShape3D_cfwu0")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
@@ -123,7 +123,8 @@ offset = Vector3(0, 19.83, 24.12)
 speed = 0.3
 target = NodePath("../Player")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("7_rckfh")]
+[node name="Player" parent="." instance=ExtResource("7_rckfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31, 0)
 
 [node name="Node" type="Node" parent="."]
 
@@ -153,3 +154,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7978, -1.90735e-06, -3.307
 
 [node name="Environment_Slow_Trap7" parent="." instance=ExtResource("8_a3e8r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0515, -4.76837e-07, -6.17481)
+
+[node name="WaterCollision" parent="." instance=ExtResource("8_j0xy2")]

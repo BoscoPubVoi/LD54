@@ -43,7 +43,11 @@ func _on_body_entered(body:Node):
 	elif !TouchedGround:
 		TouchedGround = true
 		Global.IncrementScore()
-
+	
+	if body.is_in_group("water"):
+		self.queue_free()
+		return
+		
 	explode()
 
 func slow():
