@@ -74,20 +74,20 @@ func bogey_calculator(number):
 		1:
 			bogeystring = "Single "
 		2:
-			bogeystring += "Double  "
+			bogeystring += "Double "
 		3:
 			bogeystring += "Triple "
 		4:
-			bogeystring += "Quadruple  "
+			bogeystring += "Quadruple "
 		5:
-			bogeystring += "Pentuple  "
+			bogeystring += "Pentuple "
 		6:
-			bogeystring += "Sextuple  "
+			bogeystring += "Sextuple "
 		7:
-			bogeystring += "Septuple  "
+			bogeystring += "Septuple "
 		8:
-			bogeystring += "Octuple  "
+			bogeystring += "Octuple "
 		9:
-			bogeystring += "Novuple  "
+			bogeystring += "Novuple "
 	bogeystring += "Bogey!"
 	return bogeystring
