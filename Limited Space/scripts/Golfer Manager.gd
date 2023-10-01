@@ -3,6 +3,7 @@ extends Node
 @onready var newgolfertimer = $NewGolfer
 
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var scene_root = get_tree().get_first_node_in_group("LevelRoot")
 
 var golfer_generic = preload("res://Balls/Golfers/generic_golfer.tscn")
 var golfer_scatter = preload("res://Balls/Golfers/scatter_golfer.tscn")
@@ -13,6 +14,7 @@ var distance_from_player = 25
 var current_golfer_array = []
 
 func _ready():
+	scene_root.LevelEnded.connect(_on_level_ended)
 	_on_new_golfer_timeout()
 
 func _on_new_golfer_timeout():
@@ -38,3 +40,6 @@ func get_golfer():
 		return golfer_scatter
 	else:
 		return golfer_tomato
+
+func _on_level_ended():
+	newgolfertimer.stop()
