@@ -54,19 +54,19 @@ func move(delta):
 	
 	if velocity.x > 0 && target_speed_x < 0:
 		# mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
-		stretch_mesh(0.7, 1.4, delta)
+		stretch_mesh(0.7, 1.2, delta)
 		acceleration = 3
 	elif velocity.x < 0 && target_speed_x > 0:
 		# mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
-		stretch_mesh(0.7, 1.4, delta)
+		stretch_mesh(0.7, 1.2, delta)
 		acceleration = 3
 	elif velocity.z > 0 && target_speed_z < 0:
 		# mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
-		stretch_mesh(1.4, 0.7, delta)
+		stretch_mesh(1.2, 0.7, delta)
 		acceleration = 3
 	elif velocity.z < 0 && target_speed_z > 0:
 		# mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
-		stretch_mesh(1.4, 0.7, delta)
+		stretch_mesh(1.2, 0.7, delta)
 		acceleration = 3
 	else:
 		stretch_mesh(1.0, 1.0, delta)
