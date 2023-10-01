@@ -44,6 +44,10 @@ func _physics_process(_delta):
 		$ShadowMesh.set_surface_override_material(0, mat)
 	else:
 		shadow.hide()
+	if linear_velocity.y < 0:
+		gravity_scale = 2
+	else:
+		gravity_scale = 1
 
 
 func _on_body_entered(body:Node):
