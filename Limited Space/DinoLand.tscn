@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=20 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
+[ext_resource type="Material" uid="uid://c1wyl6psthrj4" path="res://fairwaymaterial.tres" id="3_2saks"]
 [ext_resource type="Script" path="res://CameraFollow.gd" id="4_d2r8t"]
 [ext_resource type="PackedScene" path="res://Nature/golftree.tscn" id="5_bpe82"]
 [ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="7_rckfh"]
-[ext_resource type="PackedScene" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
+[ext_resource type="PackedScene" uid="uid://cv4gaqnb6wtki" path="res://Nature/environment_slow_trap.tscn" id="8_a3e8r"]
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="8_j0xy2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
@@ -89,6 +90,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("CylinderMesh_5bouf")
 skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = ExtResource("3_2saks")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]

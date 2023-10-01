@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://xtkowdwhykiw"]
+[gd_scene load_steps=11 format=3 uid="uid://xtkowdwhykiw"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_2ej0l"]
 [ext_resource type="Script" path="res://Level.gd" id="1_6qppj"]
-[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://old/old-player.tscn" id="2_1wxqo"]
+[ext_resource type="PackedScene" uid="uid://prjjcokxhp2n" path="res://player.tscn" id="2_1wxqo"]
+[ext_resource type="Material" uid="uid://c1wyl6psthrj4" path="res://fairwaymaterial.tres" id="2_nht5u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,6 +41,7 @@ environment = SubResource("Environment_pmrkg")
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+material_override = ExtResource("2_nht5u")
 mesh = SubResource("PlaneMesh_jx1k7")
 metadata/_edit_lock_ = true
 
