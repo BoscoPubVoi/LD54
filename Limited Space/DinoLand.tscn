@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
-[ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_u2qr8"]
 [ext_resource type="Material" path="res://fairwaymaterial.tres" id="3_2saks"]
 [ext_resource type="Script" path="res://CameraFollow.gd" id="4_d2r8t"]
 [ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="5_bpe82"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="7_rckfh"]
 [ext_resource type="PackedScene" path="res://Nature/water_collision.tscn" id="8_j0xy2"]
+[ext_resource type="Script" path="res://Golfer Manager.gd" id="9_xkola"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -99,24 +99,6 @@ transform = Transform3D(0.882811, 0, 0.346189, 0, 1, 0, -0.384389, 0, 0.795079, 
 mesh = SubResource("CylinderMesh_oepgq")
 metadata/_edit_lock_ = true
 
-[node name="Ball Spitter" parent="." instance=ExtResource("1_u2qr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3982, 4.50414, -29.2335)
-
-[node name="Ball Spitter2" parent="." instance=ExtResource("1_u2qr8")]
-transform = Transform3D(-0.989037, 0, -0.147671, 0, 1, 0, 0.147671, 0, -0.989037, -32.2064, 2.40116, -11.5608)
-
-[node name="Ball Spitter3" parent="." instance=ExtResource("1_u2qr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1959, 2.70191, -70.2182)
-
-[node name="Ball Spitter4" parent="." instance=ExtResource("1_u2qr8")]
-transform = Transform3D(-0.841426, 0, -0.540373, 0, 1, 0, 0.540373, 0, -0.841426, 26.8874, 3.10413, -17.0502)
-
-[node name="Ball Spitter5" parent="." instance=ExtResource("1_u2qr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0499, 0.443252, -31.2083)
-
-[node name="Ball Spitter6" parent="." instance=ExtResource("1_u2qr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4496, 0.443252, -9.77897)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.323395, -0.381334, 0, -0.762668, 0.64679, -0.5, 0.560136, 0.66049, 0, 0, 0)
 shadow_enabled = true
@@ -132,8 +114,6 @@ target = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource("7_rckfh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297199, -1.90735e-06, 2.75464)
 
-[node name="Node" type="Node" parent="."]
-
 [node name="golftree" parent="." instance=ExtResource("5_bpe82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7825, 4.76837e-07, -20.9093)
 
@@ -144,3 +124,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.434, 0, -20.8102)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8711, 4.76837e-07, -3.54049)
 
 [node name="WaterCollision" parent="." instance=ExtResource("8_j0xy2")]
+
+[node name="Golfer Manager" type="Node" parent="."]
+script = ExtResource("9_xkola")
+
+[node name="NewGolfer" type="Timer" parent="Golfer Manager"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Golfer Manager/NewGolfer" to="Golfer Manager" method="_on_new_golfer_timeout"]
