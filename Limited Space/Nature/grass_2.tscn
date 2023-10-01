@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5vagevlhu250"]
+[gd_scene load_steps=9 format=3 uid="uid://2k0upaes1sfl"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/grass_1.gdshader" id="1_h0ray"]
 [ext_resource type="Texture2D" uid="uid://cehid8teuk1ke" path="res://Nature/grass/Grass_2.png" id="1_micif"]
