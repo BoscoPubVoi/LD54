@@ -51,7 +51,7 @@ func bogey_calculator(number):
 			bogeystring += "Octocentuple "
 		9:
 			bogeystring += "Novacentuple "
-	match number / 10:
+	match (number % 100) / 10:
 		1:
 			bogeystring += "Decuple "
 		2:

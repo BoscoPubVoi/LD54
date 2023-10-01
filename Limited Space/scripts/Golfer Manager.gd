@@ -24,7 +24,7 @@ func _on_new_golfer_timeout():
 		
 	var newGolfer = get_golfer().instantiate()
 	add_child(newGolfer)
-	var direction = Vector2.UP.rotated(randf_range(0, 2*PI))* distance_from_player * randf_range(0.7, 1.4)
+	var direction = Vector2.UP.rotated(randf_range(-PI/2 + .1, PI/2 - .1))* distance_from_player * randf_range(0.7, 1.4)
 	var direction3 = Vector3(direction.x, .5, direction.y)
 	newGolfer.global_position = player.global_position + (direction3)
 	current_golfer_array.append(newGolfer)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
-[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
+[ext_resource type="Material" uid="uid://bniujwrqt6w8d" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
@@ -56,7 +56,7 @@ top_radius = 10.0
 height = 0.001
 cap_bottom = false
 
-[node name="World" type="Node3D" groups=["LevelRoot"]]
+[node name="World2" type="Node3D" groups=["LevelRoot"]]
 script = ExtResource("1_vnx84")
 NextLevel = "res://game.tscn"
 MainMenu = "res://ui/main_menu.tscn"
@@ -150,6 +150,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0340538, 30.31, 24.9172)
+current = true
 fov = 70.0
 script = ExtResource("4_ng8yq")
 offset = Vector3(0, 8, 20)
