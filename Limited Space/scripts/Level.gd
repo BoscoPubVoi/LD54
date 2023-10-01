@@ -17,11 +17,13 @@ func _on_player_hit():
 	var scoreScene = load(ScoreScene).instantiate() 
 	get_tree().current_scene.add_child(scoreScene)
 	scoreScene.MainMenuClicked.connect(ChangeToMainMenu)
-	scoreScene.NextClicked.connect(ChangeToNextLevel)
+	scoreScene.NextClicked.connect(TryLevelAgain)
 	LevelEnded.emit()
 	
 func ChangeToMainMenu():
 	get_tree().change_scene_to_file(MainMenu)
 
-func ChangeToNextLevel():
+func TryLevelAgain():
+	Global.PrepScore()
+	Global.CURRENT_LEVEL = 0
 	get_tree().change_scene_to_file(NextLevel)

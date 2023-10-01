@@ -17,8 +17,6 @@ func _on_main_menu_pressed():
 func _ready():
 	TotalScoreLabel.text = str(Global.GetTotalScore())
 #	ScoreLabel.text = str(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1], "x", " BOGEY")
-	ScoreLabel.text = Global.bogey_calculator(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1])
-	
-	if Global.CURRENT_LEVEL == Global.LEVEL_COUNT:
-		NextBtn.visible = false
+	ScoreLabel.text = "[center]" + Global.bogey_calculator(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1]) + "[/center]"
+
 	AudioManager.play("applause")

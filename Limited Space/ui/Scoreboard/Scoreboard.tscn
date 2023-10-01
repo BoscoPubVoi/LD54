@@ -12,7 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_6osyn")
 ScoreLabel = NodePath("Level Score")
 TotalScoreLabel = NodePath("Total score/Value")
-NextBtn = NodePath("buttons/Next Level")
+NextBtn = NodePath("buttons/Try again")
 
 [node name="Maybe fullscreen blur in future" type="ColorRect" parent="."]
 layout_mode = 1
@@ -38,6 +38,7 @@ theme_override_colors/font_outline_color = Color(0.913725, 0, 0.858824, 1)
 theme_override_constants/shadow_outline_size = 7
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
 text = "100x BOGEY"
 fit_content = true
 
@@ -104,13 +105,13 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
 text = "Main Menu"
 
-[node name="Next Level" type="Button" parent="buttons"]
+[node name="Try again" type="Button" parent="buttons"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
-text = "Next"
+text = "Try Again"
 
 [connection signal="pressed" from="buttons/Main Menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="buttons/Next Level" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="buttons/Try again" to="." method="_on_next_level_pressed"]
