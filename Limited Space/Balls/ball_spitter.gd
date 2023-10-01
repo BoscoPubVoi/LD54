@@ -35,8 +35,9 @@ func emit():
 	newBall.position.x -= 1.4
 	
 func _on_shot_timer_timeout():
-	$AnimationPlayer.play("swing")
-	$Shot_Timer.start(rate_of_fire * randf_range(0.8, 1.2))
+	if !Global.isDead:
+		$AnimationPlayer.play("swing")
+		$Shot_Timer.start(rate_of_fire * randf_range(0.8, 1.2))
 
 
 func _on_level_ended():
