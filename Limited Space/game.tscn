@@ -157,7 +157,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0340538, 30.31, 24.9172)
 current = true
 fov = 48.0
 script = ExtResource("4_ng8yq")
-offset = Vector3(0, 8, 20)
+offset = Vector3(0, 10.795, 20)
 speed = 2.0
 target = NodePath("../Player")
 
