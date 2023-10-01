@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://rus8cldgmcaw"]
+
+[ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_tc0gc"]
+[ext_resource type="PackedScene" uid="uid://swjlgixmxitm" path="res://Balls/scatter_ball.tscn" id="2_4mpsl"]
+
+[node name="Scatter Golfer" instance=ExtResource("1_tc0gc")]
+balltype = ExtResource("2_4mpsl")
+
+[node name="Golfer_Sprite" parent="." index="1"]
+modulate = Color(0.819608, 0.121569, 1, 1)

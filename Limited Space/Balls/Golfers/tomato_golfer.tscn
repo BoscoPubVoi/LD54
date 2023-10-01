@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dccn7i5fcujmj"]
+
+[ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_260tq"]
+[ext_resource type="PackedScene" uid="uid://book61cnkpv8j" path="res://Balls/tomato.tscn" id="2_i6lgg"]
+
+[node name="Tomato Golfer" instance=ExtResource("1_260tq")]
+rate_of_fire = 6
+balltype = ExtResource("2_i6lgg")
+
+[node name="Golfer_Sprite" parent="." index="1"]
+modulate = Color(1, 0, 0, 1)

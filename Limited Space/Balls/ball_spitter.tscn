@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=9 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
 [ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
+[ext_resource type="PackedScene" uid="uid://c58l0ckg4on82" path="res://Balls/basic_ball.tscn" id="2_pslxm"]
 [ext_resource type="AudioStream" uid="uid://cewfygsmqonrf" path="res://assets/sounds/golfballhit1.wav" id="3_bukh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oivri"]
@@ -36,6 +37,7 @@ animations = [{
 [node name="Ball Spitter" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14347, 0)
 script = ExtResource("1_5hgg1")
+balltype = ExtResource("2_pslxm")
 
 [node name="Shot_Timer" type="Timer" parent="."]
 one_shot = true
