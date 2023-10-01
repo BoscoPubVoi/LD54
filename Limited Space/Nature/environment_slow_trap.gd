@@ -7,6 +7,7 @@ func _process(delta):
 	for body in get_overlapping_bodies():
 		if body as RigidBody3D != null :
 			body.apply_central_force(-body.linear_velocity * 1)
+			body.apply_central_force(Vector3(0,ProjectSettings.get_setting("physics/3d/default_gravity"),0))
 			
 		body.slow()
 
