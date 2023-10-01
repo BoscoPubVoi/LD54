@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3wt3hya0icys"]
+[gd_scene load_steps=3 format=3 uid="uid://d3wt3hya0icys"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_p6bmp"]
+[ext_resource type="PackedScene" uid="uid://b4aadu4xxslab" path="res://Balls/seeker_ball.tscn" id="2_7daa8"]
 
 [node name="Generic Golfer" instance=ExtResource("1_p6bmp")]
 rate_of_fire = 2
+balltype = ExtResource("2_7daa8")

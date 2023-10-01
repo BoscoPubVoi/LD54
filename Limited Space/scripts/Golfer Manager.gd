@@ -8,6 +8,7 @@ extends Node
 var golfer_generic = preload("res://Balls/Golfers/generic_golfer.tscn")
 var golfer_scatter = preload("res://Balls/Golfers/scatter_golfer.tscn")
 var golfer_tomato = preload("res://Balls/Golfers/tomato_golfer.tscn")
+var golfer_seeker = preload("res://Balls/Golfers/seeker_golfer.tscn")
 
 var distance_from_player = 25
 
@@ -35,11 +36,14 @@ func get_golfer():
 	var code = randi() % (currentscore + 1)
 	
 	if code < 10:
-		return golfer_generic
-	if code < 50:
+		return golfer_seeker
+	if code < 40:
 		return golfer_scatter
-	else:
+	if code < 60:
 		return golfer_tomato
+	else:
+		return golfer_seeker
 
 func _on_level_ended():
 	newgolfertimer.stop()
+

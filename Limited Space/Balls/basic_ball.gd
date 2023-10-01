@@ -7,6 +7,7 @@ var TouchedGround : bool = false;
 
 @onready var shadowcaster = $ShadowCast
 @onready var shadow = $ShadowMesh
+@onready var mesh = $MeshInstance3D
 
 @onready var audioplayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
 

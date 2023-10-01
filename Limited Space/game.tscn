@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=18 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
-[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
+[ext_resource type="Material" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
-[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="6_1nkqg"]
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
 [ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
 
@@ -153,18 +152,6 @@ target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("5_e0upe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297199, -1.90735e-06, 2.75464)
-
-[node name="golftree" parent="." instance=ExtResource("6_1nkqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7825, 4.76837e-07, -20.9093)
-visible = false
-
-[node name="golftree2" parent="." instance=ExtResource("6_1nkqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.434, 0, -20.8102)
-visible = false
-
-[node name="golftree3" parent="." instance=ExtResource("6_1nkqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8711, 4.76837e-07, -3.54049)
-visible = false
 
 [node name="WaterCollision" parent="." instance=ExtResource("7_ny608")]
 
