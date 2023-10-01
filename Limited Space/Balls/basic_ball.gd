@@ -11,6 +11,7 @@ var TouchedGround : bool = false;
 @onready var audioplayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 func _ready():
+
 	var root = get_tree().get_first_node_in_group("LevelRoot")
 	
 	if root != null && root.has_signal("LevelEnded") : 
@@ -34,6 +35,13 @@ func _physics_process(_delta):
 	if shadowcaster.is_colliding():
 		shadow.show()
 		shadow.global_position = shadowcaster.get_collision_point()
+		var distance_to_ground = (global_position.y - shadowcaster.get_collision_point().y)
+		var dist = clamp(remap(distance_to_ground, 0, 10, 0.2, 0.8), 0.2, 0.8)
+		var alpha = lerp(255, 0, ease(dist, 0.2))
+		var mat = StandardMaterial3D.new()
+		mat.albedo_color = Color(0, 0, 0, alpha)
+		mat.transparency = true
+		$ShadowMesh.set_surface_override_material(0, mat)
 	else:
 		shadow.hide()
 
