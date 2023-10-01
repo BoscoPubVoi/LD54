@@ -114,6 +114,7 @@ func die():
 	hit.emit()
 
 func slow():
+	print("slow")
 	speed = 5
 
 func speedup():
