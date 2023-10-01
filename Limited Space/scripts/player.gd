@@ -14,6 +14,8 @@ const ANGULAR_ACCELERATION = 10
 var push_force = .5;
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var spring_velocity = 0
+var spring_velocity_scale_x = 0
+var spring_velocity_scale_z = 0
 var raycaster
 
 func _ready():
@@ -51,20 +53,25 @@ func move(delta):
 		acceleration = 2
 	
 	if velocity.x > 0 && target_speed_x < 0:
-		mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		# mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		stretch_mesh(0.7, 1.4, delta)
 		acceleration = 3
 	elif velocity.x < 0 && target_speed_x > 0:
-		mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		# mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		stretch_mesh(0.7, 1.4, delta)
 		acceleration = 3
 	elif velocity.z > 0 && target_speed_z < 0:
-		mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		# mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		stretch_mesh(1.4, 0.7, delta)
 		acceleration = 3
 	elif velocity.z < 0 && target_speed_z > 0:
-		mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		# mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		stretch_mesh(1.4, 0.7, delta)
 		acceleration = 3
 	else:
-		mesh.scale.x = lerp(mesh.scale.x, 1.0, .02)
-		mesh.scale.z = lerp(mesh.scale.z, 1.0, .02)
+		stretch_mesh(1.0, 1.0, delta)
+		# mesh.scale.x = lerp(mesh.scale.x, 1.0, .02)
+		# mesh.scale.z = lerp(mesh.scale.z, 1.0, .02)
 
 	velocity.x = lerp(velocity.x, target_speed_x, delta * acceleration); 
 	velocity.z = lerp(velocity.z, target_speed_z, delta * acceleration); 
@@ -72,6 +79,14 @@ func move(delta):
 	move_and_slide()
 	
 
+func stretch_mesh(x_scale, z_scale, delta):
+	var new_scale = Global.SpringStep(mesh.scale.z, spring_velocity_scale_z, z_scale, delta, 0.4, 5)
+	mesh.scale.z = new_scale[0]
+	spring_velocity_scale_z = new_scale[1]
+
+	new_scale = Global.SpringStep(mesh.scale.x, spring_velocity_scale_x, x_scale, delta, 0.4, 5)
+	mesh.scale.x = new_scale[0]
+	spring_velocity_scale_x = new_scale[1]
 
 func align_to_ground(delta):
 	var groundNormal = raycaster.get_collision_normal()
