@@ -32,6 +32,7 @@ func GetTotalScore():
 
 func bogey_calculator(number):
 	var bogeystring = ""
+	print("div 100: " + str(number / 100))
 	match number / 100:
 		1:
 			bogeystring += "Centuple "
@@ -51,6 +52,7 @@ func bogey_calculator(number):
 			bogeystring += "Octocentuple "
 		9:
 			bogeystring += "Novacentuple "
+	print("mod 100 div 10: " + str((number % 100) / 10))
 	match (number % 100) / 10:
 		1:
 			bogeystring += "Decuple "
@@ -70,9 +72,10 @@ func bogey_calculator(number):
 			bogeystring += "Octodecuple "
 		9:
 			bogeystring += "Novadecuple "
+	print("mod 10: " + str(number % 10))
 	match number % 10:
 		1:
-			bogeystring = "Single "
+			bogeystring += "Single "
 		2:
 			bogeystring += "Double "
 		3:
