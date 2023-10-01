@@ -3,14 +3,15 @@
 [ext_resource type="Script" path="res://Nature/explosion_particle.gd" id="1_m8405"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7wwg"]
-albedo_color = Color(1, 0.172549, 0.141176, 1)
+transparency = 1
+albedo_color = Color(1, 0.172549, 0.141176, 0.521569)
 
 [sub_resource type="SphereMesh" id="SphereMesh_yiytc"]
 material = SubResource("StandardMaterial3D_y7wwg")
 
 [sub_resource type="Curve" id="Curve_re1mw"]
 max_value = 13.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.208791, 8.89474), 40.6349, 40.6349, 0, 0, Vector2(0.362637, 13), -17.1224, -17.1224, 0, 0, Vector2(0.615385, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.214286, 6.84211), 40.6349, 40.6349, 0, 0, Vector2(0.379121, 9.57895), -17.1224, -17.1224, 0, 0, Vector2(0.615385, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_3hfue"]

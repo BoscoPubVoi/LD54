@@ -7,9 +7,9 @@ var ball_array = []
 
 func explode():
 	var newsplash = load("res://Nature/explosion_particle.tscn").instantiate()
+	newsplash.position = global_position
 	add_sibling(newsplash)
-	newsplash.position = position
-	self.queue_free()
+	
 	for i in ball_array.size():
 		var direction = ball_array[i].global_position - global_position
 		direction.normalized()
