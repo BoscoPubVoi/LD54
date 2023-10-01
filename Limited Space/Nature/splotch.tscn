@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mnw5aepui27n"]
+
+[ext_resource type="PackedScene" uid="uid://b22tpk1ji8j5f" path="res://assets/models/splotch.glb" id="1_516d5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgrjg"]
+albedo_color = Color(0.92549, 0, 0.113725, 1)
+
+[node name="splotch" instance=ExtResource("1_516d5")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pgrjg")

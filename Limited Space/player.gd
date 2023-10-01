@@ -36,7 +36,6 @@ func move(delta):
 
 	var input_dir = -Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * -Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
 	var target_speed_x = 0.0
 	var target_speed_z = 0.0
 
@@ -46,7 +45,6 @@ func move(delta):
 
 	velocity.x = lerp(velocity.x, target_speed_x, delta * acceleration); 
 	velocity.z = lerp(velocity.z, target_speed_z, delta * acceleration); 
-
 	move_and_slide()
 
 func BallInHole():
@@ -61,4 +59,7 @@ func die():
 	hit.emit()
 
 func slow():
-	print("Needs Implementation - player.gd::slow()::63")
+	speed = 5
+
+func speedup():
+	speed = 10
