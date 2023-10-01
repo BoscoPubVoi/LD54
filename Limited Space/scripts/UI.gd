@@ -24,6 +24,8 @@ func end():
 #	tween.parallel()
 	tween.tween_property(label, "theme_override_font_sizes/font_size", 100, 0.4)	
 	tween.parallel()
+	tween.tween_property(label, "theme_override_constants/outline_size", 50, 0.4)	
+	tween.parallel()
 	tween.tween_property(label, "position:y", 0, 0.4)
 	
 func updateScore(newscore):
