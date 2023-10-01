@@ -36,40 +36,40 @@ func bogey_calculator(number):
 		1:
 			bogeystring += "Centuple "
 		2:
-			bogeystring += "Double Centuple "
+			bogeystring += "Duocentuple "
 		3:
-			bogeystring += "Triple Centuple "
+			bogeystring += "Tricentuple "
 		4:
-			bogeystring += "Quadruple Centuple "
+			bogeystring += "Quadrocentuple "
 		5:
-			bogeystring += "Pentuple Centuple "
+			bogeystring += "Pentacentuple "
 		6:
-			bogeystring += "Sextuple Centuple "
+			bogeystring += "Sextacentuple "
 		7:
-			bogeystring += "Septuple Centuple "
+			bogeystring += "Septacentuple "
 		8:
-			bogeystring += "Octuple Centuple "
+			bogeystring += "Octocentuple "
 		9:
-			bogeystring += "Novuple Centuple "
+			bogeystring += "Novacentuple "
 	match number / 10:
 		1:
 			bogeystring += "Decuple "
 		2:
-			bogeystring += "Double Decuple "
+			bogeystring += "Duodecuple "
 		3:
-			bogeystring += "Triple Decuple "
+			bogeystring += "Tridecuple "
 		4:
-			bogeystring += "Quadruple Decuple "
+			bogeystring += "Quadecuple "
 		5:
-			bogeystring += "Pentuple Decuple "
+			bogeystring += "Pentadecuple "
 		6:
-			bogeystring += "Sextuple Decuple "
+			bogeystring += "Sexdecuple "
 		7:
-			bogeystring += "Septuple Decuple "
+			bogeystring += "Septdecuple "
 		8:
-			bogeystring += "Octuple Decuple "
+			bogeystring += "Octodecuple "
 		9:
-			bogeystring += "Novuple Decuple "
+			bogeystring += "Novadecuple "
 	match number % 10:
 		1:
 			bogeystring = "Single "
