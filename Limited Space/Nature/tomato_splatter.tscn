@@ -7,7 +7,7 @@
 height = 1.0
 radius = 1.90552
 
-[node name="Tomato Splatter" type="Area3D"]
+[node name="Tomato Splatter Area" type="Area3D"]
 collision_layer = 8
 collision_mask = 6
 script = ExtResource("1_qek17")

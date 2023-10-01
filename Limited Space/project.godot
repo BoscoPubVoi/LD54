@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://global.gd"
+AudioManager="*res://AudioManager.gd"
 
 [dotnet]
 
@@ -66,6 +67,7 @@ down={
 3d_physics/layer_4="traps"
 3d_physics/layer_5="little"
 3d_physics/layer_6="water"
+3d_physics/layer_7="trees/obstacles"
 
 [rendering]
 

@@ -20,3 +20,4 @@ func _ready():
 	
 	if Global.CURRENT_LEVEL == Global.LEVEL_COUNT:
 		NextBtn.visible = false
+	AudioManager.play("applause")

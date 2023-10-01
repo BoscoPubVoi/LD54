@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckr7ic7t3yjmy"]
+
+[ext_resource type="PackedScene" uid="uid://c062yqfprre53" path="res://Nature/tomato_splatter.tscn" id="1_t5b5d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgmtb"]
+size = Vector3(1, 0.273683, 2.69752)
+
+[node name="Splatter" type="RigidBody3D"]
+collision_layer = 0
+gravity_scale = 2.0
+
+[node name="Tomato Splatter Area" parent="." instance=ExtResource("1_t5b5d")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wgmtb")
