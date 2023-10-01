@@ -1,13 +1,13 @@
 [gd_scene load_steps=19 format=3 uid="uid://br0debc663st4"]
 
-[ext_resource type="Script" path="res://Level.gd" id="1_gncxt"]
-[ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="1_kfpd7"]
-[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://fairwaymaterial.tres" id="3_2saks"]
-[ext_resource type="Script" path="res://CameraFollow.gd" id="4_d2r8t"]
-[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="5_bpe82"]
-[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="7_rckfh"]
-[ext_resource type="PackedScene" path="res://Nature/water_collision.tscn" id="8_j0xy2"]
-[ext_resource type="Script" path="res://Golfer Manager.gd" id="9_xkola"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
+[ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
+[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
+[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
+[ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
+[ext_resource type="PackedScene" uid="uid://datuy2r1haam1" path="res://Nature/golftree.tscn" id="6_1nkqg"]
+[ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
+[ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -57,8 +57,8 @@ height = 0.001
 cap_bottom = false
 
 [node name="World" type="Node3D" groups=["LevelRoot"]]
-script = ExtResource("1_gncxt")
-NextLevel = "res://DinoLand.tscn"
+script = ExtResource("1_vnx84")
+NextLevel = "res://game.tscn"
 MainMenu = "res://ui/main_menu.tscn"
 ScoreScene = "res://ui/Scoreboard/Scoreboard.tscn"
 
@@ -84,14 +84,14 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12192, 4.24201, -22.0429)
 pixel_size = 0.1
 billboard = 2
-texture = ExtResource("1_kfpd7")
+texture = ExtResource("2_lrr0f")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("CylinderMesh_5bouf")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_2saks")
+surface_material_override/0 = ExtResource("3_lkics")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -106,27 +106,27 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(-1, 6.69697e-08, -5.61943e-08, 0, 0.642788, 0.766044, 8.74228e-08, 0.766044, -0.642788, 0.0340538, 30.31, 24.9172)
 fov = 50.0
-script = ExtResource("4_d2r8t")
+script = ExtResource("4_ng8yq")
 offset = Vector3(0, 19.83, 24.12)
 speed = 0.3
 target = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("7_rckfh")]
+[node name="Player" parent="." instance=ExtResource("5_e0upe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297199, -1.90735e-06, 2.75464)
 
-[node name="golftree" parent="." instance=ExtResource("5_bpe82")]
+[node name="golftree" parent="." instance=ExtResource("6_1nkqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7825, 4.76837e-07, -20.9093)
 
-[node name="golftree2" parent="." instance=ExtResource("5_bpe82")]
+[node name="golftree2" parent="." instance=ExtResource("6_1nkqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.434, 0, -20.8102)
 
-[node name="golftree3" parent="." instance=ExtResource("5_bpe82")]
+[node name="golftree3" parent="." instance=ExtResource("6_1nkqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8711, 4.76837e-07, -3.54049)
 
-[node name="WaterCollision" parent="." instance=ExtResource("8_j0xy2")]
+[node name="WaterCollision" parent="." instance=ExtResource("7_ny608")]
 
 [node name="Golfer Manager" type="Node" parent="."]
-script = ExtResource("9_xkola")
+script = ExtResource("8_50dkh")
 
 [node name="NewGolfer" type="Timer" parent="Golfer Manager"]
 wait_time = 3.0

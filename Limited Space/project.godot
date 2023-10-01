@@ -13,12 +13,12 @@ config_version=5
 config/name="Limited Space"
 run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/art/icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
-AudioManager="*res://AudioManager.gd"
+Global="*res://scripts/global.gd"
+AudioManager="*res://scripts/AudioManager.gd"
 
 [dotnet]
 

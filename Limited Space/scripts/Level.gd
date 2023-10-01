@@ -19,7 +19,7 @@ func _on_player_hit():
 	scoreScene.MainMenuClicked.connect(ChangeToMainMenu)
 	scoreScene.NextClicked.connect(ChangeToNextLevel)
 	LevelEnded.emit()
-
+	
 func ChangeToMainMenu():
 	get_tree().change_scene_to_file(MainMenu)
 

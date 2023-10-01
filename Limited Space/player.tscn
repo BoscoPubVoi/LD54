@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dnsxx58dsnroo"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_w460h"]
-[ext_resource type="Script" path="res://UI.gd" id="2_ksh0t"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_q5yvf"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="2_7187t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
 albedo_color = Color(0, 0, 0, 1)
@@ -40,7 +40,7 @@ radius = 1.5
 collision_layer = 2
 collision_mask = 97
 floor_stop_on_slope = false
-script = ExtResource("1_w460h")
+script = ExtResource("1_q5yvf")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30768, 0)
@@ -64,7 +64,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 76.0
-script = ExtResource("2_ksh0t")
+script = ExtResource("2_7187t")
 
 [node name="Label" type="Label" parent="UI"]
 layout_mode = 0
