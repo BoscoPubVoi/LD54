@@ -38,8 +38,8 @@ func _physics_process(_delta):
 		shadow.show()
 		shadow.global_position = shadowcaster.get_collision_point()
 		var distance_to_ground = (global_position.y - shadowcaster.get_collision_point().y)
-		var dist = clamp(remap(distance_to_ground, 0, 10, 0.2, 0.8), 0.2, 0.8)
-		var alpha = lerp(255, 0, ease(dist, 0.2))
+		var dist = clamp(remap(distance_to_ground, 0, 10, 0.2, 1.0), 0.2, 1.0)
+		var alpha = lerp(1.0, 0.1, ease(dist, 0.2))
 		var mat = StandardMaterial3D.new()
 		mat.albedo_color = Color(0, 0, 0, alpha)
 		mat.transparency = true
@@ -80,6 +80,12 @@ func speedup():
 func _on_level_ended():
 	self.call_deferred("set_contact_monitor", false);
 	self.continuous_cd = false;
+
+	#freeze
+	speed = 0
+	set_physics_process(false)
+	gravity_scale = 0
+	linear_velocity = Vector3.ZERO
 
 func explode():
 	down_grav += .3
