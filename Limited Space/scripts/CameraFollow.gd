@@ -18,7 +18,7 @@ func _physics_process(delta):
 	var d_x = absf(camPos.x - targetPos.x)
 	var d_y = absf(camPos.y - targetPos.y)
 
-	if d_x > 100 or d_y > 50:
-		global_position = lerp(global_position, target.global_position + offset, delta * (d_x/100 + d_y/50) * speed)
+	if d_x > 100 or d_y > 30:
+		global_position = lerp(global_position, target.global_position + offset, delta * (d_x/100 + d_y/30) * speed)
 	
 	look_at_from_position(global_position, global_position - offset, Vector3.UP)

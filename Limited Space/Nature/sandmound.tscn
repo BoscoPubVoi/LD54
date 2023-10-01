@@ -1,11 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://1ubauuii1ekx"]
+[gd_scene load_steps=3 format=3 uid="uid://djayy0giymo8g"]
 
 [ext_resource type="PackedScene" uid="uid://2xhvjj5x3ij" path="res://assets/models/sandmound.glb" id="1_vm3s4"]
-[ext_resource type="Texture2D" uid="uid://c58cxx646q1ut" path="res://assets/art/sandtexture.png" id="2_c7wcj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0afud"]
-albedo_color = Color(1, 0.854902, 0.32549, 1)
-albedo_texture = ExtResource("2_c7wcj")
+albedo_color = Color(0.741176, 0.619608, 0.4, 1)
+uv1_scale = Vector3(0.085, 0.085, 0.085)
 uv1_triplanar = true
 uv1_world_triplanar = true
 

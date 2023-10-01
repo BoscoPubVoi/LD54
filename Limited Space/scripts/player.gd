@@ -5,7 +5,7 @@ signal hit
 var IsAlive : bool = true
 
 @export var speed : float = 10
-@export var acceleration : float = 10
+@export var acceleration : float = 4
 
 const JUMP_VELOCITY = 4.5
 const ANGULAR_ACCELERATION = 10

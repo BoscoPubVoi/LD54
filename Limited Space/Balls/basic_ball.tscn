@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://djixa4vi2wean" path="res://assets/sounds/golf ball landing 1.wav" id="3_heh76"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pwfjr"]
-friction = 0.26
-bounce = 0.8
+friction = 0.32
+bounce = 0.35
 
 [sub_resource type="SphereMesh" id="SphereMesh_80ju2"]
 
