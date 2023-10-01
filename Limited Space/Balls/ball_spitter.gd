@@ -20,6 +20,7 @@ func _ready():
 		scene_root.LevelEnded.connect(_on_level_ended)
 	
 func emit():
+	audioplayer.play()
 	#try and work out a rough speed to shoot towards the player
 	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)
 	
@@ -34,13 +35,9 @@ func emit():
 	newBall.position.x -= 1.4
 	
 func _on_shot_timer_timeout():
-	golfer.play("default")
+	$AnimationPlayer.play("swing")
 	$Shot_Timer.start(rate_of_fire * randf_range(0.8, 1.2))
 
-func _on_golfer_sprite_frame_changed():
-	if golfer.frame == 1:
-		audioplayer.play()
-		emit()
 
 func _on_level_ended():
 	timer.stop()

@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnsxx58dsnroo"]
+[gd_scene load_steps=11 format=3 uid="uid://dnsxx58dsnroo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q5yvf"]
-[ext_resource type="Script" path="res://scripts/UI.gd" id="2_7187t"]
-[ext_resource type="FontFile" uid="uid://dmsm6iw3tred5" path="res://assets/fonts/Comicy.ttf" id="3_p2phb"]
+[ext_resource type="PackedScene" uid="uid://c6hx3owgggi8u" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
 albedo_color = Color(0, 0, 0, 1)
@@ -39,7 +38,7 @@ radius = 1.5
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-collision_mask = 353
+collision_mask = 97
 floor_stop_on_slope = false
 script = ExtResource("1_q5yvf")
 
@@ -62,42 +61,7 @@ mesh = SubResource("PrismMesh_l8vcc")
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_xtykm")
 
-[node name="UI" type="Control" parent="." groups=["UI"]]
-layout_mode = 3
-anchor_left = 0.5
-anchor_top = 0.081
-anchor_right = 0.5
-anchor_bottom = 0.081
-offset_left = -74.0
-offset_top = -23.488
-offset_right = 2.0
-offset_bottom = 17.512
-grow_horizontal = 2
-script = ExtResource("2_7187t")
-
-[node name="Node2D" type="Node2D" parent="UI"]
-position = Vector2(61, 40)
-
-[node name="Label" type="Label" parent="UI/Node2D"]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.488
-anchor_right = 0.5
-anchor_bottom = 0.488
-offset_left = -164.0
-offset_top = -48.0
-offset_right = 157.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_fonts/font = ExtResource("3_p2phb")
-theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="UI" parent="." instance=ExtResource("2_xx0ca")]
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 
