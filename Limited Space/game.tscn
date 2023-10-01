@@ -76,30 +76,6 @@ pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
-[node name="grass" type="Sprite3D" parent="Trees"]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 4.95224, 0.830812, -55.507)
-pixel_size = 0.1
-billboard = 2
-texture = ExtResource("3_tuitc")
-
-[node name="grass2" type="Sprite3D" parent="Trees"]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 26.1638, 0.830815, 3.54092)
-pixel_size = 0.1
-billboard = 2
-texture = ExtResource("4_xl1oq")
-
-[node name="grass3" type="Sprite3D" parent="Trees"]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -9.70793, 0.830813, -23.5902)
-pixel_size = 0.1
-billboard = 2
-texture = ExtResource("5_2cle0")
-
-[node name="grass4" type="Sprite3D" parent="Trees"]
-transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 31.9907, 0.830813, -24.4557)
-pixel_size = 0.1
-billboard = 2
-texture = ExtResource("5_2cle0")
-
 [node name="Tree3" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9496, 4.24201, -21.9737)
 visible = false
