@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dnsxx58dsnroo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q5yvf"]
-[ext_resource type="PackedScene" uid="uid://c6hx3owgggi8u" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
+[ext_resource type="PackedScene" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
 albedo_color = Color(0, 0, 0, 1)
@@ -11,6 +11,10 @@ material = SubResource("StandardMaterial3D_7rhvt")
 top_radius = 1.5
 bottom_radius = 1.5
 height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fs2np"]
+height = 0.7
+radius = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wst5l"]
 albedo_color = Color(0.729412, 0.729412, 0.729412, 1)
@@ -29,12 +33,8 @@ material = SubResource("StandardMaterial3D_do7fc")
 size = Vector3(0.125, 1, 0.5)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xtykm"]
-height = 0.511428
+height = 0.225158
 radius = 1.18516
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fs2np"]
-height = 0.7
-radius = 1.5
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
@@ -43,9 +43,18 @@ floor_stop_on_slope = false
 script = ExtResource("1_q5yvf")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.296749, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.370053, 0)
 mesh = SubResource("CylinderMesh_hoej1")
 skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298, 0)
+collision_layer = 0
+collision_mask = 20
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192449, 0)
+shape = SubResource("CylinderShape3D_fs2np")
 
 [node name="FlagPole" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.70231, 0)
@@ -65,12 +74,4 @@ shape = SubResource("CylinderShape3D_xtykm")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="."]
-collision_layer = 0
-collision_mask = 20
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192449, 0)
-shape = SubResource("CylinderShape3D_fs2np")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Mesh/Area3D" to="." method="_on_area_3d_body_entered"]
