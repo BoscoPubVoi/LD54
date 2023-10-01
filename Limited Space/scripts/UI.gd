@@ -13,7 +13,19 @@ func _ready():
 	particlearray.append($Node2D/CPUParticles2D5)
 	particlearray.append($Node2D/CPUParticles2D6)
 	particlearray.append($Node2D/CPUParticles2D7)
+	
+	var root = get_tree().get_first_node_in_group("LevelRoot")
+	root.LevelEnded.connect(end)
 
+func end():
+	var h = ProjectSettings.get_setting("display/window/size/viewport_height")
+	var tween := create_tween()
+#	tween.tween_property(label, "global_position:y", h/2, 0.4)
+#	tween.parallel()
+	tween.tween_property(label, "theme_override_font_sizes/font_size", 100, 0.4)	
+	tween.parallel()
+	tween.tween_property(label, "position:y", 0, 0.4)
+	
 func updateScore(newscore):
 	label.text = Global.boring_bogey_calculator(newscore)
 	scale *= 1.1
@@ -21,7 +33,6 @@ func updateScore(newscore):
 	var num_sparks = randi_range(1,particlearray.size())
 	for i in num_sparks:
 		particlearray.pick_random().restart()
-	
 	
 func _process(delta):
 	scale = lerp(scale, Vector2(1,1), .03)
