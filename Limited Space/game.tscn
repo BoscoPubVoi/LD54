@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
-[ext_resource type="Material" uid="uid://bniujwrqt6w8d" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
+[ext_resource type="Material" uid="uid://c5pv64p0w87cc" path="res://Nature/fairwaymaterial.tres" id="3_lkics"]
 [ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="4_ng8yq"]
 [ext_resource type="PackedScene" uid="uid://dnsxx58dsnroo" path="res://player.tscn" id="5_e0upe"]
 [ext_resource type="PackedScene" uid="uid://cauxgasqeng6o" path="res://Nature/water_collision.tscn" id="7_ny608"]
@@ -21,7 +21,6 @@ background_mode = 2
 sky = SubResource("Sky_honci")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.0
-ambient_light_energy = 1.83
 tonemap_mode = 2
 tonemap_exposure = 0.7
 adjustment_enabled = true
@@ -44,7 +43,7 @@ albedo_color = Color(0, 0.886275, 0.309804, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5bouf"]
 material = SubResource("StandardMaterial3D_3oy38")
-top_radius = 30.0
+top_radius = 75.545
 height = 0.001
 cap_bottom = false
 
@@ -70,42 +69,49 @@ environment = SubResource("Environment_pmrkg")
 
 [node name="Tree" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45592, 4.24201, -31.1827)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
 [node name="Tree3" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9496, 4.24201, -21.9737)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
 [node name="Tree4" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05038, 4.24201, -36.9737)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
 [node name="Tree5" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6646, 4.24201, -32.8633)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
 [node name="Tree6" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3354, 4.24201, -23.8633)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
 [node name="Tree7" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8262, 4.24201, -30.862)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
 
 [node name="Tree2" type="Sprite3D" parent="Trees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5962, 4.242, -28.9947)
+visible = false
 pixel_size = 0.1
 billboard = 2
 texture = ExtResource("2_lrr0f")
