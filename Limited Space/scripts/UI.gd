@@ -19,6 +19,8 @@ func _ready():
 
 func end():
 	var h = ProjectSettings.get_setting("display/window/size/viewport_height")
+	if Global.PLAYER_SCORE[0]:
+		label.text = "Hole in One!"
 	var tween := create_tween()
 #	tween.tween_property(label, "global_position:y", h/2, 0.4)
 #	tween.parallel()

@@ -21,8 +21,9 @@ func PrepScore():
 	isDead = false
 
 func IncrementScore():
-	PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
-	get_tree().get_first_node_in_group("UI").updateScore(PLAYER_SCORE[CURRENT_LEVEL - 1])
+	if !isDead:
+		PLAYER_SCORE[CURRENT_LEVEL - 1] += 1
+		get_tree().get_first_node_in_group("UI").updateScore(PLAYER_SCORE[CURRENT_LEVEL - 1])
 
 func GetTotalScore():
 	var score = 0
