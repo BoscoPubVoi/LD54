@@ -73,9 +73,15 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
+	print("sallow first")
 	swallow()
 
 
 func _on_camera_timer_timeout():
 	get_tree().get_first_node_in_group("camera").target = get_tree().get_first_node_in_group("player")
 	get_tree().get_first_node_in_group("camera").reset_offset_and_speed()
+
+
+func _on_area_3d_2_body_entered2(body):
+	print("sallow first")
+	swallow()

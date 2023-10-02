@@ -45,6 +45,9 @@ func _on_shot_timer_timeout():
 	if !Global.isDead:
 		$AnimationPlayer.play("swing_" + golfer_name)
 		$Shot_Timer.start(rate_of_fire * randf_range(0.8, 1.2))
+	if randi() % 10 == 0:
+		$Fore.pitch_scale = randf_range(0.7, 1.5)
+		$Fore.play()
 
 func _go_to_idle():
 	$AnimationPlayer.play("idle_" + golfer_name)
