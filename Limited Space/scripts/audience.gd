@@ -19,11 +19,6 @@ func _ready():
 	scale = Vector3( randf_range(0.9, 1.1), randf_range(0.9,1.1), 1 )
 	await get_tree().create_timer(randf_range(0, 1.0)).timeout
 	anim.play("idle")
-
-func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		print("asdasda")
-		throw_tomato()
 	
 func throw_tomato():
 	anim.play("tomato_throw")

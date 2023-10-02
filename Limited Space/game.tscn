@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=51 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -21,6 +21,7 @@
 [ext_resource type="FontFile" uid="uid://dmsm6iw3tred5" path="res://assets/fonts/Comicy.ttf" id="18_5osjb"]
 [ext_resource type="PackedScene" uid="uid://ckoml76si5584" path="res://audience_member.tscn" id="19_j34bq"]
 [ext_resource type="Script" path="res://scripts/Title.gd" id="19_ryomo"]
+[ext_resource type="Script" path="res://scripts/AudienceManager.gd" id="21_s30mm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1065,6 +1066,7 @@ vertical_alignment = 1
 script = ExtResource("19_ryomo")
 
 [node name="Audience" type="Node3D" parent="."]
+script = ExtResource("21_s30mm")
 
 [node name="AudienceMember" parent="Audience" instance=ExtResource("19_j34bq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55843, 0, -78.4752)
