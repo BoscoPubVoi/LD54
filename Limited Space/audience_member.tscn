@@ -25,14 +25,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("torso:scale")
+tracks/1/path = NodePath("torso/arm_l:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.183897, 0.186131, 0.714255)]
+"values": [Vector3(0, 0, -0.232286)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("torso/arm_l:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.88933, 1.67371, 0.000604509)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("torso/arm_l:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_aq03s"]
@@ -48,46 +72,71 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 3.63314, 0, 0.5, 1, 0, 3.2758, 0, 1,
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("torso:scale")
+tracks/1/path = NodePath("torso:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.183897, 0.186131, 0.714255), Vector3(0.183897, 0.186131, 0.714255)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("torso/arm_l:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.232286), Vector3(0, 0, -0.232286)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("torso/arm_l:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-5.88933, 1.67371, 0.000604509), Vector3(-5.88933, 1.67371, 0.000604509)]
 }
 
 [sub_resource type="Animation" id="Animation_rfak2"]
 resource_name = "tomato_throw"
+length = 0.3
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("torso/arm_l")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -4.99191, 9.25985, 0.000604509, 0.5, 1, -4.99496, 9.25795, 1.6244)
+tracks/0/keys = PackedFloat32Array(0, 1, -4.99191, 9.25985, 0.000604509, 0.3, 1, -4.99496, 9.25795, 1.6244)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("torso/arm_l")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.866026, -0.5, 0.5, 1, 0.0619668, 0.10124, -0.846885, 0.518361)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.866026, -0.5, 0.3, 1, 0.0619668, 0.10124, -0.846885, 0.518361)
 tracks/2/type = "rotation_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("torso")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, 90, 0, 1)
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, 90, 0, 1)
 tracks/3/type = "position_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("torso")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0, 3.63314, 0, 0.5, 1, 0, 3.63314, 0)
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 3.63314, 0, 0.3, 1, 0, 3.63314, 0)
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
@@ -95,10 +144,34 @@ tracks/4/path = NodePath("torso:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("torso/arm_l:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("torso/arm_l:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-4.99495, 9.25794, 0.00844048), Vector3(-4.99496, 9.25794, 1.6244)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bafdb"]
@@ -123,7 +196,7 @@ transform = Transform3D(0.183896, -0.000364969, 0.000343933, 0.000360561, 0.1861
 texture = ExtResource("5_5xnak")
 
 [node name="torso" type="Sprite3D" parent="."]
-transform = Transform3D(-8.03838e-09, 0, 0.714255, 0, 0.186131, 0, -0.183897, 0, -3.12211e-08, 0, 3.63314, 0)
+transform = Transform3D(-6.65705e-07, 0, 0.714255, 0, 0.186131, 0, -0.183897, 0, -2.5856e-06, 0, 3.56167, 0)
 texture = ExtResource("1_rkths")
 
 [node name="head" type="Sprite3D" parent="torso"]
@@ -131,7 +204,7 @@ transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-
 texture = ExtResource("2_rh0mg")
 
 [node name="arm_l" type="Sprite3D" parent="torso"]
-transform = Transform3D(-0.5, 0.866026, 0, -0.866026, -0.5, 0, 0, 0, 1, -4.99191, 9.25985, 0.000604509)
+transform = Transform3D(0.973143, 0.230203, 0, -0.230203, 0.973143, 0, 0, 0, 1, -5.88933, 1.67371, 0.000604509)
 texture = ExtResource("3_hxa3x")
 
 [node name="arm_r" type="Sprite3D" parent="torso"]

@@ -17,7 +17,7 @@ func _ready():
 	torso.modulate = color
 	legs.modulate = color
 	scale = Vector3( randf_range(0.9, 1.1), randf_range(0.9,1.1), 1 )
-	await get_tree().create_timer(randf_range(0, 1.0))
+	await get_tree().create_timer(randf_range(0, 1.0)).timeout
 	anim.play("idle")
 
 func _process(delta):
@@ -40,5 +40,5 @@ func throw_tomato():
 	newBall.position = position
 	newBall.position.x -= 1.4
 
-	await get_tree().create_timer(1.0)
+	await get_tree().create_timer(0.26).timeout
 	anim.play("idle")
