@@ -142,10 +142,7 @@ func _on_area_3d_body_entered(body):
 	if body.is_in_group("powerup"):
 		print("found powerup")
 		body.get_eaten()
-		$Vacuum.emitting = true
-		powered = true
-		$PowerupTimer.start()
-		set_collision_mask_value(3, false)
+		power_up()
 		return
 	if !powered && body.is_in_group("ball"):
 		body.disable_collisions()
@@ -167,3 +164,9 @@ func _on_powerup_timer_timeout():
 	powered = false
 	$Vacuum.emitting = false
 	set_collision_mask_value(3, true)
+
+func power_up():
+	$Vacuum.emitting = true
+	powered = true
+	$PowerupTimer.start()
+	set_collision_mask_value(3, false)
