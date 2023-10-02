@@ -149,6 +149,7 @@ func _on_area_3d_body_entered(body):
 		return
 	if !powered && body.is_in_group("ball"):
 		body.disable_collisions()
+		body.being_swallowed = true
 		BallInHole()
 
 func spawn_raycaster():
