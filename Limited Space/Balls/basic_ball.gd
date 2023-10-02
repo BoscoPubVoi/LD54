@@ -28,8 +28,6 @@ func _process(delta):
 		position.z = lerp(position.z, player.position.z, .05)
 		position.y -= .05
 	
-	if position.y < 10:
-		queue_free()
 
 func apply_new_force(direction, new_speed):
 	new_speed = new_speed * randf_range(.9, 1.1)
