@@ -38,7 +38,8 @@ func GetTotalScore():
 
 func fun_bogey_calculator(number):
 	var bogeystring = ""
-	match number / 100:
+	var funkeybogey = number - 5
+	match funkeybogey / 100:
 		1:
 			bogeystring += "Centuple "
 		2:
@@ -57,7 +58,7 @@ func fun_bogey_calculator(number):
 			bogeystring += "Octocentuple "
 		9:
 			bogeystring += "Novacentuple "
-	match (number % 100) / 10:
+	match (funkeybogey % 100) / 10:
 		1:
 			bogeystring += "Decuple "
 		2:
@@ -76,7 +77,7 @@ func fun_bogey_calculator(number):
 			bogeystring += "Octodecuple "
 		9:
 			bogeystring += "Novadecuple "
-	match number % 10:
+	match funkeybogey % 10:
 		1:
 			bogeystring += "Single "
 		2:
@@ -96,8 +97,33 @@ func fun_bogey_calculator(number):
 		9:
 			bogeystring += "Novuple "
 	bogeystring += "Bogey!"
-	if number == 1:
-		bogeystring = "Hole in One!"
+	match number:
+		1:
+			bogeystring = "Hole in One!"
+		2:
+			bogeystring = "Albatross!"
+		3:
+			bogeystring = "Eagle!"
+		4:
+			bogeystring = "Birdie!"
+		5:
+			bogeystring = "Par!"
+		6:
+			bogeystring = "Bogey!"
+		7:
+			bogeystring = "Double Bogey!"
+		8:
+			bogeystring = "Triple Bogey!"
+		9:
+			bogeystring = "Quadruple Bogey!"
+		10:
+			bogeystring = "Pentuple Bogey!"
+		11:
+			bogeystring = "Sextuple Bogey!"
+		12:
+			bogeystring = "Septuple Bogey!"
+		13:
+			bogeystring = "Octuple Bogey!"
 	return bogeystring
 
 func boring_bogey_calculator(number):
