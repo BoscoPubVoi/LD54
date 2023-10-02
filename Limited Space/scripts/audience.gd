@@ -33,8 +33,8 @@ func throw_tomato():
 	scene_root.add_child(newBall)
 	
 	var facing = transform.basis.z
-	var enemy_to_player = get_tree().get_first_node_in_group("player").position - global_transform.origin 
-	var newDir = Vector3(enemy_to_player.x, 0, enemy_to_player.z)
+	var enemy_to_player = get_tree().get_first_node_in_group("player").position
+	var newDir = Vector3(enemy_to_player.x, 0, enemy_to_player.z).normalized()
 	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)
 	newBall.apply_new_force(newDir, new_speed * .7)
 	newBall.position = position
