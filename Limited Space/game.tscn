@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=45 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://d32es4lnucncx" path="res://assets/art/Tee_off_unpressed.png" id="13_gj8v1"]
 [ext_resource type="Texture2D" uid="uid://8yhrx1qydbhy" path="res://assets/art/Tee_off_pressed.png" id="14_sronu"]
 [ext_resource type="PackedScene" uid="uid://br2qr28ywb1bb" path="res://Nature/cute_boat.tscn" id="15_2pi26"]
+[ext_resource type="FontFile" uid="uid://dmsm6iw3tred5" path="res://assets/fonts/Comicy.ttf" id="18_5osjb"]
+[ext_resource type="Script" path="res://scripts/Title.gd" id="19_ryomo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -985,6 +987,32 @@ texture = ExtResource("4_p6ibo")
 [node name="watersprite3" type="Sprite3D" parent="."]
 transform = Transform3D(0.698028, 0.605811, -2.8474e-08, 0, -4.06516e-08, -1, -0.599297, 0.705615, -3.3165e-08, 38.0173, 2.08165e-12, 43.1501)
 texture = ExtResource("4_p6ibo")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(576, 120)
+
+[node name="Label" type="Label" parent="Node2D"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.488
+anchor_right = 0.5
+anchor_bottom = 0.488
+offset_left = -164.0
+offset_top = -48.0
+offset_right = 157.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.717647, 0.74902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.192157, 0.431373, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("18_5osjb")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("19_ryomo")
 
 [connection signal="timeout" from="Golfer Manager/NewGolfer" to="Golfer Manager" method="_on_new_golfer_timeout"]
 [connection signal="timeout" from="ForeTimer" to="." method="_on_fore_timer_timeout"]
