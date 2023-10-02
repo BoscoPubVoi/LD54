@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b43eigd1oqfl0"]
+[gd_scene load_steps=6 format=3 uid="uid://b1ew4cba3e814"]
 
 [ext_resource type="Script" path="res://Balls/vacuum_powerup.gd" id="1_831s3"]
+[ext_resource type="PackedScene" uid="uid://cgy6vk7ns8imb" path="res://assets/models/arrows2.glb" id="2_1crih"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxnk"]
 albedo_color = Color(0.494118, 1, 1, 1)
@@ -16,7 +17,11 @@ collision_mask = 3
 script = ExtResource("1_831s3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_tvqlv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_uyh6o")
+
+[node name="arrows2" parent="." instance=ExtResource("2_1crih")]
+transform = Transform3D(-9.83506e-09, 0.3, 7.84771e-17, -0.225, -1.31134e-08, -7.8477e-17, -7.8477e-17, -1.04636e-16, 0.225, 2.08165e-12, 0.494807, 2.08165e-12)

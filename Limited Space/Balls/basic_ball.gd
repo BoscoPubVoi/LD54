@@ -101,7 +101,11 @@ func explode():
 	down_grav += .3
 	pass
 
-
+func reduce_bounce():
+	physics_material_override.bounce = 0
+	physics_material_override.friction = 1
+	linear_velocity.y *= 0.5
+	pass
 
 func disable_collisions():
 	$CollisionShape3D.queue_free()
