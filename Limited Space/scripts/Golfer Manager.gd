@@ -19,9 +19,13 @@ func _ready():
 	scene_root.LevelEnded.connect(_on_level_ended)
 	_on_new_golfer_timeout()
 
+var floor : StaticBody3D
+
 func _on_new_golfer_timeout():
-	if current_golfer_array.size() < Global.MAX_GOLFERS:
-		current_golfer_array.pop_front()
+	if current_golfer_array.size() >= Global.MAX_GOLFERS:
+		var oldest_golfer = current_golfer_array.pop_front()
+		oldest_golfer.queue_free()
+
 		
 	var newGolfer = get_golfer().instantiate()
 	add_child(newGolfer)
