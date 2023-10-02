@@ -9,8 +9,10 @@ var TouchedGround : bool = false;
 @onready var shadow = $ShadowMesh
 
 @onready var audioplayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var player = get_tree().get_first_node_in_group("player")
 
 var down_grav = 2
+var being_swallowed = false
 
 func _ready():
 
@@ -19,6 +21,11 @@ func _ready():
 	if root != null && root.has_signal("LevelEnded") : 
 		root.LevelEnded.connect(_on_level_ended)
 
+func _process(delta):
+	if being_swallowed:
+		position.x = lerp(position.x, player.position.x, .05)
+		position.z = lerp(position.z, player.position.z, .05)
+		position.y -= .05
 
 func apply_new_force(direction, new_speed):
 	new_speed = new_speed * randf_range(.9, 1.1)
@@ -56,6 +63,8 @@ func _on_body_entered(body:Node):
 #	print("uh oh")
 	if body.has_method("BallInHole"):
 		body.BallInHole()
+		being_swallowed = true
+		set_collision_layer_value(2, false)
 	elif !TouchedGround:
 		TouchedGround = true
 		audioplayer.play()
@@ -80,12 +89,12 @@ func speedup():
 func _on_level_ended():
 	self.call_deferred("set_contact_monitor", false);
 	self.continuous_cd = false;
-
-	#freeze
-	speed = 0
-	set_physics_process(false)
-	gravity_scale = 0
-	linear_velocity = Vector3.ZERO
+	if !being_swallowed:
+		#freeze
+		speed = 0
+		set_physics_process(false)
+		gravity_scale = 0
+		linear_velocity = Vector3.ZERO
 
 func explode():
 	down_grav += .3

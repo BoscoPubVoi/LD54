@@ -11,7 +11,7 @@ func explode():
 	queue_free()
 
 func _process(delta):
-	model.look_at(transform.origin + linear_velocity, Vector3.UP)
+	model.look_at(transform.origin + linear_velocity + Vector3.UP, Vector3.UP)
 
 func apply_new_force(direction, new_speed):
 	super.apply_new_force(direction, new_speed)

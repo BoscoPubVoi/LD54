@@ -14,6 +14,7 @@ func _ready():
 	player.hit.connect(_on_player_hit)
 	if Global.firstTime:
 		$TeeOff.show()
+		$TeeOff.grab_focus()
 		$"Golfer Manager/NewGolfer".stop()
 	else:
 		camera.target = player
