@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://book61cnkpv8j"]
+[gd_scene load_steps=11 format=3 uid="uid://book61cnkpv8j"]
 
 [ext_resource type="Script" path="res://Balls/tomato.gd" id="1_vrik0"]
-[ext_resource type="PackedScene" uid="uid://ct200lnos1ljn" path="res://Balls/tomato_model.tscn" id="2_puaai"]
+[ext_resource type="AudioStream" uid="uid://cani545os7x6r" path="res://assets/sounds/golfballland2.wav" id="2_aelht"]
+[ext_resource type="PackedScene" path="res://Balls/tomato_model.tscn" id="2_puaai"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="3_p5s4j"]
-[ext_resource type="AudioStream" uid="uid://o3sqsdl0u8v0" path="res://assets/sounds/splat 1.wav" id="4_dwpsk"]
+[ext_resource type="AudioStream" uid="uid://d321k2l4q0ipj" path="res://assets/sounds/golfballland3.wav" id="3_s8sal"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tpvvr"]
 
@@ -34,6 +35,7 @@ contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_vrik0")
 model = NodePath("tomato")
+land_sounds = Array[AudioStreamWAV]([ExtResource("2_aelht"), ExtResource("3_s8sal")])
 
 [node name="tomato" parent="." instance=ExtResource("2_puaai")]
 
@@ -61,7 +63,6 @@ scaleTexture = false
 startColor = Color(1, 1, 1, 0.396078)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_dwpsk")
 max_db = 0.0
 panning_strength = 2.0
 emission_angle_filter_attenuation_db = -6.0

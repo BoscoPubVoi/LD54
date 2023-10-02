@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cakv2jj02co51"]
+[gd_scene load_steps=6 format=3 uid="uid://cakv2jj02co51"]
 
 [ext_resource type="PackedScene" uid="uid://dyngbwnxwg8rd" path="res://Balls/ball_spitter.tscn" id="1_pmlyh"]
 [ext_resource type="Script" path="res://Balls/Golfers/first_golfer.gd" id="2_54e06"]
 [ext_resource type="Texture2D" uid="uid://cntlry5hk3a72" path="res://assets/art/Golfer_chan.png" id="3_uuk03"]
+[ext_resource type="AudioStream" uid="uid://dlcgb64ivq2km" path="res://assets/sounds/golfballhit1.wav" id="4_oxcd6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ihlhb"]
 
@@ -12,6 +13,9 @@ golfer_sprites = Array[CompressedTexture2D]([ExtResource("3_uuk03")])
 
 [node name="Shot_Timer" parent="." index="0"]
 autostart = false
+
+[node name="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("4_oxcd6")
 
 [node name="CameraTimer" type="Timer" parent="." index="7"]
 wait_time = 1.5

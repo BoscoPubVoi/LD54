@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://sxo74yxrvmjg"]
+[gd_scene load_steps=16 format=3 uid="uid://sxo74yxrvmjg"]
 
 [ext_resource type="Script" path="res://Balls/bomb_ball.gd" id="1_4yrrk"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_arf51"]
-[ext_resource type="AudioStream" uid="uid://o3sqsdl0u8v0" path="res://assets/sounds/splat 1.wav" id="3_b165k"]
+[ext_resource type="AudioStream" uid="uid://cani545os7x6r" path="res://assets/sounds/golfballland2.wav" id="2_c2qu1"]
+[ext_resource type="AudioStream" uid="uid://d321k2l4q0ipj" path="res://assets/sounds/golfballland3.wav" id="3_y0rla"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqful"]
 albedo_color = Color(0, 0, 0, 1)
@@ -58,6 +59,7 @@ max_contacts_reported = 1
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_4yrrk")
+land_sounds = Array[AudioStreamWAV]([ExtResource("2_c2qu1"), ExtResource("3_y0rla")])
 
 [node name="bomb" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669849, 0)
@@ -94,7 +96,6 @@ scaleTexture = false
 startColor = Color(1, 1, 1, 0.396078)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_b165k")
 max_db = 0.0
 panning_strength = 2.0
 emission_angle_filter_attenuation_db = -6.0

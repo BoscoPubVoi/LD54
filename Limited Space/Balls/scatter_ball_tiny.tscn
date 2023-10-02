@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsnj4rmacodpy"]
+[gd_scene load_steps=12 format=3 uid="uid://bsnj4rmacodpy"]
 
 [ext_resource type="Script" path="res://Balls/scatter_ball_tiny.gd" id="1_iyyw0"]
+[ext_resource type="AudioStream" uid="uid://cani545os7x6r" path="res://assets/sounds/golfballland2.wav" id="2_fg2fi"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_ya7u4"]
+[ext_resource type="AudioStream" uid="uid://d321k2l4q0ipj" path="res://assets/sounds/golfballland3.wav" id="3_nbldn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wpfnw"]
 friction = 0.09
@@ -43,6 +45,7 @@ max_contacts_reported = 1
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_iyyw0")
+land_sounds = Array[AudioStreamWAV]([ExtResource("2_fg2fi"), ExtResource("3_nbldn")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_xq873")

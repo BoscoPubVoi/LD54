@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://g0wplplt8aqd"
-path="res://.godot/imported/golf ball landing 4.wav-2b5c322c9dfa673bb82a14fe76e16868.sample"
+path="res://.godot/imported/old golf ball landing 4.wav-a2b36b19a00464e4821202136addc88e.sample"
 
 [deps]
 
-source_file="res://assets/sounds/golf ball landing 4.wav"
-dest_files=["res://.godot/imported/golf ball landing 4.wav-2b5c322c9dfa673bb82a14fe76e16868.sample"]
+source_file="res://old/old golf ball landing 4.wav"
+dest_files=["res://.godot/imported/old golf ball landing 4.wav-a2b36b19a00464e4821202136addc88e.sample"]
 
 [params]
 
