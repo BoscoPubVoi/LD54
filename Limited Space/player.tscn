@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dnsxx58dsnroo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q5yvf"]
-[ext_resource type="PackedScene" uid="uid://dw6fud148hewa" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
+[ext_resource type="PackedScene" uid="uid://c6hx3owgggi8u" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
 [ext_resource type="Texture2D" uid="uid://dqmhopnwfrw51" path="res://assets/art/Hole3.png" id="3_r88u3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rhvt"]
@@ -94,12 +94,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pbqq5")
 
 [node name="Vacuum" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0969651, 0)
-emitting = false
-amount = 18
+cast_shadow = 0
+amount = 25
 randomness = 0.34
 mesh = SubResource("CapsuleMesh_6og2p")
 emission_shape = 1
-emission_sphere_radius = 1.9
+emission_sphere_radius = 2.3
 direction = Vector3(0, 1, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
