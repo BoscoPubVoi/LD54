@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk0wabfoepk10"]
+[gd_scene load_steps=9 format=3 uid="uid://2k0upaes1sfl"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/grass_1.gdshader" id="1_h0ray"]
 [ext_resource type="Texture2D" uid="uid://cehid8teuk1ke" path="res://Nature/grass/Grass_2.png" id="1_micif"]
@@ -57,6 +57,7 @@ _data = {
 [node name="grass2" type="Sprite3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0845692, 0.893174, -0.112747)
 material_override = SubResource("ShaderMaterial_djeav")
+render_priority = 2
 texture = ExtResource("1_micif")
 script = ExtResource("3_j7pjl")
 
