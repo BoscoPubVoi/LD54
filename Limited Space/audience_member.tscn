@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckoml76si5584"]
+
+[ext_resource type="Script" path="res://scripts/audience.gd" id="1_kr2pn"]
+[ext_resource type="Texture2D" uid="uid://ci6n48ulw2mkv" path="res://assets/art/audience/torso.png" id="1_rkths"]
+[ext_resource type="Texture2D" uid="uid://bbgjttwpqvs2" path="res://assets/art/audience/head.png" id="2_rh0mg"]
+[ext_resource type="Texture2D" uid="uid://b3cg2ms43bfl5" path="res://assets/art/audience/arm_left.png" id="3_hxa3x"]
+[ext_resource type="Texture2D" uid="uid://c5ybvpk34eawj" path="res://assets/art/audience/arm_right.png" id="4_lqet7"]
+[ext_resource type="Texture2D" uid="uid://cdfk6q5yek1ht" path="res://assets/art/audience/legs.png" id="5_5xnak"]
+
+[sub_resource type="Animation" id="Animation_aq03s"]
+resource_name = "test"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bafdb"]
+_data = {
+"test": SubResource("Animation_aq03s")
+}
+
+[node name="AudienceMember" type="Node3D"]
+script = ExtResource("1_kr2pn")
+colors = Array[Color]([Color(0.741176, 0.396078, 0.760784, 1), Color(0.396078, 0.588235, 0.760784, 1), Color(0.396078, 0.760784, 0.454902, 1), Color(0.760784, 0.670588, 0.396078, 1), Color(0.760784, 0.396078, 0.396078, 1)])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bafdb")
+}
+
+[node name="torso" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform3D(0.999998, -0.00196081, 0.000481527, 0.00196067, 0.999998, 0.000305838, -0.000482126, -0.000304893, 1, 0, 19.1877, 0)
+texture = ExtResource("1_rkths")
+
+[node name="head" type="Sprite3D" parent="AnimationPlayer/torso"]
+transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-11, 0, 0, 1, 0.66258, 11.2295, 9.31323e-10)
+texture = ExtResource("2_rh0mg")
+
+[node name="arm_l" type="Sprite3D" parent="AnimationPlayer/torso"]
+transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-11, 0, 0, 1, -4.82072, 1.38408, 1.39698e-09)
+texture = ExtResource("3_hxa3x")
+
+[node name="arm_r" type="Sprite3D" parent="AnimationPlayer/torso"]
+transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-11, 0, 0, 1, 7.3101, 2.38532, -0.00160599)
+texture = ExtResource("4_lqet7")
+
+[node name="legs" type="Sprite3D" parent="AnimationPlayer/torso"]
+transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-11, 0, 0, 1, 1.07847, -12.8858, 0)
+texture = ExtResource("5_5xnak")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.0167, 43.1437)
