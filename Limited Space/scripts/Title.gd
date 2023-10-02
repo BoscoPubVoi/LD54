@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	scale = lerp(scale, Vector2(scaletarget, scaletarget), .02)
 	get_parent().rotation = lerp(get_parent().rotation, rotationtarget, .02)
 	if  abs(rotationtarget - get_parent().rotation) < 0.001:

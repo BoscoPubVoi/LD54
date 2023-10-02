@@ -20,8 +20,6 @@ func explode():
 	
 	queue_free()
 
-func _process(delta):
-	pass
 
 func _on_explosion_area_body_entered(body):
 	if body.is_in_group("ball"):

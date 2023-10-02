@@ -8,7 +8,7 @@ func _on_timer_timeout():
 	$AnimationPlayer.play("Get_ready")
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	apply_impulse((get_tree().get_first_node_in_group("player").global_position - global_position).normalized() * 3)
 
 

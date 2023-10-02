@@ -22,3 +22,8 @@ func _ready():
 	ScoreLabel.text = "[center]" + Global.fun_bogey_calculator(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1]) + "[/center]"
 	$"buttons/Try again".grab_focus()
 	AudioManager.play_music("applause")
+	$"Fancy Bogey".text = Global.fun_bogey_calculator(randi_range(11, 999))
+	
+	if Global.hiscore < Global.PLAYER_SCORE[0]:
+		Global.hiscore = Global.PLAYER_SCORE[0]
+		$"Hi Score".text = "High Score: " + str(Global.PLAYER_SCORE[0])
