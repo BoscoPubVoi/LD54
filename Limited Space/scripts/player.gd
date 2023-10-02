@@ -129,6 +129,7 @@ func _on_area_3d_body_entered(body):
 		$Vacuum.emitting = true
 		powered = true
 		$PowerupTimer.start()
+		set_collision_mask_value(3, false)
 		return
 	if !powered:
 		body.disable_collisions()
@@ -146,3 +147,4 @@ func spawn_raycaster():
 func _on_powerup_timer_timeout():
 	powered = false
 	$Vacuum.emitting = false
+	set_collision_mask_value(3, true)

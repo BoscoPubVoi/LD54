@@ -93,21 +93,21 @@ mesh = SubResource("QuadMesh_rfetk")
 surface_material_override/0 = SubResource("StandardMaterial3D_pbqq5")
 
 [node name="Vacuum" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02982, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0969651, 0)
 emitting = false
 amount = 16
-randomness = 0.28
+randomness = 0.34
 mesh = SubResource("CapsuleMesh_6og2p")
 emission_shape = 1
 emission_sphere_radius = 1.5
-direction = Vector3(0, -1, 0)
+direction = Vector3(0, 1, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
 initial_velocity_min = 4.0
 initial_velocity_max = 4.0
 
 [node name="PowerupTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 
 [connection signal="body_entered" from="Mesh/Area3D" to="." method="_on_area_3d_body_entered"]
