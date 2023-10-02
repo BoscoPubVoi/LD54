@@ -108,7 +108,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_rfak2"]
 resource_name = "tomato_throw"
-length = 0.3
+length = 0.4
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -122,14 +122,14 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("torso/arm_l")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.866026, -0.5, 0.3, 1, 0.0619668, 0.10124, -0.846885, 0.518361)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.866026, -0.5, 0.3, 1, 0.0619668, 0.10124, -0.846885, 0.518361, 0.4, 1, 0, 0, -0.866, 0.5)
 tracks/2/type = "rotation_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("torso")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, 90, 0, 1)
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, 1, 0, 0.011, 0.4, 1, 0, 0, 0, 1)
 tracks/3/type = "position_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
@@ -196,7 +196,7 @@ transform = Transform3D(0.183896, -0.000364969, 0.000343933, 0.000360561, 0.1861
 texture = ExtResource("5_5xnak")
 
 [node name="torso" type="Sprite3D" parent="."]
-transform = Transform3D(-6.65705e-07, 0, 0.714255, 0, 0.186131, 0, -0.183897, 0, -2.5856e-06, 0, 3.56167, 0)
+transform = Transform3D(-6.65705e-07, 0, 0.714255, 0, 0.186131, 0, -0.183897, 0, -2.5856e-06, 0, 3.63314, 0)
 texture = ExtResource("1_rkths")
 
 [node name="head" type="Sprite3D" parent="torso"]
