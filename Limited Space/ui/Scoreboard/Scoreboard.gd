@@ -20,5 +20,5 @@ func _ready():
 	TotalScoreLabel.text = str(Global.GetTotalScore())
 #	ScoreLabel.text = str(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1], "x", " BOGEY")
 	ScoreLabel.text = "[center]" + Global.fun_bogey_calculator(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1]) + "[/center]"
-
+	$"buttons/Try again".grab_focus()
 	AudioManager.play_music("applause")
