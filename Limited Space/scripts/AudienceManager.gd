@@ -17,6 +17,6 @@ func _process(delta):
 	var score = Global.GetTotalScore();
 	if score == oldScore:
 		return
-	if score % 10 == 0:
+	if score % 8 == 0:
 		throw_tomato()
 	oldScore = score
