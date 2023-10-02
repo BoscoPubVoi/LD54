@@ -33,6 +33,7 @@ func end():
 func updateScore(newscore):
 	label.text = Global.boring_bogey_calculator(newscore)
 	scale *= 1.1
+	scale = clamp(scale, Vector2(1,1), Vector2(12,12))
 	labelparent.rotate(randf_range(-.1, .1))
 	var num_sparks = randi_range(1,particlearray.size())
 	for i in num_sparks:
