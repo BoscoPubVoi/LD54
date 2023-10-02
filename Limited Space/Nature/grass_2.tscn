@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2k0upaes1sfl"]
+[gd_scene load_steps=9 format=3 uid="uid://bk0wabfoepk10"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/grass_1.gdshader" id="1_h0ray"]
 [ext_resource type="Texture2D" uid="uid://cehid8teuk1ke" path="res://Nature/grass/Grass_2.png" id="1_micif"]
@@ -15,22 +15,38 @@ height = 7.34814
 
 [sub_resource type="Animation" id="Animation_n0oue"]
 length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5)
 
 [sub_resource type="Animation" id="Animation_1a7j6"]
 resource_name = "rustle"
 length = 0.4
-tracks/0/type = "value"
+tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0.174, 0.985, 0.2, 1, 0, 0, 0, 1, 0.3, 1, 0, 0, -0.174, 0.985, 0.4, 1, 0, 0, 0, 1)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, 0.1, 1, 0.4, 0.6, 0.5, 0.2, 1, 0.5, 0.5, 0.5, 0.3, 1, 0.4, 0.6, 0.5, 0.4, 1, 0.5, 0.5, 0.5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4v5j8"]
 _data = {
@@ -56,3 +72,5 @@ shape = SubResource("CapsuleShape3D_l74c3")
 libraries = {
 "": SubResource("AnimationLibrary_4v5j8")
 }
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

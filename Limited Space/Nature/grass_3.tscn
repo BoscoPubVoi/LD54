@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://di1owwkkgymqg"]
+[gd_scene load_steps=9 format=3 uid="uid://c3vw585yiqvds"]
 
 [ext_resource type="Texture2D" uid="uid://1vax5dyq0egx" path="res://Nature/grass/Grass_3.png" id="1_3tpg4"]
 [ext_resource type="Shader" path="res://scripts/shaders/grass_1.gdshader" id="1_p1bfw"]
@@ -15,22 +15,24 @@ height = 7.34814
 
 [sub_resource type="Animation" id="Animation_n0oue"]
 length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5)
 
 [sub_resource type="Animation" id="Animation_1a7j6"]
 resource_name = "rustle"
 length = 0.4
-tracks/0/type = "value"
+tracks/0/type = "scale_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
+tracks/0/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, 0.1, 1, 0.35, 0.65, 0.5, 0.2, 1, 0.5, 0.5, 0.5, 0.3, 1, 0.65, 0.35, 0.5, 0.4, 1, 0.5, 0.5, 0.5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4v5j8"]
 _data = {
@@ -56,3 +58,5 @@ shape = SubResource("CapsuleShape3D_pjbx6")
 libraries = {
 "": SubResource("AnimationLibrary_4v5j8")
 }
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
