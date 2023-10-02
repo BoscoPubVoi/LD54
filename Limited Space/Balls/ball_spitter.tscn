@@ -314,6 +314,8 @@ sprite_frames = SubResource("SpriteFrames_j4tlh")
 frame = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -4.0
+max_db = -4.0
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
