@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=26 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
 [ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
@@ -284,18 +284,30 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0.3, 0.3, 0.3, 0.4, 1, 0.25, 0.25, 0.3, 0.6, 1, 0.3, 0.32, 0.3, 1, 1, 0.3, 0.3, 0.3)
 
+[sub_resource type="Animation" id="Animation_qcyjd"]
+resource_name = "right_round"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.009, 0, -1, 0.5, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_snqjj"]
 _data = {
 "idle_Golfer_chan": SubResource("Animation_ikgji"),
 "idle_Golfer_kun": SubResource("Animation_4gbl7"),
 "idle_Golfer_san": SubResource("Animation_uh0vb"),
+"right_round": SubResource("Animation_qcyjd"),
 "swing_Golfer_chan": SubResource("Animation_w2hx2"),
 "swing_Golfer_kun": SubResource("Animation_eycki"),
 "swing_Golfer_san": SubResource("Animation_3hv07")
 }
 
 [node name="Ball Spitter" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14347, 0)
+transform = Transform3D(0.999838, 0, -0.0179985, 0, 1, 0, 0.0179985, 0, 0.999838, 0, 0.14347, 0)
 script = ExtResource("1_5hgg1")
 balltype = ExtResource("2_pslxm")
 golfer_sprites = Array[CompressedTexture2D]([ExtResource("5_2l1si"), ExtResource("4_dq6jx"), ExtResource("5_oufw6")])
@@ -314,8 +326,6 @@ sprite_frames = SubResource("SpriteFrames_j4tlh")
 frame = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-volume_db = -4.0
-max_db = -4.0
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
