@@ -46,7 +46,7 @@ func emit():
 	newBall.position.x -= 1.4
 	
 func _on_shot_timer_timeout():
-	if !Global.isDead:
+	if !Global.isDead && !being_swallowed:
 		$AnimationPlayer.play("swing_" + golfer_name)
 		$Shot_Timer.start(rate_of_fire * randf_range(0.8, 1.2))
 	if randi() % 40 == 0 && !Global.isDead:
@@ -63,6 +63,7 @@ func _on_level_ended():
 
 func swallow():
 	being_swallowed = true
+	$AnimationPlayer.pause()
 	timer.stop()
 
 func _process(delta):
