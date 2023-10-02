@@ -3,7 +3,8 @@ extends Node3D
 var limit_left = -7
 var limit_right = 7
 
-var speed = -.02
+var speed = .03
+var direction = 1
 
 func _ready():
 	$AnimationPlayer.play("bob")

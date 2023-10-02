@@ -9,6 +9,7 @@ extends Node3D
 	$torso/arm_l, 
 	$torso/arm_r]
 @onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready():
 	var torso = sprites[0]
@@ -27,11 +28,10 @@ func throw_tomato():
 	var newBall = tomato.instantiate()
 	scene_root.add_child(newBall)
 	
-	var facing = transform.basis.z
-	var enemy_to_player = get_tree().get_first_node_in_group("player").position
-	var newDir = Vector3(enemy_to_player.x, 0, enemy_to_player.z).normalized()
-	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)
-	newBall.apply_new_force(newDir, new_speed * .7)
+	var direction = player.position - position 
+	direction.y = 10
+	direction = direction.normalized() * position.distance_to(player.position)/randf_range(17.0, 20.0)
+	newBall.apply_impulse(direction)
 	newBall.position = position
 	newBall.position.x -= 1.4
 	newBall.position.y += 4.5
