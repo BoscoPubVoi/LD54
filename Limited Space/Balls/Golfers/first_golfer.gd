@@ -83,5 +83,5 @@ func _on_camera_timer_timeout():
 
 
 func _on_area_3d_2_body_entered2(body):
-	print("sallow first")
+	body.power_up()
 	swallow()
