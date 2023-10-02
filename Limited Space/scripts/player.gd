@@ -127,7 +127,6 @@ func speedup():
 
 
 func _on_area_3d_body_entered(body):
-	print("found somethin")
 	if body.is_in_group("powerup"):
 		print("found powerup")
 		body.get_eaten()

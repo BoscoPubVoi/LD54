@@ -53,3 +53,10 @@ func _on_tee_off_pressed():
 func _on_timer_timeout():
 	$"Golfer Manager/First Golfer"._on_shot_timer_timeout()
 	$"Golfer Manager/NewGolfer".start()
+	$ForeTimer.start()
+
+
+func _on_fore_timer_timeout():
+	$ForeTimer.start(randi_range(8,15))
+	AudioManager.say_fore()
+	print("fore!")

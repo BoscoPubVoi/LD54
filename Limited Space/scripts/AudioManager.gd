@@ -12,7 +12,10 @@ var audio_files = \
 	"bounce3" : ["res://assets/sounds/golf ball landing 3.wav", "SFX", 0],
 	"bounce4" : ["res://assets/sounds/golf ball landing 4.wav", "SFX", 0],
 	"hit1" : ["res://assets/sounds/golfballhit1.wav", "SFX", 0],
-	"hit2" : ["res://assets/sounds/golfballhit2.wav", "SFX", 0]
+	"hit2" : ["res://assets/sounds/golfballhit2.wav", "SFX", 0],
+	"fore1" : ["res://assets/sounds/fore1.wav", "SFX", 0],
+	"fore2" : ["res://assets/sounds/fore2.wav", "SFX", 0],
+	"fore3" : ["res://assets/sounds/fore3.wav", "SFX", 0]
 	
 
 }
@@ -33,6 +36,7 @@ var current_music_name = ""
 
 var ballbouncesounds = ["bounce1", "bounce2", "bounce3", "bounce4"]
 var ballhitsounds = ["hit1", "hit2"]
+var foresounds = ["fore1", "fore2", "fore3"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -143,7 +147,10 @@ func _on_music_fade_finished():
 
 
 func ball_bounce():
-	play(ballbouncesounds.pick_random(), -3, randf_range(.8, 1.2))
+	play(ballbouncesounds.pick_random(), -5, randf_range(.8, 1.2))
 
 func ball_hit():
-	play(ballhitsounds.pick_random(), -3, randf_range(.8, 1.2))
+	play(ballhitsounds.pick_random(), -5, randf_range(.8, 1.2))
+
+func say_fore():
+	play(foresounds.pick_random(), -5, randf_range(.8, 1.2))

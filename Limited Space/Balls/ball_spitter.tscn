@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=23 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
 [ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ck8jl7bcpicur" path="res://assets/art/Golfer_kun.png" id="4_dq6jx"]
 [ext_resource type="Texture2D" uid="uid://cntlry5hk3a72" path="res://assets/art/Golfer_chan.png" id="5_2l1si"]
 [ext_resource type="Texture2D" uid="uid://bj1hkobinql10" path="res://assets/art/Golfer_san.png" id="5_oufw6"]
+[ext_resource type="AudioStream" uid="uid://doehg2jxjaj4w" path="res://assets/sounds/fore1.wav" id="8_gqhmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oivri"]
 atlas = ExtResource("2_e5nxh")
@@ -50,50 +51,6 @@ bottom_radius = 1.7
 height = 0.01
 cap_bottom = false
 
-[sub_resource type="Animation" id="Animation_w2hx2"]
-resource_name = "swing_Golfer_chan"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.5, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [1, 0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.5, 0.6),
-"transitions": PackedFloat32Array(1.10957, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.74533, 0), Vector3(0, 3.14159, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 1),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"emit"
-}, {
-"args": [],
-"method": &"_go_to_idle"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_ikgji"]
 resource_name = "idle_Golfer_chan"
 length = 0.001
@@ -120,51 +77,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_eycki"]
-resource_name = "swing_Golfer_kun"
-length = 1.5795
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
-"transitions": PackedFloat32Array(1.10957, 1, 2.21914),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.788889, 0), Vector3(0, 0.610865, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.8, 1.4),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"emit"
-}, {
-"args": [],
-"method": &"_go_to_idle"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_4gbl7"]
@@ -229,6 +141,95 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0, 1, 0.3, 0.3, 0.3)
+
+[sub_resource type="Animation" id="Animation_w2hx2"]
+resource_name = "swing_Golfer_chan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1.10957, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.74533, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"emit"
+}, {
+"args": [],
+"method": &"_go_to_idle"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_eycki"]
+resource_name = "swing_Golfer_kun"
+length = 1.5795
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1.10957, 1, 2.21914),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.788889, 0), Vector3(0, 0.610865, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"emit"
+}, {
+"args": [],
+"method": &"_go_to_idle"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_3hv07"]
 resource_name = "swing_Golfer_san"
@@ -334,6 +335,9 @@ root_node = NodePath("../Golfer_Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_snqjj")
 }
+
+[node name="Fore" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_gqhmn")
 
 [connection signal="timeout" from="Shot_Timer" to="." method="_on_shot_timer_timeout"]
 [connection signal="frame_changed" from="Golfer_Sprite(obsolete?)" to="." method="_on_golfer_sprite_frame_changed"]
