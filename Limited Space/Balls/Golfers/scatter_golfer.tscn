@@ -6,5 +6,5 @@
 [node name="Scatter Golfer" instance=ExtResource("1_tc0gc")]
 balltype = ExtResource("2_4mpsl")
 
-[node name="Golfer_Sprite" parent="." index="1"]
-modulate = Color(0.819608, 0.121569, 1, 1)
+[node name="Golfer_Sprite" parent="." index="5"]
+modulate = Color(1, 0.623529, 0.588235, 1)
