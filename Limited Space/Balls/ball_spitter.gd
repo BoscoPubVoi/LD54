@@ -4,6 +4,7 @@ extends Node3D
 
 @export var balltype : PackedScene
 @export var golfer_sprites : Array[CompressedTexture2D]
+@export var hit_sounds : Array[AudioStreamWAV]
 
 @onready var golfer : Sprite3D = $Golfer_Sprite
 @onready var timer : Timer = $Shot_Timer
@@ -27,6 +28,9 @@ func _ready():
 
 
 func emit():
+	var hit_clip = hit_sounds[randi() % hit_sounds.size()]
+	audioplayer.set_stream(hit_clip)
+	audioplayer.pitch_scale = randf_range(0.8, 1.2)
 	audioplayer.play()
 	#try and work out a rough speed to shoot towards the player
 	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)

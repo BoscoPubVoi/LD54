@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djixa4vi2wean"
+path="res://.godot/imported/old golf ball landing 1.wav-1ac0a0b2fe8232b1fad1f1163cb6fe61.sample"
+
+[deps]
+
+source_file="res://old/old golf ball landing 1.wav"
+dest_files=["res://.godot/imported/old golf ball landing 1.wav-1ac0a0b2fe8232b1fad1f1163cb6fe61.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

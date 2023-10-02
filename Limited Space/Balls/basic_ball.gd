@@ -8,6 +8,7 @@ var TouchedGround : bool = false;
 @onready var shadowcaster = $ShadowCast
 @onready var shadow = $ShadowMesh
 
+@export var land_sounds : Array[AudioStreamWAV]
 @onready var audioplayer : AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var player = get_tree().get_first_node_in_group("player")
 
@@ -68,6 +69,9 @@ func _on_body_entered(body:Node):
 		
 	elif !TouchedGround:
 		TouchedGround = true
+		var land_clip = land_sounds[randi() % land_sounds.size()]
+		audioplayer.set_stream(land_clip)
+		audioplayer.pitch_scale = randf_range(0.8, 1.2)
 		audioplayer.play()
 		Global.IncrementScore()
 	

@@ -7,12 +7,11 @@ var audio_files = \
 	#PLAYER SFX
 	"applause" : ["res://assets/sounds/applause.wav", "SFX", 0],
 	"splash" : ["res://assets/sounds/splash.wav", "SFX", 0],
-	"bounce1" : ["res://assets/sounds/golf ball landing 1.wav", "SFX", 0],
-	"bounce2" : ["res://assets/sounds/golf ball landing 2.wav", "SFX", 0],
-	"bounce3" : ["res://assets/sounds/golf ball landing 3.wav", "SFX", 0],
-	"bounce4" : ["res://assets/sounds/golf ball landing 4.wav", "SFX", 0],
+	"bounce1" : ["res://assets/sounds/golfballland2.wav", "SFX", 0],
+	"bounce2" : ["res://assets/sounds/golfballland3.wav", "SFX", 0],
 	"hit1" : ["res://assets/sounds/golfballhit1.wav", "SFX", 0],
 	"hit2" : ["res://assets/sounds/golfballhit2.wav", "SFX", 0],
+	"hit3" : ["res://assets/sounds/golfballhit3.wav", "SFX", 0],
 	"fore1" : ["res://assets/sounds/fore1.wav", "SFX", 0],
 	"fore2" : ["res://assets/sounds/fore2.wav", "SFX", 0],
 	"fore3" : ["res://assets/sounds/fore3.wav", "SFX", 0]
@@ -34,8 +33,8 @@ var current_music = null
 var current_music_name = ""
 
 
-var ballbouncesounds = ["bounce1", "bounce2", "bounce3", "bounce4"]
-var ballhitsounds = ["hit1", "hit2"]
+var ballbouncesounds = ["bounce1", "bounce2"]
+var ballhitsounds = ["hit1", "hit2", "hit3"]
 var foresounds = ["fore1", "fore2", "fore3"]
 
 # Called when the node enters the scene tree for the first time.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://swjlgixmxitm"]
+[gd_scene load_steps=13 format=3 uid="uid://swjlgixmxitm"]
 
 [ext_resource type="Script" path="res://Balls/scatter_ball.gd" id="1_f5i35"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_0l88n"]
-[ext_resource type="PackedScene" uid="uid://c2g71el2rogxm" path="res://Balls/scattershot.tscn" id="2_rhbfl"]
-[ext_resource type="AudioStream" uid="uid://blpqhpvbb3cpu" path="res://assets/sounds/golf ball landing 2.wav" id="4_t2jh7"]
+[ext_resource type="AudioStream" uid="uid://cani545os7x6r" path="res://assets/sounds/golfballland2.wav" id="2_d5id8"]
+[ext_resource type="PackedScene" path="res://Balls/scattershot.tscn" id="2_rhbfl"]
+[ext_resource type="AudioStream" uid="uid://d321k2l4q0ipj" path="res://assets/sounds/golfballland3.wav" id="3_4bwwi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hw0ps"]
 
@@ -41,6 +42,7 @@ max_contacts_reported = 1
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_f5i35")
+land_sounds = Array[AudioStreamWAV]([ExtResource("2_d5id8"), ExtResource("3_4bwwi")])
 
 [node name="scattershot" parent="." instance=ExtResource("2_rhbfl")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
@@ -76,6 +78,5 @@ initial_velocity_min = 3.0
 initial_velocity_max = 3.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_t2jh7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

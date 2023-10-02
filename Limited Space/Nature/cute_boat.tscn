@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://8c0wervb6rbw"]
+
+[ext_resource type="Texture2D" uid="uid://8rbsybpggjgx" path="res://assets/art/Boat.png" id="1_1aam5"]
+[ext_resource type="Script" path="res://Nature/cute_boat.gd" id="1_ptwkj"]
+
+[sub_resource type="Animation" id="Animation_cyl6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.95519, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node/Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ejw2y"]
+resource_name = "bob"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.95519, 0), Vector3(0, 1.75979, 0), Vector3(0, 2.20084, 0), Vector3(0.142395, 1.77984, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node/Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.0523599), Vector3(0, 0, -0.0461116), Vector3(0, 0, -0.0872665)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rj27n"]
+_data = {
+"RESET": SubResource("Animation_cyl6w"),
+"bob": SubResource("Animation_ejw2y")
+}
+
+[node name="Cute Boat" type="Node3D"]
+script = ExtResource("1_ptwkj")
+
+[node name="Node" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95519, 0)
+render_priority = 1
+texture = ExtResource("1_1aam5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rj27n")
+}

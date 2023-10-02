@@ -1,12 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://dyngbwnxwg8rd"]
+[gd_scene load_steps=25 format=3 uid="uid://dyngbwnxwg8rd"]
 
 [ext_resource type="Script" path="res://Balls/ball_spitter.gd" id="1_5hgg1"]
 [ext_resource type="Texture2D" uid="uid://b3vrefsi7pj6s" path="res://assets/art/pretend_golfer.png" id="2_e5nxh"]
 [ext_resource type="PackedScene" uid="uid://c58l0ckg4on82" path="res://Balls/basic_ball.tscn" id="2_pslxm"]
-[ext_resource type="AudioStream" uid="uid://cewfygsmqonrf" path="res://assets/sounds/golfballhit1.wav" id="3_bukh6"]
+[ext_resource type="AudioStream" uid="uid://dlcgb64ivq2km" path="res://assets/sounds/golfballhit1.wav" id="3_bukh6"]
 [ext_resource type="Texture2D" uid="uid://ck8jl7bcpicur" path="res://assets/art/Golfer_kun.png" id="4_dq6jx"]
 [ext_resource type="Texture2D" uid="uid://cntlry5hk3a72" path="res://assets/art/Golfer_chan.png" id="5_2l1si"]
 [ext_resource type="Texture2D" uid="uid://bj1hkobinql10" path="res://assets/art/Golfer_san.png" id="5_oufw6"]
+[ext_resource type="AudioStream" uid="uid://ca6ossave7lew" path="res://assets/sounds/golfballhit2.wav" id="7_67s5p"]
+[ext_resource type="AudioStream" uid="uid://cntk7rfxqcv57" path="res://assets/sounds/golfballhit3.wav" id="8_fw80m"]
 [ext_resource type="AudioStream" uid="uid://doehg2jxjaj4w" path="res://assets/sounds/fore1.wav" id="8_gqhmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oivri"]
@@ -297,6 +299,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14347, 0)
 script = ExtResource("1_5hgg1")
 balltype = ExtResource("2_pslxm")
 golfer_sprites = Array[CompressedTexture2D]([ExtResource("5_2l1si"), ExtResource("4_dq6jx"), ExtResource("5_oufw6")])
+hit_sounds = Array[AudioStreamWAV]([ExtResource("3_bukh6"), ExtResource("7_67s5p"), ExtResource("8_fw80m")])
 
 [node name="Shot_Timer" type="Timer" parent="."]
 one_shot = true
@@ -311,7 +314,6 @@ sprite_frames = SubResource("SpriteFrames_j4tlh")
 frame = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_bukh6")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0

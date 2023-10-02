@@ -57,6 +57,7 @@ _data = {
 [node name="cattails" type="Sprite3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0845692, 2.26326, -0.112747)
 material_override = SubResource("ShaderMaterial_44gyw")
+render_priority = 2
 texture = ExtResource("3_7k6rk")
 script = ExtResource("3_shboj")
 
