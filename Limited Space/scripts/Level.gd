@@ -14,12 +14,14 @@ func _ready():
 	player.hit.connect(_on_player_hit)
 	if Global.firstTime:
 		$TeeOff.show()
+		$Node2D.show()
 		$TeeOff.grab_focus()
 		$"Golfer Manager/NewGolfer".stop()
 	else:
 		camera.target = player
 		$"Golfer Manager/NewGolfer".start()
 		$TeeOff.hide()
+		$Node2D.hide()
 		$"Golfer Manager/First Golfer"._on_shot_timer_timeout()
 
 #need to pause game, show score for the level and move to next level or end screen
@@ -46,6 +48,7 @@ func _on_tee_off_pressed():
 		
 #		$"Golfer Manager/NewGolfer".stop()
 		$TeeOff.hide()
+		$Node2D.hide()
 		$TeeOff/Timer.start()
 		
 
