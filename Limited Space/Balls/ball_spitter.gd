@@ -63,7 +63,7 @@ func _on_level_ended():
 
 func swallow():
 	being_swallowed = true
-	$AnimationPlayer.pause()
+	$AnimationPlayer.play("right_round")
 	timer.stop()
 
 func _process(delta):
