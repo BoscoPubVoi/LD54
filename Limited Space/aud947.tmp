@@ -10,30 +10,6 @@
 
 [sub_resource type="Animation" id="Animation_l3rsy"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("torso:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("torso:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.183897, 0.186131, 0.714255)]
-}
 
 [sub_resource type="Animation" id="Animation_aq03s"]
 resource_name = "test"
@@ -45,21 +21,10 @@ tracks/0/path = NodePath("torso")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 3.63314, 0, 0.5, 1, 0, 3.2758, 0, 1, 1, 0, 3.633, 0)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("torso:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.183897, 0.186131, 0.714255), Vector3(0.183897, 0.186131, 0.714255)]
-}
 
 [sub_resource type="Animation" id="Animation_rfak2"]
 resource_name = "tomato_throw"
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -88,18 +53,6 @@ tracks/3/path = NodePath("torso")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0, 3.63314, 0, 0.5, 1, 0, 3.63314, 0)
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("torso:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bafdb"]
 _data = {
@@ -123,7 +76,7 @@ transform = Transform3D(0.183896, -0.000364969, 0.000343933, 0.000360561, 0.1861
 texture = ExtResource("5_5xnak")
 
 [node name="torso" type="Sprite3D" parent="."]
-transform = Transform3D(-8.03838e-09, 0, 0.714255, 0, 0.186131, 0, -0.183897, 0, -3.12211e-08, 0, 3.63314, 0)
+transform = Transform3D(0.183897, 0, 0, 0, 0.186131, 0, 0, 0, 0.714255, 0, 3.63314, 0)
 texture = ExtResource("1_rkths")
 
 [node name="head" type="Sprite3D" parent="torso"]
@@ -131,7 +84,7 @@ transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-
 texture = ExtResource("2_rh0mg")
 
 [node name="arm_l" type="Sprite3D" parent="torso"]
-transform = Transform3D(-0.5, 0.866026, 0, -0.866026, -0.5, 0, 0, 0, 1, -4.99191, 9.25985, 0.000604509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.19499, 1.21544, 0.000604509)
 texture = ExtResource("3_hxa3x")
 
 [node name="arm_r" type="Sprite3D" parent="torso"]
