@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d164vyam6xlcc"]
+[gd_scene load_steps=15 format=3 uid="uid://sxo74yxrvmjg"]
 
 [ext_resource type="Script" path="res://Balls/bomb_ball.gd" id="1_4yrrk"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_arf51"]
