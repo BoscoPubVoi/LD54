@@ -9,14 +9,6 @@
 
 [sub_resource type="Animation" id="Animation_aq03s"]
 resource_name = "test"
-loop_mode = 1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("torso")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 3.63314, 0, 0.5, 1, 0, 3.2758, 0, 1, 1, 0, 3.633, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bafdb"]
 _data = {
@@ -31,10 +23,6 @@ colors = Array[Color]([Color(0.741176, 0.396078, 0.760784, 1), Color(0.396078, 0
 libraries = {
 "": SubResource("AnimationLibrary_bafdb")
 }
-
-[node name="legs" type="Sprite3D" parent="."]
-transform = Transform3D(0.183896, -0.000364969, 0.000343933, 0.000360561, 0.186131, 0.000218446, -8.86615e-05, -5.67501e-05, 0.714254, 0.20303, 1.18717, 0.000635652)
-texture = ExtResource("5_5xnak")
 
 [node name="torso" type="Sprite3D" parent="."]
 transform = Transform3D(0.183896, -0.000364968, 0.000343933, 0.000360561, 0.186131, 0.000218446, -8.86616e-05, -5.67501e-05, 0.714254, 0, 3.63314, 0)
@@ -51,3 +39,7 @@ texture = ExtResource("3_hxa3x")
 [node name="arm_r" type="Sprite3D" parent="torso"]
 transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-11, 0, 0, 1, 7.3101, 2.38532, -0.00160599)
 texture = ExtResource("4_lqet7")
+
+[node name="legs" type="Sprite3D" parent="torso"]
+transform = Transform3D(1, -8.50719e-10, 5.82077e-11, 8.09735e-11, 1, -2.91038e-11, 0, 0, 1, 1.07847, -12.8858, 0)
+texture = ExtResource("5_5xnak")
