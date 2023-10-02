@@ -40,5 +40,5 @@ func throw_tomato():
 	newBall.position = position
 	newBall.position.x -= 1.4
 
-	await get_tree().create_timer(1.0)
+	await get_tree().create_timer(0.26).timeout
 	anim.play("idle")
