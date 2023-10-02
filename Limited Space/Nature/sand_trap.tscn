@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c58cxx646q1ut" path="res://assets/art/sandtexture.png" id="2_d0jyr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2smtm"]
-albedo_color = Color(1, 0.760784, 0.0745098, 1)
+albedo_color = Color(0.854902, 0.764706, 0.184314, 1)
 albedo_texture = ExtResource("2_d0jyr")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 uv1_world_triplanar = true
 

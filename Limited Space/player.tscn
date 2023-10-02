@@ -95,6 +95,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pbqq5")
 [node name="Vacuum" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0969651, 0)
 cast_shadow = 0
+emitting = false
 amount = 25
 randomness = 0.34
 mesh = SubResource("CapsuleMesh_6og2p")
