@@ -45,7 +45,7 @@ transparency = 1
 albedo_texture = ExtResource("3_l7tlf")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6og2p"]
-radius = 0.05
+radius = 0.1
 height = 0.3
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
@@ -94,6 +94,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pbqq5")
 
 [node name="Vacuum" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02982, 0)
+emitting = false
 amount = 16
 randomness = 0.28
 mesh = SubResource("CapsuleMesh_6og2p")
