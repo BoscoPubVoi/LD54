@@ -26,6 +26,11 @@ func _physics_process(delta):
 	move(delta)
 	process_collisions()
 	align_to_ground(delta)
+	
+	#scale emissions based on timer
+	var newscale = $PowerupTimer.time_left/40.0
+	$Vacuum.mesh.radius = newscale
+	$Vacuum.mesh.height = newscale * 4
 
 func process_collisions():
 	for i in range(get_slide_collision_count()):
@@ -143,6 +148,8 @@ func spawn_raycaster():
 	raycaster.target_position = Vector3(0, -2, 0)
 	self.add_child(raycaster) 
 
+func isPowered():
+	return powered
 
 func _on_powerup_timer_timeout():
 	powered = false

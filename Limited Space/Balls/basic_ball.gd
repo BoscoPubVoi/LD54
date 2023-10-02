@@ -61,8 +61,11 @@ func _on_body_entered(body:Node):
 #	print("uh oh")
 	if body.has_method("BallInHole"):
 		body.BallInHole()
-#		being_swallowed = true
-		apply_impulse(Vector3.UP * .5)
+		if body.isPowered():
+			apply_impulse(Vector3.UP * .5)
+		else:
+			being_swallowed = true
+		
 	elif !TouchedGround:
 		TouchedGround = true
 		audioplayer.play()
