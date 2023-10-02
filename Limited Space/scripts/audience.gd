@@ -34,6 +34,7 @@ func throw_tomato():
 	newBall.apply_new_force(newDir, new_speed * .7)
 	newBall.position = position
 	newBall.position.x -= 1.4
-
+	newBall.position.y += 4.5
+	
 	await get_tree().create_timer(0.26).timeout
 	anim.play("idle")
