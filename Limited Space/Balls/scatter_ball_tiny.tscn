@@ -13,7 +13,7 @@ albedo_color = Color(0.839216, 0, 0.968627, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_xq873"]
 material = SubResource("StandardMaterial3D_xg75e")
 radius = 0.2
-height = 0.5
+height = 0.4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mjsub"]
 radius = 0.379963
@@ -32,9 +32,9 @@ transparency = 1
 blend_mode = 1
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.443137)
+albedo_color = Color(1, 0.129412, 1, 0.443137)
 
-[node name="Scatter Ball Tiny" type="RigidBody3D"]
+[node name="Scatter Ball Tiny" type="RigidBody3D" groups=["ball"]]
 collision_layer = 16
 collision_mask = 99
 mass = 0.01
@@ -63,6 +63,7 @@ skeleton = NodePath("../ShadowCast")
 material_override = SubResource("StandardMaterial3D_3epgj")
 cast_shadow = 0
 script = ExtResource("2_ya7u4")
+fromWidth = 0.3
 scaleAcceleration = 0.667
 lifespan = 0.4
 scaleTexture = false

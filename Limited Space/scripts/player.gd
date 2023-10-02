@@ -136,7 +136,7 @@ func _on_area_3d_body_entered(body):
 		$PowerupTimer.start()
 		set_collision_mask_value(3, false)
 		return
-	if !powered:
+	if !powered && body.is_in_group("ball"):
 		body.disable_collisions()
 		BallInHole()
 
