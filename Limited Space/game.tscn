@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=32 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cakv2jj02co51" path="res://Balls/Golfers/first_golfer.tscn" id="12_1do1j"]
 [ext_resource type="PackedScene" uid="uid://6j6378jbinub" path="res://Nature/corndogs.tscn" id="12_5n3vi"]
 [ext_resource type="PackedScene" uid="uid://b1ew4cba3e814" path="res://Balls/vacuum_powerup.tscn" id="12_lo8ri"]
+[ext_resource type="PackedScene" uid="uid://br2qr28ywb1bb" path="res://Nature/cute_boat.tscn" id="15_2pi26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76u55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -172,23 +173,11 @@ visible = false
 mesh = SubResource("CylinderMesh_oepgq")
 metadata/_edit_lock_ = true
 
-[node name="watersprite" type="Sprite3D" parent="Floor"]
-transform = Transform3D(0.63, -5.54963e-31, 1.8352e-38, 0, -3.64007e-08, -0.63, 4.19846e-31, 0.83275, -2.75382e-08, -11.734, 2.08165e-12, -11.984)
-texture = ExtResource("4_p6ibo")
-
 [node name="water2" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -53, 2.08165e-12, 18)
 visible = false
 mesh = SubResource("CylinderMesh_oepgq")
 metadata/_edit_lock_ = true
-
-[node name="watersprite2" type="Sprite3D" parent="Floor"]
-transform = Transform3D(0.63, -5.54963e-31, 1.8352e-38, 0, -3.64007e-08, -0.63, 4.19846e-31, 0.83275, -2.75382e-08, -52.562, 2.08165e-12, 18.084)
-texture = ExtResource("4_p6ibo")
-
-[node name="watersprite3" type="Sprite3D" parent="Floor"]
-transform = Transform3D(0.698028, 0.605811, -2.8474e-08, 0, -4.06516e-08, -1, -0.599297, 0.705615, -3.3165e-08, 38.0173, 2.08165e-12, 43.1501)
-texture = ExtResource("4_p6ibo")
 
 [node name="water3" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 35, 2.08165e-12, 47)
@@ -223,8 +212,20 @@ transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -4.8167
 shape = SubResource("CylinderShape3D_7ofwv")
 
 [node name="CollisionShape3D50" type="CollisionShape3D" parent="WaterCollider"]
-transform = Transform3D(1, 6.08261e-31, 0, -6.08261e-31, 1, 0, 0, 0, 1, -53, 0.2, 18)
-shape = SubResource("CylinderShape3D_6wtek")
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -52.4748, 0.2, 16.8813)
+shape = SubResource("CylinderShape3D_3pbrs")
+
+[node name="CollisionShape3D56" type="CollisionShape3D" parent="WaterCollider"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -54.6185, 0.2, 20.541)
+shape = SubResource("CylinderShape3D_ywvkx")
+
+[node name="CollisionShape3D57" type="CollisionShape3D" parent="WaterCollider"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -59.3644, 0.2, 14.7436)
+shape = SubResource("CylinderShape3D_7ofwv")
+
+[node name="CollisionShape3D58" type="CollisionShape3D" parent="WaterCollider"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -45.7026, 0.2, 16.3812)
+shape = SubResource("CylinderShape3D_7ofwv")
 
 [node name="CollisionShape3D51" type="CollisionShape3D" parent="WaterCollider"]
 transform = Transform3D(1, 6.08261e-31, 0, -6.08261e-31, 1, 0, 0, 0, 1, 35, 0.2, 47)
@@ -863,6 +864,21 @@ one_shot = true
 
 [node name="Vacuum" parent="." instance=ExtResource("12_lo8ri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2253, 1.14747, 21.6013)
+
+[node name="Cute Boat" parent="." instance=ExtResource("15_2pi26")]
+transform = Transform3D(0.939848, 0, -0.341594, 0, 1, 0, 0.341594, 0, 0.939848, 37.7263, 0.999996, 47.7933)
+
+[node name="watersprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.63, -5.54963e-31, 1.8352e-38, 0, -3.64007e-08, -0.63, 4.19846e-31, 0.83275, -2.75382e-08, -11.734, 2.08165e-12, -11.984)
+texture = ExtResource("4_p6ibo")
+
+[node name="watersprite2" type="Sprite3D" parent="."]
+transform = Transform3D(0.63, -5.54963e-31, 1.8352e-38, 0, -3.64007e-08, -0.63, 4.19846e-31, 0.83275, -2.75382e-08, -52.562, 2.08165e-12, 18.084)
+texture = ExtResource("4_p6ibo")
+
+[node name="watersprite3" type="Sprite3D" parent="."]
+transform = Transform3D(0.698028, 0.605811, -2.8474e-08, 0, -4.06516e-08, -1, -0.599297, 0.705615, -3.3165e-08, 38.0173, 2.08165e-12, 43.1501)
+texture = ExtResource("4_p6ibo")
 
 [connection signal="timeout" from="Golfer Manager/NewGolfer" to="Golfer Manager" method="_on_new_golfer_timeout"]
 [connection signal="timeout" from="ForeTimer" to="." method="_on_fore_timer_timeout"]
