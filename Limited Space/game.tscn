@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=49 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d32es4lnucncx" path="res://assets/art/Tee_off_unpressed.png" id="13_gj8v1"]
 [ext_resource type="Texture2D" uid="uid://8yhrx1qydbhy" path="res://assets/art/Tee_off_pressed.png" id="14_sronu"]
 [ext_resource type="PackedScene" uid="uid://br2qr28ywb1bb" path="res://Nature/cute_boat.tscn" id="15_2pi26"]
+[ext_resource type="Texture2D" uid="uid://c4kw3jubooo8i" path="res://assets/art/DuPond2.png" id="17_24rni"]
 [ext_resource type="FontFile" uid="uid://dmsm6iw3tred5" path="res://assets/fonts/Comicy.ttf" id="18_5osjb"]
 [ext_resource type="Script" path="res://scripts/Title.gd" id="19_ryomo"]
 
@@ -130,6 +131,48 @@ albedo_texture = ExtResource("9_v8wuw")
 material = SubResource("StandardMaterial3D_5miwo")
 size = Vector2(2.4, 3.4)
 orientation = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtey4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_24rni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6ibo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkegh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_24rni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6ibo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhcpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_24rni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6ibo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="World2" type="Node3D" groups=["LevelRoot"]]
 script = ExtResource("1_vnx84")
@@ -976,17 +1019,23 @@ one_shot = true
 [node name="Cute Boat" parent="." instance=ExtResource("15_2pi26")]
 transform = Transform3D(0.939848, 0, -0.341594, 0, 1, 0, 0.341594, 0, 0.939848, 37.7263, 0.999996, 47.7933)
 
-[node name="watersprite" type="Sprite3D" parent="."]
+[node name="animatedwater1" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.63, -5.54963e-31, 1.8352e-38, 0, -3.64007e-08, -0.63, 4.19846e-31, 0.83275, -2.75382e-08, -11.734, 2.08165e-12, -11.984)
-texture = ExtResource("4_p6ibo")
+sprite_frames = SubResource("SpriteFrames_jtey4")
+autoplay = "default"
+frame_progress = 0.0016674
 
-[node name="watersprite2" type="Sprite3D" parent="."]
+[node name="animatedwater2" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.63, -5.54963e-31, 1.8352e-38, 0, -3.64007e-08, -0.63, 4.19846e-31, 0.83275, -2.75382e-08, -52.562, 2.08165e-12, 18.084)
-texture = ExtResource("4_p6ibo")
+sprite_frames = SubResource("SpriteFrames_nkegh")
+autoplay = "default"
+frame_progress = 0.0239057
 
-[node name="watersprite3" type="Sprite3D" parent="."]
+[node name="animatedwater3" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.698028, 0.605811, -2.8474e-08, 0, -4.06516e-08, -1, -0.599297, 0.705615, -3.3165e-08, 38.0173, 2.08165e-12, 43.1501)
-texture = ExtResource("4_p6ibo")
+sprite_frames = SubResource("SpriteFrames_dhcpf")
+autoplay = "default"
+frame_progress = 0.940141
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(576, 120)
