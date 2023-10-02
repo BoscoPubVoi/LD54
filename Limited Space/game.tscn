@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=44 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://byid2ls8a7d2s" path="res://assets/art/WhiteSand3.png" id="9_v8wuw"]
 [ext_resource type="PackedScene" uid="uid://2k0upaes1sfl" path="res://Nature/grass_2.tscn" id="10_62njo"]
 [ext_resource type="PackedScene" uid="uid://di1owwkkgymqg" path="res://Nature/grass_3.tscn" id="11_s4tt8"]
-[ext_resource type="PackedScene" uid="uid://cakv2jj02co51" path="res://Balls/Golfers/first_golfer.tscn" id="12_1do1j"]
+[ext_resource type="PackedScene" uid="uid://d2hi3eydpmrfg" path="res://Balls/Golfers/first_golfer.tscn" id="12_1do1j"]
 [ext_resource type="PackedScene" uid="uid://6j6378jbinub" path="res://Nature/corndogs.tscn" id="12_5n3vi"]
 [ext_resource type="PackedScene" uid="uid://b1ew4cba3e814" path="res://Balls/vacuum_powerup.tscn" id="12_lo8ri"]
 [ext_resource type="Texture2D" uid="uid://d32es4lnucncx" path="res://assets/art/Tee_off_unpressed.png" id="13_gj8v1"]
@@ -95,6 +95,40 @@ radius = 3.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_duv4t"]
 size = Vector3(10, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yt6a6"]
+render_priority = -1
+transparency = 1
+albedo_color = Color(1, 1, 0.380392, 1)
+albedo_texture = ExtResource("9_v8wuw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_devqq"]
+material = SubResource("StandardMaterial3D_yt6a6")
+size = Vector2(2.5, 2)
+center_offset = Vector3(2.08165e-12, 0.02, 2.08165e-12)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi8xv"]
+render_priority = -1
+transparency = 1
+albedo_color = Color(1, 1, 0.380392, 1)
+albedo_texture = ExtResource("9_v8wuw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vhng7"]
+material = SubResource("StandardMaterial3D_hi8xv")
+size = Vector2(2.5, 2.5)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5miwo"]
+render_priority = -1
+transparency = 1
+albedo_color = Color(1, 1, 0.380392, 1)
+albedo_texture = ExtResource("9_v8wuw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gchir"]
+material = SubResource("StandardMaterial3D_5miwo")
+size = Vector2(2.4, 3.4)
+orientation = 1
 
 [node name="World2" type="Node3D" groups=["LevelRoot"]]
 script = ExtResource("1_vnx84")
@@ -545,7 +579,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.5935, 0.795931, -50.
 transform = Transform3D(0.499998, -0.000698846, 0.00121706, 0.00069789, 0.499999, 0.000393595, -0.00121761, -0.000391894, 0.499998, 48.5216, 0.781224, -60.0367)
 
 [node name="grass28" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass29" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -74.7529, 0.690628, 11.5497)
@@ -560,10 +594,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -71.3335, 0.670575, 31.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -77.6777, 0.71803, -8.68126)
 
 [node name="grass33" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, -76.9305, 0.704267, 0.81949)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, -76.9305, 0.704267, 0.81949)
 
 [node name="grass34" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass35" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -71.4187, 0.684156, 17.5623)
@@ -578,10 +612,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -63.3475, 0.664687, 37.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -71.7406, 0.711186, -2.66639)
 
 [node name="grass39" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, -72.6277, 0.697568, 6.85526)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, -72.6277, 0.697568, 6.85526)
 
 [node name="grass40" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass41" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -64.541, 0.774049, -42.5432)
@@ -596,10 +630,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -73.5598, 0.740644, -22
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -47.2591, 0.805844, -57.1276)
 
 [node name="grass45" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, -55.9655, 0.791231, -50.9943)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, -55.9655, 0.791231, -50.9943)
 
 [node name="grass46" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass47" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -64.0444, 0.76401, -36.8738)
@@ -614,10 +648,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -71.6954, 0.730739, -17
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -50.3347, 0.795931, -51.7515)
 
 [node name="grass51" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, -57.5403, 0.781224, -45.4645)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, -57.5403, 0.781224, -45.4645)
 
 [node name="grass52" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass53" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.4222, 0.690628, 72.2305)
@@ -632,10 +666,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 33.6832, 0.670575, 68.8
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.77935, 0.71803, 73.3262)
 
 [node name="grass57" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, 3.76927, 0.704267, 73.8484)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, 3.76927, 0.704267, 73.8484)
 
 [node name="grass58" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass59" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 20.311, 0.684156, 69.9716)
@@ -650,10 +684,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 39.3813, 0.664687, 60.7
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.137171, 0.711186, 71.4944)
 
 [node name="grass63" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, 9.69469, 0.697568, 75.9156)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, 9.69469, 0.697568, 75.9156)
 
 [node name="grass64" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass65" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.4709, 0.774049, 63.4211)
@@ -668,10 +702,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.2601, 0.740644, 70.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -55.6819, 0.805844, 50.2907)
 
 [node name="grass69" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, -49.1237, 0.791231, 57.2505)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, -49.1237, 0.791231, 57.2505)
 
 [node name="grass70" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass71" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -34.467, 0.76401, 65.8434)
@@ -686,10 +720,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.2953, 0.730739, 72.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -50.1327, 0.795931, 53.0416)
 
 [node name="grass75" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.82981e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, -43.4288, 0.781224, 59.8611)
+transform = Transform3D(0.5, -0.000697888, -2.43877e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, -43.4288, 0.781224, 59.8611)
 
 [node name="grass76" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass77" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 73.6926, 0.690628, -9.10384)
@@ -704,10 +738,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 66.0081, 0.670575, -28.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 73.6165, 0.71803, 11.1272)
 
 [node name="grass81" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.8312e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, 74.6908, 0.704267, 1.62486)
+transform = Transform3D(0.5, -0.000697888, -2.44016e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, 74.6908, 0.704267, 1.62486)
 
 [node name="grass82" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass83" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 71.7785, 0.684156, -15.1136)
@@ -722,10 +756,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 63.6782, 0.664687, -34.
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72.1304, 0.711186, 5.11454)
 
 [node name="grass87" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.8312e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, 77.6781, 0.697568, -4.40841)
+transform = Transform3D(0.5, -0.000697888, -2.44016e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, 77.6781, 0.697568, -4.40841)
 
 [node name="grass88" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass89" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 61.7294, 0.774049, 45.0068)
@@ -740,10 +774,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 69.7675, 0.740644, 25.4
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47.7297, 0.805844, 59.612)
 
 [node name="grass93" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.8312e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, 55.0577, 0.791231, 53.4679)
+transform = Transform3D(0.5, -0.000697888, -2.44016e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, 55.0577, 0.791231, 53.4679)
 
 [node name="grass94" parent="grASS" instance=ExtResource("9_huojr")]
-transform = Transform3D(0.5, -0.000697875, 2.10443e-12, 0.000697874, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
+transform = Transform3D(0.5, -0.000697874, 2.90037e-12, 0.000697873, 0.499999, 0.000393595, -5.49362e-07, -0.000393594, 0.5, -0.0845692, 0.893174, -0.112747)
 
 [node name="grass95" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 64.4849, 0.76401, 39.3334)
@@ -758,7 +792,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72.1067, 0.730739, 19.5
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.7973, 0.795931, 54.2314)
 
 [node name="grass99" parent="grASS" instance=ExtResource("11_s4tt8")]
-transform = Transform3D(0.5, -0.000697889, -9.8312e-13, 0.000697888, 0.499999, 0.000393595, -5.4937e-07, -0.000393594, 0.5, 57.9936, 0.781224, 47.9337)
+transform = Transform3D(0.5, -0.000697888, -2.44016e-13, 0.000697887, 0.499999, 0.000393595, -5.49369e-07, -0.000393594, 0.5, 57.9936, 0.781224, 47.9337)
 
 [node name="grass2" parent="grASS" instance=ExtResource("10_62njo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.54489, 0.735419, 33.8237)
@@ -842,28 +876,55 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -47.4451, 2.26326, 27.4
 [node name="grass111" parent="grASS" instance=ExtResource("9_huojr")]
 
 [node name="Sand_Trap" parent="." instance=ExtResource("8_2b8lq")]
-transform = Transform3D(-1.04907e-06, 3.48787e-16, 18, 8.37088e-15, 1, -6.27816e-15, -24, 3.48787e-16, -7.86805e-07, 38.6577, -0.021, -11.1494)
+transform = Transform3D(-1.04907e-06, 3.48787e-16, 18, 8.37088e-15, 1, -6.27816e-15, -24, 3.48787e-16, -7.86805e-07, 38.658, -0.022, -11.149)
 
 [node name="Sprite3D" type="Sprite3D" parent="Sand_Trap"]
-transform = Transform3D(0.07, 2.06651e-16, 2.8312e-23, 8.97209e-23, -2.62268e-09, -1, 6.11474e-16, 0.06, -4.37114e-08, -0.0281534, 0.02, 0)
+transform = Transform3D(0.07, -5.24121e-16, 3.81834e-23, 0, -2.62268e-09, -0.1, 6.11474e-16, 0.06, -4.37114e-09, -0.028, 0.004, 2.08165e-12)
+visible = false
+sorting_offset = -1.0
+cast_shadow = 0
 modulate = Color(1, 1, 0.380392, 1)
+alpha_cut = 2
 texture = ExtResource("9_v8wuw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sand_Trap"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -0.028, 0.004, 2.08165e-12)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_devqq")
 
 [node name="Sand_Trap2" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-12.9828, 4.93158e-16, 8.31191, 6.27816e-15, 1, -4.18544e-15, -12.4679, -9.97733e-18, -8.65518, -35.6391, -0.0210076, 43.5083)
 
 [node name="Sprite3D2" type="Sprite3D" parent="Sand_Trap2"]
-transform = Transform3D(-0.00823007, 0.0536739, -4.34474e-08, -1.14345e-24, -2.36041e-09, -1, -0.0745471, -0.00592565, 4.79664e-09, 2.08165e-12, 0.02, 2.08165e-12)
+transform = Transform3D(-0.00823007, 0.0536739, -4.34474e-09, 0, -2.36041e-09, -0.1, -0.0745471, -0.00592565, 4.79664e-10, 2.08165e-12, 0.004, 2.08165e-12)
+visible = false
+sorting_offset = -1.0
+cast_shadow = 0
 modulate = Color(1, 1, 0.380392, 1)
 texture = ExtResource("9_v8wuw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Sand_Trap2"]
+transform = Transform3D(0.882948, -4.71706e-16, -0.469471, 3.48787e-16, 1, -3.48787e-16, 0.469471, 1.44215e-16, 0.882948, 2.08165e-12, 0.004, 2.08165e-12)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_vhng7")
+skeleton = NodePath("../../Sand_Trap")
 
 [node name="Sand_Trap3" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-8.65518, 4.93158e-16, 8.31191, 4.18544e-15, 1, -4.18544e-15, -8.31191, -9.9773e-18, -8.65518, -30.7761, -0.0210076, -31.4404)
 
 [node name="Sprite3D3" type="Sprite3D" parent="Sand_Trap3"]
-transform = Transform3D(0.0693377, -0.0130376, 5.99885e-09, 0, -4.15258e-09, -1, 0.00960665, 0.0941011, -4.32978e-08, 0.0478594, 0.2, 0.503337)
+transform = Transform3D(0.0693377, -0.0130376, 5.99885e-10, 0, -4.15258e-09, -0.1, 0.00960665, 0.0941011, -4.32978e-09, 0.048, 0.004, 0.503)
+visible = false
+sorting_offset = -1.0
+cast_shadow = 0
 modulate = Color(1, 1, 0.380392, 1)
 texture = ExtResource("9_v8wuw")
+
+[node name="sandmesh" type="MeshInstance3D" parent="Sand_Trap3"]
+transform = Transform3D(0.992123, 5.47179e-16, 0.125264, -4.05853e-16, 1, -1.15375e-15, -0.125264, 1.09382e-15, 0.992123, 0.0479999, 0.004, 0.503)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_gchir")
+skeleton = NodePath("../../Sand_Trap")
 
 [node name="Sand_Trap4" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-6.91975, 4.86083e-16, 15.5229, 4.18544e-15, 1, -6.62695e-15, -9.80393, 8.38301e-17, -10.9563, -26.0513, -0.0210076, -37.9481)
