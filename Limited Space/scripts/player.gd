@@ -5,9 +5,12 @@ signal hit
 var IsAlive : bool = true
 var powered : bool = false
 
-@onready var mesh = $Mesh
+@onready var mesh = $spriteHole
+@onready var movepar = $MoveParticles
 @export var speed : float = 10
 @export var acceleration : float = 10
+
+
 
 const JUMP_VELOCITY = 4.5
 const ANGULAR_ACCELERATION = 10
@@ -59,30 +62,38 @@ func move(delta):
 		acceleration = 2
 	
 	if velocity.x > 0 && target_speed_x < 0:
-		# mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		mesh.scale.x = lerp(mesh.scale.x, 0.9, .2)
 		stretch_mesh(0.7, 1.2, delta)
 		acceleration = 3
 	elif velocity.x < 0 && target_speed_x > 0:
-		# mesh.scale.x = lerp(mesh.scale.x, 0.7, .2)
+		mesh.scale.x = lerp(mesh.scale.x, 0.9, .2)
 		stretch_mesh(0.7, 1.2, delta)
 		acceleration = 3
 	elif velocity.z > 0 && target_speed_z < 0:
-		# mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
 		stretch_mesh(1.2, 0.7, delta)
 		acceleration = 3
 	elif velocity.z < 0 && target_speed_z > 0:
-		# mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
+		mesh.scale.z = lerp(mesh.scale.z, 0.7, .2)
 		stretch_mesh(1.2, 0.7, delta)
 		acceleration = 3
 	else:
 		stretch_mesh(1.0, 1.0, delta)
-		# mesh.scale.x = lerp(mesh.scale.x, 1.0, .02)
-		# mesh.scale.z = lerp(mesh.scale.z, 1.0, .02)
+		mesh.scale.x = lerp(mesh.scale.x, 1.0, .02)
+		mesh.scale.z = lerp(mesh.scale.z, 1.0, .02)
 
 	velocity.x = lerp(velocity.x, target_speed_x, delta * acceleration); 
 	velocity.z = lerp(velocity.z, target_speed_z, delta * acceleration); 
 	velocity.y -= gravity * delta * 1.5
 	move_and_slide()
+	
+	var part_direction = input_dir.normalized() * 1.2
+	movepar.position.x = part_direction.x
+	movepar.position.z = part_direction.y
+	if input_dir:
+		movepar.emitting = true
+	else:
+		movepar.emitting = false
 	
 
 func stretch_mesh(x_scale, z_scale, delta):
@@ -111,6 +122,7 @@ func align_to_ground(delta):
 func BallInHole():
 	if !IsAlive || powered:
 		return
+	$MoveParticles.emitting = false
 	Global.isDead = true
 	IsAlive = false
 	die()
