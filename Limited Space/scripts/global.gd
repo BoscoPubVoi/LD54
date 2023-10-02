@@ -9,6 +9,7 @@ var LEVEL_COUNT : int = 1
 
 var MAX_GOLFERS : int = 50
 
+var firstTime = true
 var isDead = false
 
 func _ready():

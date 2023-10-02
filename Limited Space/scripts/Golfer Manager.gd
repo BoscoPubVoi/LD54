@@ -17,7 +17,7 @@ var current_golfer_array = []
 
 func _ready():
 	scene_root.LevelEnded.connect(_on_level_ended)
-	_on_new_golfer_timeout()
+#	_on_new_golfer_timeout()
 
 var floor : StaticBody3D
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_uwqp2"]
 [ext_resource type="Texture2D" uid="uid://0cs6v4b1272c" path="res://ui/golfmockup.png" id="2_gt81a"]
-[ext_resource type="PackedScene" uid="uid://c6wibr36fk20i" path="res://leveltest.tscn" id="2_rs5v3"]
+[ext_resource type="PackedScene" uid="uid://br0debc663st4" path="res://game.tscn" id="2_jrmw8"]
 [ext_resource type="Script" path="res://ui/Credits.gd" id="3_415tf"]
 
 [node name="Main Menu" type="Control" node_paths=PackedStringArray("Title", "ButtonContainer", "Credits")]
@@ -16,7 +16,7 @@ script = ExtResource("1_uwqp2")
 Title = NodePath("Title")
 ButtonContainer = NodePath("VBoxContainer")
 Credits = NodePath("Credits")
-GameScene = ExtResource("2_rs5v3")
+GameScene = ExtResource("2_jrmw8")
 
 [node name="Fancy Background" type="TextureRect" parent="."]
 layout_mode = 1
