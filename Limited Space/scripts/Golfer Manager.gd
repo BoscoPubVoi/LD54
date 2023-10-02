@@ -38,18 +38,20 @@ func _on_new_golfer_timeout():
 func get_golfer():
 	var currentscore =  Global.PLAYER_SCORE[0]
 	
-	var code = randi() % (currentscore + 1)
+	var code = randi() % (currentscore + 1) % 100
 	
-	if code < 10:
-		return golfer_generic
 	if code < 20:
+		return golfer_generic
+	if code < 35:
 		return golfer_scatter
-	if code < 30:
+	if code < 50:
 		return golfer_bomb
-	if code < 40:
+	if code < 75:
 		return golfer_tomato
-	else:
+	if code < 90:
 		return golfer_seeker
+	else:
+		return golfer_generic
 
 func _on_level_ended():
 	newgolfertimer.stop()
