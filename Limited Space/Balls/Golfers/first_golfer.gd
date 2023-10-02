@@ -65,14 +65,14 @@ func swallow():
 	being_swallowed = true
 	timer.stop()
 
-func _process(delta):
+func _process(_delta):
 	if being_swallowed:
 		position.x = player.position.x
 		position.z = player.position.z 
 		position.y -= .1
 
 
-func _on_area_3d_body_entered(body):
+func _on_area_3d_body_entered(_body):
 	print("sallow first")
 	swallow()
 

@@ -3,6 +3,7 @@ extends Node
 #any persistant variables and stuff
 var PLAYER_SCORE : Array[int]
 var CURRENT_LEVEL : int = 0
+var hiscore = 0
 
 #level count should probably be handled differently but maybe it's fine for gamejam 
 var LEVEL_COUNT : int = 1

@@ -10,7 +10,7 @@ func explode():
 	newsplat.position = position - Vector3.UP * 0.2
 	queue_free()
 
-func _process(delta):
+func _process(_delta):
 	model.look_at(transform.origin + linear_velocity + Vector3.RIGHT, Vector3.UP)
 	pass
 
