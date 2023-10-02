@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://br2qr28ywb1bb"]
+[gd_scene load_steps=6 format=3 uid="uid://8c0wervb6rbw"]
 
 [ext_resource type="Texture2D" uid="uid://8rbsybpggjgx" path="res://assets/art/Boat.png" id="1_1aam5"]
 [ext_resource type="Script" path="res://Nature/cute_boat.gd" id="1_ptwkj"]
