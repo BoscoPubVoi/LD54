@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dnsxx58dsnroo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q5yvf"]
-[ext_resource type="PackedScene" uid="uid://dw6fud148hewa" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
+[ext_resource type="PackedScene" uid="uid://c6hx3owgggi8u" path="res://ui/overlay_ui.tscn" id="2_xx0ca"]
 [ext_resource type="Texture2D" uid="uid://dqmhopnwfrw51" path="res://assets/art/Hole3.png" id="3_r88u3"]
 [ext_resource type="AudioStream" uid="uid://d1smrlnhjimrh" path="res://assets/sounds/movement loop.wav" id="4_7kpk4"]
 [ext_resource type="Texture2D" uid="uid://cxsuhd2tpjxe8" path="res://assets/art/move_particle.png" id="5_yradj"]
@@ -118,7 +118,7 @@ initial_velocity_min = 6.0
 initial_velocity_max = 6.0
 
 [node name="PowerupTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Movement" type="AudioStreamPlayer" parent="."]
