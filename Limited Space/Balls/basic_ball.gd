@@ -32,8 +32,6 @@ func apply_new_force(direction, new_speed):
 	direction = Vector3(direction.x * randf_range(.9, 1.1), 1, direction.z * randf_range(.9, 1.1))
 	direction = direction.normalized()
 	direction = direction * new_speed /17
-#	direction.x = direction.x * new_speed / 2
-#	direction.z = direction.z * new_speed / 2
 	direction.y = new_speed/30
 	
 	apply_impulse(direction)
@@ -64,7 +62,8 @@ func _on_body_entered(body:Node):
 	if body.has_method("BallInHole"):
 		body.BallInHole()
 		being_swallowed = true
-		set_collision_layer_value(2, false)
+		set_collision_layer_value(3, false)
+		set_collision_mask_value(2, false)
 	elif !TouchedGround:
 		TouchedGround = true
 		audioplayer.play()

@@ -25,18 +25,15 @@ func _ready():
 	golfer.texture = chosen_sprite
 	golfer_name = chosen_sprite.resource_path.get_file().replace(".png", "")
 
-	print("chosen sprite " + golfer_name)
 
 func emit():
 	audioplayer.play()
 	#try and work out a rough speed to shoot towards the player
 	var new_speed = position.distance_to(get_tree().get_first_node_in_group("player").position)
-	print(new_speed)
 	#create new ball
 	var newBall = balltype.instantiate()
 	scene_root.add_child(newBall)
 	var enemy_to_player = get_tree().get_first_node_in_group("player").position - global_transform.origin 
-	print(enemy_to_player)
 	var newDir
 	if Global.firstTime:
 		newDir = Vector3(enemy_to_player.x + .1, 10, enemy_to_player.z)

@@ -3,6 +3,7 @@ extends CharacterBody3D
 signal hit
 
 var IsAlive : bool = true
+var powered : bool = false
 
 @onready var mesh = $Mesh
 @export var speed : float = 10
@@ -103,7 +104,7 @@ func align_to_ground(delta):
 
 
 func BallInHole():
-	if !IsAlive:
+	if !IsAlive || powered:
 		return
 	Global.isDead = true
 	IsAlive = false
@@ -114,7 +115,6 @@ func die():
 	hit.emit()
 
 func slow():
-	print("slow")
 	speed = 5
 
 func speedup():
@@ -122,8 +122,17 @@ func speedup():
 
 
 func _on_area_3d_body_entered(body):
-	body.disable_collisions()
-	BallInHole()
+	print("found somethin")
+	if body.is_in_group("powerup"):
+		print("found powerup")
+		body.get_eaten()
+		$Vacuum.emitting = true
+		powered = true
+		$PowerupTimer.start()
+		return
+	if !powered:
+		body.disable_collisions()
+		BallInHole()
 
 func spawn_raycaster():
 	raycaster = RayCast3D.new()
@@ -132,3 +141,8 @@ func spawn_raycaster():
 	raycaster.exclude_parent = false
 	raycaster.target_position = Vector3(0, -2, 0)
 	self.add_child(raycaster) 
+
+
+func _on_powerup_timer_timeout():
+	powered = false
+	$Vacuum.emitting = false

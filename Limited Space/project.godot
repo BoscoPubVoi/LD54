@@ -22,8 +22,6 @@ AudioManager="*res://scripts/AudioManager.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -75,6 +73,7 @@ down={
 3d_physics/layer_6="water"
 3d_physics/layer_7="trees/obstacles"
 3d_physics/layer_8="golfers"
+3d_physics/layer_10="powerups"
 
 [rendering]
 

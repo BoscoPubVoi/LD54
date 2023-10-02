@@ -25,7 +25,6 @@ func _ready():
 	golfer.texture = chosen_sprite
 	golfer_name = chosen_sprite.resource_path.get_file().replace(".png", "")
 
-	print("chosen sprite " + golfer_name)
 
 func emit():
 	audioplayer.play()
@@ -67,5 +66,4 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	print("help!!")
 	swallow()

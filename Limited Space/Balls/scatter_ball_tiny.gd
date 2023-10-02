@@ -15,6 +15,8 @@ func apply_new_force(direction, new_speed):
 func _on_body_entered(body:Node):
 	if body.has_method("BallInHole"):
 		body.BallInHole()
+		being_swallowed = true
+		set_collision_layer_value(5, false)
 	elif !TouchedGround:
 		TouchedGround = true
 		Global.IncrementScore()
