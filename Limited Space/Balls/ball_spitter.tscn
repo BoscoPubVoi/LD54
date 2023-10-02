@@ -144,6 +144,17 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0, 1, 0.3, 0.3, 0.3)
 
+[sub_resource type="Animation" id="Animation_qcyjd"]
+resource_name = "right_round"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.009, 0, -1, 0.5, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_w2hx2"]
 resource_name = "swing_Golfer_chan"
 tracks/0/type = "value"
