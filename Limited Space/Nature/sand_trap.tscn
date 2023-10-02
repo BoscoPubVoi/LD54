@@ -1,14 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4tpklaj4lxdw"]
 
 [ext_resource type="Script" path="res://Nature/environment_slow_trap.gd" id="1_xmjco"]
-[ext_resource type="Texture2D" uid="uid://c58cxx646q1ut" path="res://assets/art/sandtexture.png" id="2_d0jyr"]
+[ext_resource type="Texture2D" uid="uid://rbjqbe0dl80f" path="res://assets/art/Sand3.png" id="2_dcxwq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2smtm"]
-albedo_color = Color(0.854902, 0.764706, 0.184314, 1)
-albedo_texture = ExtResource("2_d0jyr")
-uv1_scale = Vector3(0.05, 0.05, 0.05)
-uv1_triplanar = true
-uv1_world_triplanar = true
+albedo_texture = ExtResource("2_dcxwq")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_gtp3e"]
 material = SubResource("StandardMaterial3D_2smtm")
@@ -25,6 +21,7 @@ collision_mask = 6
 script = ExtResource("1_xmjco")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CylinderMesh_gtp3e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

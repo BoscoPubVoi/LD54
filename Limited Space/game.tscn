@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://br0debc663st4"]
+[gd_scene load_steps=38 format=3 uid="uid://br0debc663st4"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_vnx84"]
 [ext_resource type="Texture2D" uid="uid://06mgarag2ioi" path="res://assets/art/tREE.png" id="2_lrr0f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4tpklaj4lxdw" path="res://Nature/sand_trap.tscn" id="8_2b8lq"]
 [ext_resource type="Script" path="res://scripts/Golfer Manager.gd" id="8_50dkh"]
 [ext_resource type="PackedScene" uid="uid://cyttdvi22ldke" path="res://Nature/grass_1.tscn" id="9_huojr"]
+[ext_resource type="Texture2D" uid="uid://rbjqbe0dl80f" path="res://assets/art/Sand3.png" id="9_oalef"]
 [ext_resource type="PackedScene" uid="uid://2k0upaes1sfl" path="res://Nature/grass_2.tscn" id="10_62njo"]
 [ext_resource type="PackedScene" uid="uid://di1owwkkgymqg" path="res://Nature/grass_3.tscn" id="11_s4tt8"]
 [ext_resource type="PackedScene" uid="uid://cakv2jj02co51" path="res://Balls/Golfers/first_golfer.tscn" id="12_1do1j"]
@@ -843,11 +844,23 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -47.4451, 2.26326, 27.4
 [node name="Sand_Trap" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-1.04907e-06, 3.48787e-16, 18, 8.37088e-15, 1, -6.27816e-15, -24, 3.48787e-16, -7.86805e-07, 38.6577, -0.021, -11.1494)
 
+[node name="Sprite3D" type="Sprite3D" parent="Sand_Trap"]
+transform = Transform3D(0.07, 2.06651e-16, 2.8312e-23, 8.97209e-23, -2.62268e-09, -1, 6.11474e-16, 0.06, -4.37114e-08, -0.0281534, 0.02, 0)
+texture = ExtResource("9_oalef")
+
 [node name="Sand_Trap2" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-12.9828, 4.93158e-16, 8.31191, 6.27816e-15, 1, -4.18544e-15, -12.4679, -9.97733e-18, -8.65518, -35.6391, -0.0210076, 43.5083)
 
+[node name="Sprite3D2" type="Sprite3D" parent="Sand_Trap2"]
+transform = Transform3D(-0.00823007, 0.0536739, -4.34474e-08, -1.14345e-24, -2.36041e-09, -1, -0.0745471, -0.00592565, 4.79664e-09, 2.08165e-12, 0.02, 2.08165e-12)
+texture = ExtResource("9_oalef")
+
 [node name="Sand_Trap3" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-8.65518, 4.93158e-16, 8.31191, 4.18544e-15, 1, -4.18544e-15, -8.31191, -9.9773e-18, -8.65518, -30.7761, -0.0210076, -31.4404)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Sand_Trap3"]
+transform = Transform3D(0.0693377, -0.0130376, 5.99885e-09, 0, -4.15258e-09, -1, 0.00960665, 0.0941011, -4.32978e-08, 0.0478594, 0.2, 0.503337)
+texture = ExtResource("9_oalef")
 
 [node name="Sand_Trap4" parent="." instance=ExtResource("8_2b8lq")]
 transform = Transform3D(-6.91975, 4.86083e-16, 15.5229, 4.18544e-15, 1, -6.62695e-15, -9.80393, 8.38301e-17, -10.9563, -26.0513, -0.0210076, -37.9481)
@@ -903,6 +916,7 @@ one_shot = true
 
 [node name="Vacuum" parent="." instance=ExtResource("12_lo8ri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2253, 1.14747, 21.6013)
+visible = false
 
 [node name="Cute Boat" parent="." instance=ExtResource("15_2pi26")]
 transform = Transform3D(0.939848, 0, -0.341594, 0, 1, 0, 0.341594, 0, 0.939848, 37.7263, 0.999996, 47.7933)
