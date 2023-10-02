@@ -43,7 +43,7 @@ func get_golfer():
 	if code < 10:
 		return golfer_generic
 	if code < 20:
-		return golfer_seeker
+		return golfer_scatter
 	if code < 30:
 		return golfer_bomb
 	if code < 40:
