@@ -1251,7 +1251,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.6677, -9.53674e-07, 56.45
 [node name="AudienceMember57" parent="Audience" instance=ExtResource("19_j34bq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.7561, -9.53674e-07, 35.4689)
 
+[node name="Timer" type="Timer" parent="Audience"]
+
 [connection signal="timeout" from="Golfer Manager/NewGolfer" to="Golfer Manager" method="_on_new_golfer_timeout"]
 [connection signal="timeout" from="ForeTimer" to="." method="_on_fore_timer_timeout"]
 [connection signal="pressed" from="TeeOff" to="." method="_on_tee_off_pressed"]
 [connection signal="timeout" from="TeeOff/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Audience/Timer" to="Audience" method="_on_timer_timeout"]
