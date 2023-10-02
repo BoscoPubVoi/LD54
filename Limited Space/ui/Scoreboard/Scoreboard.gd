@@ -10,13 +10,15 @@ signal NextClicked
  
 func _on_next_level_pressed():
 	NextClicked.emit()
+	AudioManager.stop_music("applause", 1)
 
 func _on_main_menu_pressed():
 	MainMenuClicked.emit()
+	AudioManager.stop_music("applause", 1)
 
 func _ready():
 	TotalScoreLabel.text = str(Global.GetTotalScore())
 #	ScoreLabel.text = str(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1], "x", " BOGEY")
 	ScoreLabel.text = "[center]" + Global.fun_bogey_calculator(Global.PLAYER_SCORE[Global.CURRENT_LEVEL - 1]) + "[/center]"
 
-	AudioManager.play("applause")
+	AudioManager.play_music("applause")
