@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://swjlgixmxitm"]
+[gd_scene load_steps=12 format=3 uid="uid://swjlgixmxitm"]
 
 [ext_resource type="Script" path="res://Balls/scatter_ball.gd" id="1_f5i35"]
 [ext_resource type="Script" path="res://Balls/trail.gd" id="2_0l88n"]
 [ext_resource type="PackedScene" uid="uid://c2g71el2rogxm" path="res://Balls/scattershot.tscn" id="2_rhbfl"]
 [ext_resource type="AudioStream" uid="uid://blpqhpvbb3cpu" path="res://assets/sounds/golf ball landing 2.wav" id="4_t2jh7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hw0ps"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mjsub"]
 radius = 0.379963
@@ -34,6 +36,7 @@ height = 0.2
 collision_layer = 4
 collision_mask = 97
 mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_hw0ps")
 max_contacts_reported = 1
 contact_monitor = true
 lock_rotation = true
