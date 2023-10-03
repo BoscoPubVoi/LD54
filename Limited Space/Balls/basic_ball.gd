@@ -14,6 +14,7 @@ var TouchedGround : bool = false;
 
 var down_grav = 2
 var being_swallowed = false
+var active = false
 
 func _ready():
 
@@ -27,6 +28,8 @@ func _process(delta):
 		position.x = lerp(position.x, player.position.x, .05)
 		position.z = lerp(position.z, player.position.z, .05)
 		position.y -= .05
+	if linear_velocity.length() < 0.1 && active:
+		sleeping = true
 	
 
 func apply_new_force(direction, new_speed):
@@ -111,3 +114,8 @@ func reduce_bounce():
 
 func disable_collisions():
 	$CollisionShape3D.queue_free()
+
+
+func _on_timer_timeout():
+	active = true
+	pass # Replace with function body.
